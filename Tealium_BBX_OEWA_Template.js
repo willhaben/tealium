@@ -24,8 +24,8 @@
 */
 
 /* Start Tag Library Code */
-// We load the OEWA library from the official location and don't host the code
-// on our own. This is important.
+// We load the OEWA library from the official location and don't host the code on our own. This is important.
+// Official OEWA documentation: http://www.oewa.at/Implementierung
 var oewaScript = document.createElement("script");
 oewaScript.src = "https://script-at.iocnt.net/iam.js";
 document.head.appendChild(oewaScript);
