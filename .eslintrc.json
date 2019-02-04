@@ -1,9 +1,9 @@
 {
-  "parserOptions": {
-    "ecmaVersion": 5,
-    "sourceType": "module"
-  },
-  "rules": {
-    "semi": "error"
-  }
+    "parserOptions": {
+        "ecmaVersion": 5,
+        "sourceType": "script"
+    },
+    "rules": {
+        "semi": "error"
+    }
 }

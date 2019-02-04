@@ -26,14 +26,14 @@
 /* Start Tag Library Code */
 // We load the OEWA library from the official location and don't host the code
 // on our own. This is important.
-var oewaScript = document.createElement('script');
-oewaScript.src = 'https://script-at.iocnt.net/iam.js';
+var oewaScript = document.createElement("script");
+oewaScript.src = "https://script-at.iocnt.net/iam.js";
 document.head.appendChild(oewaScript);
 /* End Tag Library Code */
 
 //tealium universal tag - utag.sender.custom_container ut4.0.##UTVERSION##, Copyright ##UTYEAR## Tealium.com Inc. All Rights Reserved.
 try {
-    (function (id, loader) {
+    (function(id, loader) {
         var u = {};
         utag.o[loader].sender[id] = u;
 
@@ -42,7 +42,7 @@ try {
         if (utag === undefined) { utag = {}; } if (utag.ut === undefined) { utag.ut = {}; } if (utag.ut.loader === undefined) { u.loader = function (o) { var a, b, c, l; a = document; if (o.type === "iframe") { b = a.createElement("iframe"); b.setAttribute("height", "1"); b.setAttribute("width", "1"); b.setAttribute("style", "display:none"); b.setAttribute("src", o.src); } else if (o.type === "img") { utag.DB("Attach img: " + o.src); b = new Image(); b.src = o.src; return; } else { b = a.createElement("script"); b.language = "javascript"; b.type = "text/javascript"; b.async = 1; b.charset = "utf-8"; b.src = o.src; } if (o.id) { b.id = o.id; } if (typeof o.cb === "function") { if (b.addEventListener) { b.addEventListener("load", function () { o.cb(); }, false); } else { b.onreadystatechange = function () { if (this.readyState === "complete" || this.readyState === "loaded") { this.onreadystatechange = null; o.cb(); } }; } } l = o.loc || "head"; c = a.getElementsByTagName(l)[0]; if (c) { utag.DB("Attach to " + l + ": " + o.src); if (l === "script") { c.parentNode.insertBefore(b, c); } else { c.appendChild(b); } } }; } else { u.loader = utag.ut.loader; }
         // End Tealium loader
 
-        u.ev = {'view' : 1};
+        u.ev = { view: 1 };
 
         u.initialized = false;
 
@@ -62,12 +62,10 @@ try {
                     /* A value mapped to "account_id" or "base_url" in TiQ will replace these default values. */
                 };
 
-
                 /* Start Tag-Scoped Extensions Code */
                 /* Please Do Not Edit This Section */
                 ##UTEXTEND##
                 /* End Tag-Scoped Extensions Code */
-
 
                 /* Start Mapping Code */
                 for (d in utag.loader.GV(u.map)) {
@@ -80,7 +78,6 @@ try {
                 }
                 /* End Mapping Code */
 
-
                 /* Start Tag Sending Code */
                 if (window.iom) {
                     if (u.data && u.data["st"] && u.data["cp"]) {
@@ -89,7 +86,6 @@ try {
                     }
                 }
                 /* End Tag Sending Code */
-
 
                 /* Start Loader Callback Function */
                 /* Un-comment the single-line JavaScript comments ("//") to use this Loader callback function. */
@@ -105,7 +101,6 @@ try {
 
                 /* End Loader Callback Function */
 
-
                 /* Start Loader Function Call */
                 /* Un-comment the single-line JavaScript comments ("//") to use Loader. */
 
@@ -119,7 +114,6 @@ try {
                 //u.loader({"type" : "img", "src" : u.data.base_url + c.join(u.data.qsp_delim) });
 
                 /* End Loader Function Call */
-
 
                 //##UTENABLEDEBUG##utag.DB("send:##UTID##:COMPLETE");
             }
