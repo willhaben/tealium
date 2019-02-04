@@ -1,0 +1,15 @@
+{
+  "name": "tealium_bbx_oewa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Tealium_BBX_OEWA_Template.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^5.13.0",
+    "prettier": "^1.16.4"
+  }
+}
