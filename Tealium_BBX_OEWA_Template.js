@@ -24,11 +24,6 @@
 */
 
 /* Start Tag Library Code */
-// We load the OEWA library from the official location and don't host the code on our own. This is important.
-// Official OEWA documentation: http://www.oewa.at/Implementierung
-var oewaScript = document.createElement("script");
-oewaScript.src = "https://script-at.iocnt.net/iam.js";
-document.head.appendChild(oewaScript);
 /* End Tag Library Code */
 
 //tealium universal tag - utag.sender.custom_container ut4.0.##UTVERSION##, Copyright ##UTYEAR## Tealium.com Inc. All Rights Reserved.
@@ -54,12 +49,16 @@ try {
 
                 var c, d, e, f, i;
 
+                // We load the OEWA library from the official location and don't host the code on our own. This is important.
+                // Official OEWA documentation: http://www.oewa.at/Implementierung
+                var oewa_script_url = "//script-at.iocnt.net/iam.js";
                 u.data = {
                     /* Initialize default tag parameter values here */
-                    /* Examples: */
-                    /* "account_id" : "1234567" */
-                    /* "base_url" : "//insert.your.javascript.library.url.here.js" */
-                    /* A value mapped to "account_id" or "base_url" in TiQ will replace these default values. */
+                    cp: "",
+                    cn: "",
+                    sv: "",
+                    st: "",
+                    ps: "",
                 };
 
                 /* Start Tag-Scoped Extensions Code */
@@ -79,37 +78,41 @@ try {
                 /* End Mapping Code */
 
                 /* Start Tag Sending Code */
-                if (window.iom) {
-                    if (u.data && u.data["st"] && u.data["cp"]) {
-                        console.log("would send info to oewa");
-                        //iom.c(u.data, 1);
-                    }
-                }
                 /* End Tag Sending Code */
 
                 /* Start Loader Callback Function */
                 /* Un-comment the single-line JavaScript comments ("//") to use this Loader callback function. */
 
-                //u.loader_cb = function () {
-                //u.initialized = true;
-                /* Start Loader Callback Tag Sending Code */
+                u.loader_cb = function() {
+                    u.initialized = true;
+                    /* Start Loader Callback Tag Sending Code */
 
-                // Insert your post-Loader tag sending code here.
+                    utag.DB("send loader_cb: ##UTID## ");
+                    utag.DB(u.data);
+                    utag.DB(window.iom);
 
-                /* End Loader Callback Tag Sending Code */
-                //};
+                    if (window.iom) {
+                        if (u.data && u.data["st"] && u.data["cp"]) {
+                            // see OEWA documentation, 1 = AppendChild() method
+                            var submission_mode = 1;
+                            //iom.c(u.data, submission_mode);
+                        }
+                    }
+
+                    /* End Loader Callback Tag Sending Code */
+                };
 
                 /* End Loader Callback Function */
 
                 /* Start Loader Function Call */
                 /* Un-comment the single-line JavaScript comments ("//") to use Loader. */
 
-                //if (!u.initialized) {
-                //u.loader({"type" : "iframe", "src" : u.data.base_url + c.join(u.data.qsp_delim), "cb" : u.loader_cb, "loc" : "body", "id" : 'utag_##UTID##' });
-                //u.loader({"type" : "script", "src" : u.data.base_url, "cb" : u.loader_cb, "loc" : "script", "id" : 'utag_##UTID##' });
-                //} else {
-                //u.loader_cb();
-                //}
+                if (!u.initialized) {
+                    // u.loader({ type: "iframe", src: u.data.base_url + c.join(u.data.qsp_delim), cb: u.loader_cb, loc: "body", id: "utag_##UTID##" });
+                    u.loader({ type: "script", src: oewa_script_url, cb: u.loader_cb, loc: "script", id: "utag_##UTID##" });
+                } else {
+                    u.loader_cb();
+                }
 
                 //u.loader({"type" : "img", "src" : u.data.base_url + c.join(u.data.qsp_delim) });
 
