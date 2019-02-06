@@ -78,7 +78,7 @@ try {
 
                 utag.DB("environment of ##UTID##: " + b["ut.env"]);
 
-                if (u.data && u.data["st"] && u.data["cp"]) {
+                if (!(u.data && u.data["st"] && u.data["cp"])) {
                     utag.DB("skipping tag as not all necessary parameters were provided: ##UTID##");
                     utag.DB(u.data);
                     return;
