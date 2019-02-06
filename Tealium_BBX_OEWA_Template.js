@@ -75,6 +75,29 @@ try {
                         }
                     }
                 }
+
+                utag.DB("environment of ##UTID##: " + b["ut.env"]);
+
+                if (u.data && u.data["st"] && u.data["cp"]) {
+                    utag.DB("skipping tag as not all necessary parameters were provided: ##UTID##");
+                    utag.DB(u.data);
+                    return;
+                }
+
+                var oewaParams = {
+                    cn: u.data["cn"],
+                    sv: u.data["sv"],
+                    st: u.data["st"],
+                    ps: u.data["ps"],
+                };
+                var cp = u.data["cp"];
+                var isProd = b["ut.env"] == "prod";
+                if (isProd) {
+                    oewaParams["cp"] = cp;
+                } else {
+                    // the "xp" parameter can be sent to oewa instead of cp for testing purposes, the requests will not be counted
+                    oewaParams["xp"] = cp;
+                }
                 /* End Mapping Code */
 
                 /* Start Tag Sending Code */
@@ -87,17 +110,17 @@ try {
                     u.initialized = true;
                     /* Start Loader Callback Tag Sending Code */
 
-                    utag.DB("send loader_cb: ##UTID## ");
-                    utag.DB(u.data);
-                    utag.DB(window.iom);
+                    utag.DB("send loader_cb: ##UTID##");
+                    utag.DB(oewaParams);
 
-                    if (window.iom) {
-                        if (u.data && u.data["st"] && u.data["cp"]) {
-                            // see OEWA documentation, 1 = AppendChild() method
-                            var submission_mode = 1;
-                            //iom.c(u.data, submission_mode);
-                        }
+                    if (!(typeof window.iom === "object" && typeof window.iom.c === "function")) {
+                        utag.DB("window.iom.c not available: ##UTID##");
+                        return;
                     }
+
+                    // see OEWA documentation, 1 = AppendChild() method
+                    var submission_mode = 1;
+                    iom.c(oewaParams, submission_mode);
 
                     /* End Loader Callback Tag Sending Code */
                 };
