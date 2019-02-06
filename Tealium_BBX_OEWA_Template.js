@@ -44,14 +44,16 @@ try {
         ##UTGEN##
 
         u.send = function(a, b) {
+            if (a !== "view") {
+                utag.DB("ignoring send event in ##UTID## of type " + a);
+                return;
+            }
+
             if (u.ev[a] || u.ev.all !== undefined) {
                 //##UTENABLEDEBUG##utag.DB("send:##UTID##");
 
                 var c, d, e, f, i;
 
-                // We load the OEWA library from the official location and don't host the code on our own. This is important.
-                // Official OEWA documentation: http://www.oewa.at/Implementierung
-                var oewa_script_url = "//script-at.iocnt.net/iam.js";
                 u.data = {
                     /* Initialize default tag parameter values here */
                     cp: "",
@@ -90,7 +92,20 @@ try {
                     st: u.data["st"],
                     ps: u.data["ps"],
                 };
+
                 var cp = u.data["cp"];
+
+                var width = b["dom.viewport_width"];
+                var isMobile = false;
+                if (typeof width === "number" && width <= 970) {
+                    isMobile = true;
+                }
+
+                if (isMobile) {
+                    // TODO we need to follow the format [SKTG]/[moewa]/[PAGEID]
+                    cp = cp + "/moewa";
+                }
+
                 var isProd = b["ut.env"] == "prod";
                 if (isProd) {
                     oewaParams["cp"] = cp;
@@ -132,6 +147,9 @@ try {
 
                 if (!u.initialized) {
                     // u.loader({ type: "iframe", src: u.data.base_url + c.join(u.data.qsp_delim), cb: u.loader_cb, loc: "body", id: "utag_##UTID##" });
+                    // We load the OEWA library from the official location and don't host the code on our own. This is important.
+                    // Official OEWA documentation: http://www.oewa.at/Implementierung
+                    var oewa_script_url = "//script-at.iocnt.net/iam.js";
                     u.loader({ type: "script", src: oewa_script_url, cb: u.loader_cb, loc: "script", id: "utag_##UTID##" });
                 } else {
                     u.loader_cb();
