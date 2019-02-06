@@ -90,14 +90,19 @@ try {
                 var cp = u.data["cp_sktg"];
 
                 var width = b["dom.viewport_width"];
+                var breakpointWidth = u.data["moewa_breakpoint"];
                 var isMobile = false;
-                if (typeof width === "number" && width <= 970) {
+                if (typeof width === "number" && breakpointWidth && width <= breakpointWidth) {
                     isMobile = true;
                 }
 
                 if (isMobile) {
                     // TODO we need to follow the format [SKTG]/[moewa]/[PAGEID]
                     cp = cp + "/moewa";
+                }
+
+                if (u.data["cp_pageid"]) {
+                    cp = cp + "/" + u.data["cp_pageid"];
                 }
 
                 // oewa survey unfortunately is not responsive, but has 2 formats: in (desktop version) and mo (mobile optimized)
