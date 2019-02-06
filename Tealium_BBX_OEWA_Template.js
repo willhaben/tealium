@@ -88,7 +88,6 @@ try {
 
                 var oewaParams = {
                     cn: u.data["cn"],
-                    sv: u.data["sv"],
                     st: u.data["st"],
                     ps: u.data["ps"],
                 };
@@ -104,6 +103,14 @@ try {
                 if (isMobile) {
                     // TODO we need to follow the format [SKTG]/[moewa]/[PAGEID]
                     cp = cp + "/moewa";
+                }
+
+                // oewa survey unfortunately is not responsive, but has 2 formats: in (desktop version) and mo (mobile optimized)
+                // since the mobile optimized version looks awful on bigger browser widths, select the better one based on browser width
+                if (isMobile) {
+                    oewaParams["sv"] = "mo";
+                } else {
+                    oewaParams["sv"] = "in";
                 }
 
                 var isProd = b["ut.env"] == "prod";
