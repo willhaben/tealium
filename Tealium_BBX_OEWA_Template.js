@@ -56,11 +56,6 @@ try {
 
                 u.data = {
                     /* Initialize default tag parameter values here */
-                    cp: "",
-                    cn: "",
-                    sv: "",
-                    st: "",
-                    ps: "",
                 };
 
                 /* Start Tag-Scoped Extensions Code */
@@ -87,9 +82,9 @@ try {
                 }
 
                 var oewaParams = {
-                    cn: u.data["cn"],
-                    st: u.data["st"],
-                    ps: u.data["ps"],
+                    cn: "at", // country = austria
+                    ps: "lin", // privacy setting, there is only "lin"
+                    st: u.data["st"], // site
                 };
 
                 var cp = u.data["cp"];
