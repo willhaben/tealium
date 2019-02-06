@@ -75,7 +75,7 @@ try {
 
                 utag.DB("environment of ##UTID##: " + b["ut.env"]);
 
-                if (!(u.data && u.data["st"] && u.data["cp"])) {
+                if (!(u.data && u.data["st"] && u.data["cp_sktg"])) {
                     utag.DB("skipping tag as not all necessary parameters were provided: ##UTID##");
                     utag.DB(u.data);
                     return;
@@ -87,7 +87,7 @@ try {
                     st: u.data["st"], // site
                 };
 
-                var cp = u.data["cp"];
+                var cp = u.data["cp_sktg"];
 
                 var width = b["dom.viewport_width"];
                 var isMobile = false;
