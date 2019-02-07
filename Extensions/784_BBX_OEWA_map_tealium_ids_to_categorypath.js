@@ -60,6 +60,7 @@ var map = {
 var params = map[b.event_name];
 
 if (!params) {
+    utag.DB("ignoring unhandled event_name '" + b.event_name + "' in BBX OEWA map");
     return false;
 }
 
