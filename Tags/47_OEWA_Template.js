@@ -2,29 +2,11 @@
 //~~tc: Tealium Custom Container
 
 /*
- * Tealium does not support OEWA out of the box, so this is a custom container
- * for integrating OEWA in tealium.
+ * Tealium does not support OEWA out of the box, so this is a custom container for integrating OEWA in tealium.
+ * We keep the source of this at https://github.schibsted.io/willhaben/willhaben-tealium-scripts/blob/master/Tags/47_OEWA_Template.js
+ * Keep it up to date in the git repo, and do not just make random changes directly in the Tealium template.
+ * Official OEWA documentation: http://www.oewa.at/Implementierung
  */
-
-/*
-  Tealium Custom Container Notes:
-  - Add sending code between "Start Tag Sending Code" and "End Tag Sending Code".
-  - Add JavaScript tag library code between "Start Tag Library Code" and "End Tag Library Code".
-  - Add JavaScript code only, do not add HTML code in this file.
-  - Remove any <script> and </script> tags from the code you place in this file.
-
-  Loading external JavaScript files (Loader):
-  - If you need to load an additional external JavaScript file, un-comment the singe-line JavaScript comments ("//") within the following Loader sections near the bottom of this file:
-      - "Start Loader Function Call"
-      - "End Loader Function Call"
-      - "Start Loader Callback Function"
-      - "End Loader Callback Function"
-  - After un-commenting, insert the path to the external JavaScript file you want to load.
-  - Finally, within the Loader callback function, insert the JavaScript code that should run after the external JavaScript file has loaded.
-*/
-
-/* Start Tag Library Code */
-/* End Tag Library Code */
 
 //tealium universal tag - utag.sender.custom_container ut4.0.##UTVERSION##, Copyright ##UTYEAR## Tealium.com Inc. All Rights Reserved.
 try {
@@ -50,8 +32,6 @@ try {
             }
 
             if (u.ev[a] || u.ev.all !== undefined) {
-                //##UTENABLEDEBUG##utag.DB("send:##UTID##");
-
                 var c, d, e, f, i;
 
                 u.data = {
@@ -122,15 +102,10 @@ try {
                 }
                 /* End Mapping Code */
 
-                /* Start Tag Sending Code */
-                /* End Tag Sending Code */
-
-                /* Start Loader Callback Function */
-                /* Un-comment the single-line JavaScript comments ("//") to use this Loader callback function. */
-
+                // we cannot directly send the request to oewa, but we need to load the oewa js library first
+                // loader_cb is called when the oewa js lib was loaded successfully, only then we can send the request
                 u.loader_cb = function() {
                     u.initialized = true;
-                    /* Start Loader Callback Tag Sending Code */
 
                     utag.DB("send loader_cb: ##UTID##");
                     utag.DB(oewaParams);
@@ -143,30 +118,15 @@ try {
                     // see OEWA documentation, 1 = AppendChild() method
                     var submission_mode = 1;
                     iom.c(oewaParams, submission_mode);
-
-                    /* End Loader Callback Tag Sending Code */
                 };
 
-                /* End Loader Callback Function */
-
-                /* Start Loader Function Call */
-                /* Un-comment the single-line JavaScript comments ("//") to use Loader. */
-
                 if (!u.initialized) {
-                    // u.loader({ type: "iframe", src: u.data.base_url + c.join(u.data.qsp_delim), cb: u.loader_cb, loc: "body", id: "utag_##UTID##" });
                     // We load the OEWA library from the official location and don't host the code on our own. This is important.
-                    // Official OEWA documentation: http://www.oewa.at/Implementierung
                     var oewa_script_url = "//script-at.iocnt.net/iam.js";
                     u.loader({ type: "script", src: oewa_script_url, cb: u.loader_cb, loc: "script", id: "utag_##UTID##" });
                 } else {
                     u.loader_cb();
                 }
-
-                //u.loader({"type" : "img", "src" : u.data.base_url + c.join(u.data.qsp_delim) });
-
-                /* End Loader Function Call */
-
-                //##UTENABLEDEBUG##utag.DB("send:##UTID##:COMPLETE");
             }
         };
         utag.o[loader].loader.LOAD(id);
