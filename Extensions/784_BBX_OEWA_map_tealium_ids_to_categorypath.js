@@ -64,5 +64,5 @@ if (!params) {
     return false;
 }
 
-b.oewa_categorypath_sktg = params[sktg];
-b.oewa_categorypath_pageid = params[pageid];
+b.oewa_categorypath_sktg = params.sktg;
+b.oewa_categorypath_pageid = params.pageid;
