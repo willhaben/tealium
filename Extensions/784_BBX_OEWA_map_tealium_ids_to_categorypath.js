@@ -1,6 +1,8 @@
-// this extension maps tealium page identifiers of barbarix to oewa categorypath parts
-// for a list of the tealium `event_name`s of page events, consult the tagging plan
-// the `event_name`s can also be found in barbarix code in taggingService.ts
+// This extension maps tealium page identifiers of barbarix to oewa categorypath parts.
+// For a list of the tealium `event_name`s of page events, consult the tagging plan.
+// The `event_name`s can also be found in barbarix code in taggingService.ts.
+// We keep the source of this at https://github.schibsted.io/willhaben/willhaben-tealium-scripts/blob/master/Extensions/784_BBX_OEWA_map_tealium_ids_to_categorypath.js
+// Keep it up to date in the git repo, and do not just make random changes directly in the Tealium extension.
 
 if (!b.client || b.client.toLowerCase() !== "bbx") {
     return false;
