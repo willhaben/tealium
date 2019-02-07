@@ -1,7 +1,10 @@
 {
     "parserOptions": {
         "ecmaVersion": 5,
-        "sourceType": "script"
+        "sourceType": "script",
+        "ecmaFeatures": {
+            "globalReturn": true
+        }
     },
     "rules": {
         "semi": "error"
