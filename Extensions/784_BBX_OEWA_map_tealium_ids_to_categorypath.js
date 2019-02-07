@@ -12,52 +12,56 @@ if (a !== "view") {
     return false;
 }
 
-if (b.event_name === "contact_contact") {
-    b.oewa_categorypath_sktg = "Service/Unternehmenskommunikation/Unternehmenskommunikation";
-    b.oewa_categorypath_pageid = "";
-} else if (b.event_name === "terms_conditions_general") {
-    b.oewa_categorypath_sktg = "Service/Unternehmenskommunikation/Unternehmenskommunikation";
-    b.oewa_categorypath_pageid = "";
-} else if (b.event_name === "ad_rules") {
-    b.oewa_categorypath_sktg = "Service/Unternehmenskommunikation/Unternehmenskommunikation";
-    b.oewa_categorypath_pageid = "";
-} else if (b.event_name === "privacy_policy") {
-    b.oewa_categorypath_sktg = "Service/Unternehmenskommunikation/Unternehmenskommunikation";
-    b.oewa_categorypath_pageid = "";
-} else if (b.event_name === "imprint") {
-    b.oewa_categorypath_sktg = "Service/Unternehmenskommunikation/Unternehmenskommunikation";
-    b.oewa_categorypath_pageid = "";
-} else if (b.event_name === "terms_conditions") {
-    b.oewa_categorypath_sktg = "Service/Unternehmenskommunikation/Unternehmenskommunikation";
-    b.oewa_categorypath_pageid = "";
-} else if (b.event_name === "press_about_willhaben") {
-    b.oewa_categorypath_sktg = "Service/Unternehmenskommunikation/Unternehmenskommunikation";
-    b.oewa_categorypath_pageid = "";
-} else if (b.event_name === "press_presstext") {
-    b.oewa_categorypath_sktg = "Service/Unternehmenskommunikation/Unternehmenskommunikation";
-    b.oewa_categorypath_pageid = "";
-} else if (b.event_name === "press_download") {
-    b.oewa_categorypath_sktg = "Service/Unternehmenskommunikation/Unternehmenskommunikation";
-    b.oewa_categorypath_pageid = "";
-} else if (b.event_name === "security_hints_overview") {
-    b.oewa_categorypath_sktg = "Service/Unternehmenskommunikation/Unternehmenskommunikation";
-    b.oewa_categorypath_pageid = "";
-} else if (b.event_name === "security_hints_buy") {
-    b.oewa_categorypath_sktg = "Service/Unternehmenskommunikation/Unternehmenskommunikation";
-    b.oewa_categorypath_pageid = "";
-} else if (b.event_name === "security_hints_account") {
-    b.oewa_categorypath_sktg = "Service/Unternehmenskommunikation/Unternehmenskommunikation";
-    b.oewa_categorypath_pageid = "";
-} else if (b.event_name === "security_hints_sell") {
-    b.oewa_categorypath_sktg = "Service/Unternehmenskommunikation/Unternehmenskommunikation";
-    b.oewa_categorypath_pageid = "";
-} else if (b.event_name === "security_hints_puppy") {
-    b.oewa_categorypath_sktg = "Service/Unternehmenskommunikation/Unternehmenskommunikation";
-    b.oewa_categorypath_pageid = "";
-} else if (b.event_name === "mywillhaben_myprofile") {
-    b.oewa_categorypath_sktg = "Service/Unternehmenskommunikation/Unternehmenskommunikation";
-    b.oewa_categorypath_pageid = "";
-} else {
-    // ignore unknown pages
+var map = {
+    contact_contact: {
+        sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
+    },
+    terms_conditions_general: {
+        sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
+    },
+    ad_rules: {
+        sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
+    },
+    privacy_policy: {
+        sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
+    },
+    imprint: {
+        sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
+    },
+    terms_conditions: {
+        sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
+    },
+    press_about_willhaben: {
+        sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
+    },
+    press_presstext: {
+        sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
+    },
+    press_download: {
+        sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
+    },
+    security_hints_overview: {
+        sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
+    },
+    security_hints_buy: {
+        sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
+    },
+    security_hints_account: {
+        sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
+    },
+    security_hints_sell: {
+        sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
+    },
+    security_hints_puppy: {
+        sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
+    },
+};
+
+var params = map[b.event_name];
+
+if (!params) {
     return false;
 }
+
+b.oewa_categorypath_sktg = params[sktg];
+b.oewa_categorypath_pageid = params[pageid];
