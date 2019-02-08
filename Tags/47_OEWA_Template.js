@@ -32,6 +32,7 @@ try {
             }
 
             if (u.ev[a] || u.ev.all !== undefined) {
+                // eslint-disable-next-line no-unused-vars
                 var c, d, e, f, i;
 
                 u.data = {
@@ -117,7 +118,7 @@ try {
 
                     // see OEWA documentation, 1 = AppendChild() method
                     var submission_mode = 1;
-                    iom.c(oewaParams, submission_mode);
+                    window.iom.c(oewaParams, submission_mode);
                 };
 
                 if (!u.initialized) {
