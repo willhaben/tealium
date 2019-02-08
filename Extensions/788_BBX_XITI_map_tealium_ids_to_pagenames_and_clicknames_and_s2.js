@@ -68,6 +68,14 @@ if (a === "view") {
             page: "SecurityHints::Puppy",
             s2: "5",
         },
+        mywillhaben_myprofile: {
+            page: "MyWillhaben::MyProfile",
+            s2: "10",
+        },
+        mywillhaben_changelogindata: {
+            page: "MyWillhaben::MyProfile::Edit",
+            s2: "10",
+        },
     };
 
     params = map[b.event_name];
@@ -88,6 +96,18 @@ if (a === "view") {
         send_error: {
             click: "SendError",
             s2: "5",
+        },
+        mywillhaben_myprofile_save: {
+            page: "MyProfile::Save",
+            s2: "10",
+        },
+        mywillhaben_myprofile_seller_profile: {
+            page: "MyProfile::SellerProfile",
+            s2: "10",
+        },
+        mywillhaben_myprofile_privacy_policy: {
+            page: "MyProfile::PrivacyPolicy",
+            s2: "10",
         },
     };
 
