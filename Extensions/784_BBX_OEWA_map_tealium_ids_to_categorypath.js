@@ -55,6 +55,14 @@ var map = {
     security_hints_puppy: {
         sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
     },
+    mywillhaben_myprofile: {
+        sktg: "Service/Sonstiges/Sonstiges",
+        pageid: "Meinwillhaben",
+    },
+    mywillhaben_changelogindata: {
+        sktg: "Service/Sonstiges/Sonstiges",
+        pageid: "Meinwillhaben",
+    },
 };
 
 var params = map[b.event_name];
