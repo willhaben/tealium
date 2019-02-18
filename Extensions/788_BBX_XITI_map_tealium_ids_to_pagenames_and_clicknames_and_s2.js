@@ -98,15 +98,15 @@ if (a === "view") {
             s2: "5",
         },
         mywillhaben_myprofile_save: {
-            page: "MyProfile::Save",
+            click: "MyProfile::Save",
             s2: "10",
         },
         mywillhaben_myprofile_seller_profile: {
-            page: "MyProfile::SellerProfile",
+            click: "MyProfile::SellerProfile",
             s2: "10",
         },
         mywillhaben_myprofile_privacy_policy: {
-            page: "MyProfile::PrivacyPolicy",
+            click: "MyProfile::PrivacyPolicy",
             s2: "10",
         },
     };
