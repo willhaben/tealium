@@ -84,6 +84,10 @@ if (a === "view") {
             page: "MyWillhaben::MyAccount::Registration",
             s2: "10",
         },
+        register_done: {
+            page: "MyWillhaben::MyAccount::RegistrationDone",
+            s2: "10",
+        },
         forgot_password: {
             page: "MyWillhaben::MyAccount::ForgotPassword",
             s2: "10",

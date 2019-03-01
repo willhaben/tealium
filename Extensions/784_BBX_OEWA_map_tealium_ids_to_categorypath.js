@@ -71,6 +71,10 @@ var map = {
         sktg: "Service/Sonstiges/Sonstiges",
         pageid: "Meinwillhaben",
     },
+    register_done: {
+        sktg: "Service/Sonstiges/Sonstiges",
+        pageid: "Meinwillhaben",
+    },
     forgot_password: {
         sktg: "Service/Sonstiges/Sonstiges",
         pageid: "Meinwillhaben",
