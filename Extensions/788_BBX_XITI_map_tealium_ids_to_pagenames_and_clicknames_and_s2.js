@@ -84,7 +84,7 @@ if (a === "view") {
             page: "MyWillhaben::MyAccount::Registration",
             s2: "10",
         },
-        register_done: {
+        register_confirm: {
             page: "MyWillhaben::MyAccount::RegistrationDone",
             s2: "10",
         },
