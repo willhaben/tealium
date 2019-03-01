@@ -76,6 +76,18 @@ if (a === "view") {
             page: "MyWillhaben::MyProfile::Edit",
             s2: "10",
         },
+        login: {
+            page: "MyWillhaben::MyAccount::Login",
+            s2: "10",
+        },
+        register_form: {
+            page: "MyWillhaben::MyAccount::Registration",
+            s2: "10",
+        },
+        forgot_password: {
+            page: "MyWillhaben::MyAccount::ForgotPassword",
+            s2: "10",
+        },
     };
 
     params = map[b.event_name];
@@ -107,6 +119,22 @@ if (a === "view") {
         },
         mywillhaben_myprofile_privacy_policy: {
             click: "MyProfile::PrivacyPolicy",
+            s2: "10",
+        },
+        login_success: {
+            click: "Login::SendConfirm",
+            s2: "10",
+        },
+        login_error: {
+            click: "Login::SendError",
+            s2: "10",
+        },
+        register_success: {
+            click: "Registration::SendConfirm",
+            s2: "10",
+        },
+        register_error: {
+            click: "Registration::SendError",
             s2: "10",
         },
     };
