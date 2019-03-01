@@ -92,6 +92,18 @@ if (a === "view") {
             page: "MyWillhaben::MyAccount::ForgotPassword",
             s2: "10",
         },
+        forgot_password_confirm: {
+            page: "MyWillhaben::MyAccount::ForgotPasswordDone",
+            s2: "10",
+        },
+        verify_email: {
+            page: "MyWillhaben::MyAccount::VerifyEmail",
+            s2: "10",
+        },
+        change_password: {
+            page: "MyWillhaben::MyAccount::ChangePassword",
+            s2: "10",
+        },
     };
 
     params = map[b.event_name];
