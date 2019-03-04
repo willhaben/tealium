@@ -83,10 +83,6 @@ var map = {
         sktg: "Service/Sonstiges/Sonstiges",
         pageid: "Meinwillhaben",
     },
-    verify_email: {
-        sktg: "Service/Sonstiges/Sonstiges",
-        pageid: "Meinwillhaben",
-    },
     change_password: {
         sktg: "Service/Sonstiges/Sonstiges",
         pageid: "Meinwillhaben",
