@@ -100,6 +100,14 @@ if (a === "view") {
             page: "MyWillhaben::MyAccount::ChangePassword",
             s2: "10",
         },
+        my_saved_searches: {
+            page: "MyWillhaben::MyAccount::ChangePassword",
+            s2: "10",
+        },
+        my_saved_searches_edit_modal: {
+            page: "MyWillhaben::MySearchAgents_Edit",
+            s2: "10",
+        },
     };
 
     params = map[b.event_name];
@@ -147,6 +155,34 @@ if (a === "view") {
         },
         register_error: {
             click: "Registration::SendError",
+            s2: "10",
+        },
+        my_saved_searches_detail: {
+            click: "MySearchAgents::Open::SearchResult_List",
+            s2: "10",
+        },
+        my_saved_searches_edit: {
+            click: "MySearchAgents::Edit",
+            s2: "10",
+        },
+        my_saved_searches_deactivate: {
+            click: "MySearchAgents::ActiveOn",
+            s2: "10",
+        },
+        my_saved_searches_activate: {
+            click: "MySearchAgents::InactiveOn",
+            s2: "10",
+        },
+        my_saved_searches_delete: {
+            click: "MySearchAgents::Delete",
+            s2: "10",
+        },
+        my_saved_searches_save: {
+            click: "MySearchAgents_Edit::Save",
+            s2: "10",
+        },
+        my_saved_searches_change_criteria: {
+            click: "MySearchAgents_Edit::ChangeCriteria",
             s2: "10",
         },
     };
