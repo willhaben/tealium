@@ -166,11 +166,11 @@ if (a === "view") {
             s2: "10",
         },
         my_saved_searches_deactivate: {
-            click: "MySearchAgents::ActiveOn",
+            click: "MySearchAgents::InactiveOn",
             s2: "10",
         },
         my_saved_searches_activate: {
-            click: "MySearchAgents::InactiveOn",
+            click: "MySearchAgents::ActiveOn",
             s2: "10",
         },
         my_saved_searches_delete: {
