@@ -101,7 +101,7 @@ if (a === "view") {
             s2: "10",
         },
         my_saved_searches: {
-            page: "MyWillhaben::MyAccount::ChangePassword",
+            page: "MyWillhaben::MySearchAgents",
             s2: "10",
         },
         my_saved_searches_edit_modal: {
