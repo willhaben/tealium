@@ -87,7 +87,11 @@ var map = {
         sktg: "Service/Sonstiges/Sonstiges",
         pageid: "Meinwillhaben",
     },
-    my_saved_searches: {
+    my_search_agents: {
+        sktg: "Service/Sonstiges/Sonstiges",
+        pageid: "Meinwillhaben",
+    },
+    my_search_agents_create: {
         sktg: "Service/Sonstiges/Sonstiges",
         pageid: "Meinwillhaben",
     },

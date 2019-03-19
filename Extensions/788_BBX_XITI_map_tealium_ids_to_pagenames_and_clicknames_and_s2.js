@@ -100,11 +100,15 @@ if (a === "view") {
             page: "MyWillhaben::MyAccount::ChangePassword",
             s2: "10",
         },
-        my_saved_searches: {
+        my_search_agents: {
             page: "MyWillhaben::MySearchAgents",
             s2: "10",
         },
-        my_saved_searches_edit_modal: {
+        my_search_agents_create: {
+            page: "MyWillhaben::MySearchAgents::Create",
+            s2: "10",
+        },
+        my_search_agents_edit: {
             page: "MyWillhaben::MySearchAgents_Edit",
             s2: "10",
         },
@@ -157,31 +161,31 @@ if (a === "view") {
             click: "Registration::SendError",
             s2: "10",
         },
-        my_saved_searches_detail: {
+        my_search_agents_detail: {
             click: "MySearchAgents::Open::SearchResult_List",
             s2: "10",
         },
-        my_saved_searches_edit: {
+        my_search_agents_edit_click: {
             click: "MySearchAgents::Edit",
             s2: "10",
         },
-        my_saved_searches_deactivate: {
+        my_search_agents_deactivate: {
             click: "MySearchAgents::InactiveOn",
             s2: "10",
         },
-        my_saved_searches_activate: {
+        my_search_agents_activate: {
             click: "MySearchAgents::ActiveOn",
             s2: "10",
         },
-        my_saved_searches_delete: {
+        my_search_agents_delete: {
             click: "MySearchAgents::Delete",
             s2: "10",
         },
-        my_saved_searches_save: {
+        my_search_agents_save: {
             click: "MySearchAgents_Edit::Save",
             s2: "10",
         },
-        my_saved_searches_change_criteria: {
+        my_search_agents_change_criteria: {
             click: "MySearchAgents_Edit::ChangeCriteria",
             s2: "10",
         },
