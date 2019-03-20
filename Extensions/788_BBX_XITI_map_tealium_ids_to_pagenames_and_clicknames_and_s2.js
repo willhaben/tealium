@@ -105,7 +105,7 @@ if (a === "view") {
             s2: "10",
         },
         my_search_agents_create: {
-            page: "MyWillhaben::MySearchAgents::Create",
+            page: "MyWillhaben::MySearchAgents_Create",
             s2: "10",
         },
         my_search_agents_edit: {
