@@ -112,6 +112,10 @@ if (a === "view") {
             page: "MyWillhaben::MySearchAgents_Edit",
             s2: "10",
         },
+        my_search_agents_edit_modal: {
+            page: "MyWillhaben::MySearchAgents_Edit_Overlay",
+            s2: "10",
+        },
     };
 
     params = map[b.event_name];

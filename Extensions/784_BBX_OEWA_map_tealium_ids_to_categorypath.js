@@ -95,6 +95,14 @@ var map = {
         sktg: "Service/Sonstiges/Sonstiges",
         pageid: "Meinwillhaben",
     },
+    my_search_agents_edit: {
+        sktg: "Service/Sonstiges/Sonstiges",
+        pageid: "Meinwillhaben",
+    },
+    my_search_agents_edit_modal: {
+        sktg: "Service/Sonstiges/Sonstiges",
+        pageid: "Meinwillhaben",
+    },
 };
 
 var params = map[b.event_name];
