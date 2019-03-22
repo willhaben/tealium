@@ -66,6 +66,7 @@ try {
                     cn: "at", // country = austria
                     ps: "lin", // privacy setting, there is only "lin"
                     st: u.data["st"], // site
+                    sc: "yes", // set cookie - sets a 1st party cookies for tracking user that block 3rd party cookies
                 };
 
                 var cp = u.data["cp_sktg"];
