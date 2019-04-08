@@ -12,6 +12,24 @@ if (a !== "view") {
     return false;
 }
 
+function oewaVerticalName(verticalId) {
+    switch (verticalId) {
+        case "1":
+            return "Jobs";
+        case "2":
+            return "Immobilienmarkt";
+        case "3":
+            return "Automarkt";
+        case "5":
+            return "Sonstiges";
+    }
+
+    // this is a fallback, since slightly wrong oewa tags are better than broken ones
+    return "Sonstiges";
+}
+
+var vertical = oewaVerticalName(b.vertical_id);
+
 var map = {
     contact_contact: {
         sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
@@ -102,6 +120,10 @@ var map = {
     my_search_agents_edit_modal: {
         sktg: "Service/Sonstiges/Sonstiges",
         pageid: "Meinwillhaben",
+    },
+    upselling: {
+        sktg: "Service/Rubrikenmaerkte/".concat(vertical),
+        pageid: "Anzeigenaufgabe",
     },
 };
 

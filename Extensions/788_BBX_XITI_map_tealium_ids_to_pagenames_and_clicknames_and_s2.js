@@ -10,6 +10,17 @@ if (!b.client || b.client.toLowerCase() !== "bbx") {
 
 var map, params;
 
+function isPrivateAd() {
+    if (b.ad_type_id === "69") {
+        return false;
+    }
+
+    // as a fallback we always assume private
+    return true;
+}
+
+var privateOrProfessionalString = isPrivateAd() ? "Private" : "Professional";
+
 if (a === "view") {
     map = {
         contact_contact: {
@@ -116,6 +127,10 @@ if (a === "view") {
             page: "MyWillhaben::MySearchAgents_Edit_Overlay",
             s2: "10",
         },
+        upselling: {
+            page: "AI::".concat(privateOrProfessionalString).concat("::Upselling"),
+            s2: "4",
+        },
     };
 
     params = map[b.event_name];
@@ -192,6 +207,10 @@ if (a === "view") {
         my_search_agents_change_criteria: {
             click: "MySearchAgents_Edit::ChangeCriteria",
             s2: "10",
+        },
+        upselling_purchase_click: {
+            click: "Upselling::Purchase",
+            s2: "4",
         },
     };
 
