@@ -125,6 +125,18 @@ var map = {
         sktg: "Service/Rubrikenmaerkte/".concat(vertical),
         pageid: "Anzeigenaufgabe",
     },
+    checkout: {
+        sktg: "Service/Rubrikenmaerkte/".concat(vertical),
+        pageid: "Anzeigenaufgabe",
+    },
+    billrequest: {
+        sktg: "Service/Sonstiges/Sonstiges",
+        pageid: "Meinwillhaben",
+    },
+    invoices: {
+        sktg: "Service/Sonstiges/Sonstiges",
+        pageid: "Meinwillhaben",
+    },
 };
 
 var params = map[b.event_name];

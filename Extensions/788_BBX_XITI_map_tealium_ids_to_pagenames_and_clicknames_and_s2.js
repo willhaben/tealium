@@ -131,6 +131,18 @@ if (a === "view") {
             page: "AI::".concat(privateOrProfessionalString).concat("::Upselling"),
             s2: "4",
         },
+        checkout: {
+            page: "AI::".concat(privateOrProfessionalString).concat("::Checkout"),
+            s2: "4",
+        },
+        billrequest: {
+            page: "MyWillhaben::MyAds::RequestReceipt",
+            s2: "10",
+        },
+        invoices: {
+            page: "MyWillhaben::MyAds::Invoices",
+            s2: "10",
+        },
     };
 
     params = map[b.event_name];
