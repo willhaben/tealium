@@ -136,7 +136,7 @@ if (a === "view") {
             s2: "4",
         },
         billrequest: {
-            page: "MyWillhaben::MyAds::RequestReceipt",
+            page: "MyWillhaben::MyAds::RequestInvoice",
             s2: "10",
         },
         invoices: {
