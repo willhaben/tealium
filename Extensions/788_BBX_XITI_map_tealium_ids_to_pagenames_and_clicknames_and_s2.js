@@ -143,6 +143,10 @@ if (a === "view") {
             page: "MyWillhaben::MyAds::Invoices",
             s2: "10",
         },
+        my_ads: {
+            page: "MyWillhaben::MyAds",
+            s2: "10",
+        },
     };
 
     params = map[b.event_name];
@@ -223,6 +227,78 @@ if (a === "view") {
         upselling_purchase_click: {
             click: "Upselling::Purchase",
             s2: "4",
+        },
+        my_ads_click_open_context_menu: {
+            click: "MyAds::Edit",
+            s2: "10",
+        },
+        my_ads_click_delete_ad: {
+            click: "MyAds::Delete",
+            s2: "10",
+        },
+        my_ads_click_share_ad: {
+            click: "MyAds::Share",
+            s2: "10",
+        },
+        my_ads_click_upselling: {
+            click: "MyAds::Upselling",
+            s2: "10",
+        },
+        my_ads_click_finalize: {
+            click: "MyAds::Resume",
+            s2: "10",
+        },
+        my_ads_click_activate: {
+            click: "MyAds::Activate",
+            s2: "10",
+        },
+        my_ads_click_republish: {
+            click: "MyAds::Resubmit",
+            s2: "10",
+        },
+        my_ads_contextmenu_click_edit_images: {
+            click: "MyAds::Edit::Image",
+            s2: "10",
+        },
+        my_ads_contextmenu_click_edit_text: {
+            click: "MyAds::Edit::Description",
+            s2: "10",
+        },
+        my_ads_contextmenu_click_activate: {
+            click: "MyAds::Edit::Activate",
+            s2: "10",
+        },
+        my_ads_contextmenu_click_deactivate: {
+            click: "MyAds::Edit::Deactivate",
+            s2: "10",
+        },
+        my_ads_contextmenu_click_toggle_availability: {
+            click: "MyAds::Edit::ToggleAvailability",
+            s2: "10",
+        },
+        my_ads_contextmenu_click_finalize: {
+            click: "MyAds::Edit::Resume",
+            s2: "10",
+        },
+        my_ads_contextmenu_click_republish: {
+            click: "MyAds::Edit::Resubmit",
+            s2: "10",
+        },
+        my_ads_contextmenu_click_upselling: {
+            click: "MyAds::Edit::Upselling",
+            s2: "10",
+        },
+        my_ads_contextmenu_click_delete: {
+            click: "MyAds::Edit::Delete",
+            s2: "10",
+        },
+        my_ads_contextmenu_click_request_bill: {
+            click: "MyAds::Edit::RequestInvoice",
+            s2: "10",
+        },
+        my_ads_click_goto_aza: {
+            click: "MyAds::EmptyState::CreateAd",
+            s2: "10",
         },
     };
 
