@@ -147,6 +147,10 @@ if (a === "view") {
             page: "MyWillhaben::MyAds",
             s2: "10",
         },
+        my_saved_ads: {
+            page: "MyWillhaben::MySavedAds",
+            s2: "10",
+        },
     };
 
     params = map[b.event_name];
@@ -298,6 +302,26 @@ if (a === "view") {
         },
         my_ads_click_goto_aza: {
             click: "MyAds::EmptyState::CreateAd",
+            s2: "10",
+        },
+        my_saved_ads_click_renew: {
+            click: "MySavedAds::Save::Renewed",
+            s2: "10",
+        },
+        my_saved_ads_click_sorting_DATE_ADDED: {
+            click: "MySavedAds::Sort::Date",
+            s2: "10",
+        },
+        my_saved_ads_click_sorting_MARKET: {
+            click: "MySavedAds::Sort::AdType",
+            s2: "10",
+        },
+        my_saved_ads_click_sorting_PRICE_DESC: {
+            click: "MySavedAds::Sort::PriceDescending",
+            s2: "10",
+        },
+        my_saved_ads_click_sorting_PRICE_ASC: {
+            click: "MySavedAds::Sort::PriceAscending",
             s2: "10",
         },
     };
