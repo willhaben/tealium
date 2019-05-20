@@ -151,6 +151,10 @@ if (a === "view") {
             page: "MyWillhaben::MySavedAds",
             s2: "10",
         },
+        chat_view: {
+            page: "MyWillhaben::Messages",
+            s2: "10",
+        },
     };
 
     params = map[b.event_name];

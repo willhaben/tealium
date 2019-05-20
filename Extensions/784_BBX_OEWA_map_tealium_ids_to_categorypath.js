@@ -145,6 +145,10 @@ var map = {
         sktg: "Service/Sonstiges/Sonstiges",
         pageid: "Meinwillhaben",
     },
+    chat_view: {
+        sktg: "Service/Sonstiges/Sonstiges",
+        pageid: "Meinwillhaben",
+    },
 };
 
 var params = map[b.event_name];
