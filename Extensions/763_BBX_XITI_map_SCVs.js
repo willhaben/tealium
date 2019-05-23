@@ -6,14 +6,15 @@ if (!b.client || b.client.toLowerCase() !== "bbx") {
     return false;
 }
 
+// do not set xiti SCVs for clicks, otherwise additional page views will be tagged
 if (a == "view") {
     b.xiti_x7 = "willhaben";
     b.xiti_x13 = "1";
-}
 
-if (b.vertical_id === "5") {
-    b.xiti_x9 = b.category_level_id_1;
-    b.xiti_x10 = b.category_level_id_2;
-    b.xiti_x11 = b.category_level_id_3;
-    b.xiti_x12 = b.category_level_id_4;
+    if (b.vertical_id === "5") {
+        b.xiti_x9 = b.category_level_id_1;
+        b.xiti_x10 = b.category_level_id_2;
+        b.xiti_x11 = b.category_level_id_3;
+        b.xiti_x12 = b.category_level_id_4;
+    }
 }
