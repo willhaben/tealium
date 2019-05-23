@@ -1,5 +1,5 @@
 // This extension maps fields from tmsDataValues to xiti SCVs
-// We keep the source of this at https://github.schibsted.io/willhaben/willhaben-tealium-scripts/blob/master/Extensions/763_BBX_XITI_map_SCVs.js
+// We keep the source of this at https://github.schibsted.io/willhaben/willhaben-tealium-scripts/blob/master/Extensions/901_BBX_XITI_map_SCVs.js
 // Keep it up to date in the git repo, and do not just make random changes directly in the Tealium extension.
 
 if (!b.client || b.client.toLowerCase() !== "bbx") {
