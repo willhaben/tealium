@@ -143,6 +143,10 @@ if (a === "view") {
             page: "MyWillhaben::MyAds::Invoices",
             s2: "10",
         },
+        renew_ad_page: {
+            page: "MyWillhaben::MyAds::RenewAd",
+            s2: "10",
+        },
         my_ads: {
             page: "MyWillhaben::MyAds",
             s2: "10",
@@ -235,6 +239,10 @@ if (a === "view") {
         upselling_purchase_click: {
             click: "Upselling::Purchase",
             s2: "4",
+        },
+        renew_ad_renew_click: {
+            click: "RenewAd::Publish",
+            s2: "10",
         },
         my_ads_click_open_context_menu: {
             click: "MyAds::Edit",

@@ -137,6 +137,10 @@ var map = {
         sktg: "Service/Sonstiges/Sonstiges",
         pageid: "Meinwillhaben",
     },
+    renew_ad_page: {
+        sktg: "Service/Sonstiges/Sonstiges",
+        pageid: "Meinwillhaben",
+    },
     my_ads: {
         sktg: "Service/Sonstiges/Sonstiges",
         pageid: "Meinwillhaben",
