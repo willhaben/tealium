@@ -336,6 +336,46 @@ if (a === "view") {
             click: "MySavedAds::Sort::PriceAscending",
             s2: "10",
         },
+        header_click_logo: {
+            click: "Menu::Logo",
+            s2: "11",
+        },
+        header_click_messages: {
+            click: "Menu::Messages",
+            s2: "11",
+        },
+        header_click_login: {
+            click: "Menu::Login",
+            s2: "11",
+        },
+        header_click_register: {
+            click: "Menu::Register",
+            s2: "11",
+        },
+        header_click_myWillhaben: {
+            click: "Menu::MyWillhaben",
+            s2: "11",
+        },
+        header_click_insertAd: {
+            click: "Menu::InsertAd",
+            s2: "11",
+        },
+        header_click_marketplace: {
+            click: "Menu::Generalist",
+            s2: "11",
+        },
+        header_click_realestate: {
+            click: "Menu::RealEstate",
+            s2: "11",
+        },
+        header_click_motor: {
+            click: "Menu::Motor",
+            s2: "11",
+        },
+        header_click_jobs: {
+            click: "Menu::Jobs",
+            s2: "11",
+        },
     };
 
     params = map[b.event_name];
