@@ -376,6 +376,34 @@ if (a === "view") {
             click: "Menu::Jobs",
             s2: "11",
         },
+        header_usermenu_click_myAdverts: {
+            click: "Menu::MyWillhaben::MyAds",
+            s2: "11",
+        },
+        header_usermenu_click_mySearches: {
+            click: "Menu::MyWillhaben::MySearchAgents",
+            s2: "11",
+        },
+        header_usermenu_click_myFindings: {
+            click: "Menu::MyWillhaben::MySavedAds",
+            s2: "11",
+        },
+        header_usermenu_click_chat: {
+            click: "Menu::MyWillhaben::MyMessages",
+            s2: "11",
+        },
+        header_usermenu_click_jobsProfile: {
+            click: "Menu::MyWillhaben::MyJob",
+            s2: "11",
+        },
+        header_usermenu_click_editUser: {
+            click: "Menu::MyWillhaben::MyProfile",
+            s2: "11",
+        },
+        header_usermenu_click_logout: {
+            click: "Menu::MyWillhaben::Logout",
+            s2: "11",
+        },
     };
 
     params = map[b.event_name];
