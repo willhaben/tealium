@@ -60,7 +60,7 @@ willhabenSPT = {
                 var categories = [];
 
                 if (b['category_level_5']) {
-                    categories.push(map_marketplace_category(b['category_level_id_5'], b['category_level_5'], 5, rootCategoryName));
+                    categories.push(map_marketplace_category(b['category_level_id_5'], b['category_level_5'], 5, rootCategoryName, b[willhabenSPT.B_PROPS.AD_TYPE_ID]));
                 }
 
                 if (b['category_level_4']) {
