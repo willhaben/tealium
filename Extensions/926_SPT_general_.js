@@ -22,6 +22,10 @@ willhabenSPT = {
             sptCustom['object'] = sptCustom['object'] || {};
             sptCustom['object'][name] = value;
             b[willhabenSPT.B_PROPS.SPT_CUSTOM] = JSON.stringify(sptCustom);
+        },
+        addPublisherToInReplyTo: function (classifiedPublisher) {
+            b.spt_in_reply_to = b.spt_in_reply_to || {};
+            b.spt_in_reply_to.publisher = classifiedPublisher;
         }
     },
 
@@ -60,7 +64,7 @@ willhabenSPT = {
                 var categories = [];
 
                 if (b['category_level_5']) {
-                    categories.push(map_marketplace_category(b['category_level_id_5'], b['category_level_5'], 5, rootCategoryName));
+                    categories.push(map_marketplace_category(b['category_level_id_5'], b['category_level_5'], 5, rootCategoryName, b[willhabenSPT.B_PROPS.AD_TYPE_ID]));
                 }
 
                 if (b['category_level_4']) {
@@ -122,12 +126,15 @@ willhabenSPT = {
         },
 
         includePublisher: function () {
+            var classifiedPublisher = {
+                "@id": "sdrn:willhaben:user:" + b.seller_uuid,
+                "@type": "Account",
+            };
+
             if (b && b[willhabenSPT.B_PROPS.EVENT_NAME] === 'adview') {
-                var publisher = {
-                    "@id": "sdrn:willhaben:user:" + b.seller_uuid,
-                    "@type": "Account",
-                };
-                willhabenSPT.utilities.appendSPTCustom('publisher', publisher);
+                willhabenSPT.utilities.appendSPTCustom('publisher', classifiedPublisher);
+            } else if (b && b[willhabenSPT.B_PROPS.EVENT_NAME] === 'contact_seller_chat_confirmation') {
+                willhabenSPT.utilities.addPublisherToInReplyTo(classifiedPublisher);
             }
         }
     },
