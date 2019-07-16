@@ -64,19 +64,19 @@ willhabenSPT = {
                 }
 
                 if (b['category_level_4']) {
-                    categories.push(map_marketplace_category(b['category_level_id_4'], b['category_level_4'], 4, rootCategoryName), b[willhabenSPT.B_PROPS.AD_TYPE_ID]);
+                    categories.push(map_marketplace_category(b['category_level_id_4'], b['category_level_4'], 4, rootCategoryName, b[willhabenSPT.B_PROPS.AD_TYPE_ID]));
                 }
 
                 if (b['category_level_3']) {
-                    categories.push(map_marketplace_category(b['category_level_id_3'], b['category_level_3'], 3, rootCategoryName), b[willhabenSPT.B_PROPS.AD_TYPE_ID]);
+                    categories.push(map_marketplace_category(b['category_level_id_3'], b['category_level_3'], 3, rootCategoryName, b[willhabenSPT.B_PROPS.AD_TYPE_ID]));
                 }
 
                 if (b['category_level_2']) {
-                    categories.push(map_marketplace_category(b['category_level_id_2'], b['category_level_2'], 2, rootCategoryName), b[willhabenSPT.B_PROPS.AD_TYPE_ID]);
+                    categories.push(map_marketplace_category(b['category_level_id_2'], b['category_level_2'], 2, rootCategoryName, b[willhabenSPT.B_PROPS.AD_TYPE_ID]));
                 }
 
                 if (b['category_level_1']) {
-                    categories.push(map_marketplace_category(b['category_level_id_1'], b['category_level_1'], 1, rootCategoryName), b[willhabenSPT.B_PROPS.AD_TYPE_ID]);
+                    categories.push(map_marketplace_category(b['category_level_id_1'], b['category_level_1'], 1, rootCategoryName, b[willhabenSPT.B_PROPS.AD_TYPE_ID]));
                 }
 
                 categories.push(map_marketplace_category(rootCategoryId, rootCategoryName, 0, rootCategoryName));
