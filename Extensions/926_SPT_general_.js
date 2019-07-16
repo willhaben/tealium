@@ -4,11 +4,11 @@ willhabenSPT = {
     classifiedAd: {
         includePublisher: function() {
             if (b && b['event_name'] === 'adview') {
-                b['spt_custom'] = JSON.stringify({
-                    "object": {
-                        "publisher": "sdrn:willhabenat:message:123"
-                    }
-                });
+                var publisher = {
+                   "@id": "sdrn:willhaben:user:",
+                   "@type": "Account",
+                };
+                b.append_spt_custom_object('publisher', publisher);
             }
         }
     },
