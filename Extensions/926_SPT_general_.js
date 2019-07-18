@@ -6,7 +6,7 @@ willhabenSPT = {
         AD_VIEW: 'adview',
         CONTACT_SELLER_CHAT_CONFIRMATION: 'contact_seller_chat_confirmation',
         CALL_BUTTON: 'call_button',
-        K_G_CHAT: 'K_G_chat'
+        K_G_CHAT: 'k_g_chat'
     },
 
     B_PROPS: {
@@ -97,7 +97,9 @@ willhabenSPT = {
                         localId = localId + ":" + adTypeId;
                     }
                 } else if (rootCategoryName == 'Realestate') {
-                    localId = localId + ":" + b["category_tree_id"];
+                    if (level !== 0) {
+                        localId = localId + ":" + b["category_tree_id"];
+                    }
                 } else {
                     localId = localId + ":" + id;
                 }
@@ -110,9 +112,6 @@ willhabenSPT = {
             switch (b[willhabenSPT.B_PROPS.EVENT_NAME].toString().toLowerCase()) {
 
                 case willhabenSPT.EVENTS.AD_VIEW:
-                    willhabenSPT.utilities.appendSPTCustom('categories', make_marketplace_categories());
-                    break;
-
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CHAT_CONFIRMATION:
                 case willhabenSPT.EVENTS.CALL_BUTTON:
                 case willhabenSPT.EVENTS.K_G_CHAT:
@@ -134,15 +133,11 @@ willhabenSPT = {
         },
 
         includePublisher: function () {
-            var classifiedPublisher = {
-                "@id": "sdrn:willhaben:user:" + b.seller_uuid,
-                "@type": "Account",
-            };
-
-            if (b && b[willhabenSPT.B_PROPS.EVENT_NAME] === 'adview') {
-                willhabenSPT.utilities.appendSPTCustom('publisher', classifiedPublisher);
-            } else if (b && b[willhabenSPT.B_PROPS.EVENT_NAME] === 'contact_seller_chat_confirmation') {
-                willhabenSPT.utilities.addPublisherToInReplyTo(classifiedPublisher);
+            switch (b[willhabenSPT.B_PROPS.EVENT_NAME].toString().toLowerCase()) {
+                case willhabenSPT.EVENTS.AD_VIEW:
+                case willhabenSPT.EVENTS.CONTACT_SELLER_CHAT_CONFIRMATION:
+                    b['spt_publisher_id'] = b.seller_uuid || '';
+                    break;
             }
         }
     },
