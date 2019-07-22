@@ -122,8 +122,8 @@ willhabenSPT = {
                     b['spt_subcategory_id'] = null;
                     for(var i=0; i<categories.length; i++){
                         if (i!==0) {
-                            b['spt_category'] = b['spt_category'] + ', ';
-                            b['spt_category_id'] = b['spt_category_id'] + ', ';
+                            b['spt_category'] = b['spt_category'] + ',';
+                            b['spt_category_id'] = b['spt_category_id'] + ',';
                         }
                         b['spt_category'] = b['spt_category']  + categories[i].name;
                         b['spt_category_id'] = b['spt_category_id'] + categories[i].localId;
