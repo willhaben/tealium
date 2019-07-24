@@ -92,23 +92,37 @@ willhabenSPT = {
                 category["level"] = level;
                 category["name"] = name;
 
-                var localId =  "sdrn:willhabenat:category:" + rootCategoryName;
-                if (rootCategoryName == 'Motor') {
-                    if (level !== 0) {
-                        localId = localId + ":" + adTypeId;
-                    }
-                } else if (rootCategoryName == 'Realestate') {
-                    if (level !== 0) {
-                        localId = localId + ":" + b["category_tree_id"];
-                    }
-                } else {
-                    localId = localId + ":" + id;
+                var sdrn = undefined;
+                var extension = undefined;
+
+                switch (rootCategoryName) {
+
+                    case 'Motor':
+                        sdrn = "sdrn:willhabenat:legacycategory";
+                        if (level !== 0) {
+                            extension = adTypeId;
+                        }
+                        break;
+                    case 'Realestate':
+                        sdrn = "sdrn:willhabenat:category";
+                        if (level !== 0) {
+                            extension =  b["category_tree_id"];
+                        }
+                        extension = id;
+                        break;
+                    default:
+                        sdrn = "sdrn:willhabenat:category";
+                        extension = id;
+                }
+
+                var localId = sdrn + ":" + rootCategoryName;
+                if (extension) {
+                    localId = localId + ":" + extension;
                 }
                 category["localId"] = localId;
 
                 return category;
             }
-
 
             switch (b[willhabenSPT.B_PROPS.EVENT_NAME].toString().toLowerCase()) {
 
