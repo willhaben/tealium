@@ -92,8 +92,8 @@ willhabenSPT = {
                 category["level"] = level;
                 category["name"] = name;
 
-                var sdrn = undefined;
-                var extension = undefined;
+                var sdrn;
+                var extension;
 
                 switch (rootCategoryName) {
 
