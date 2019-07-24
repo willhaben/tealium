@@ -107,8 +107,9 @@ willhabenSPT = {
                         sdrn = "sdrn:willhabenat:category";
                         if (level !== 0) {
                             extension =  b["category_tree_id"];
+                        } else {
+                            extension = id;
                         }
-                        extension = id;
                         break;
                     default:
                         sdrn = "sdrn:willhabenat:category";
