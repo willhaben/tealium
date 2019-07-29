@@ -154,7 +154,6 @@ willhabenSPT = {
                 case willhabenSPT.EVENTS.AD_VIEW:
                 case willhabenSPT.EVENTS.K_G_CHAT:
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CHAT_CONFIRMATION:
-                case willhabenSPT.EVENTS.CALL_BUTTON:
                     b['spt_publisher_id'] = b.seller_uuid || ' ';
                     break;
             }
