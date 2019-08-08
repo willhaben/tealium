@@ -152,6 +152,7 @@ willhabenSPT = {
         includePublisher: function () {
             switch (b[willhabenSPT.B_PROPS.EVENT_NAME].toString().toLowerCase()) {
                 case willhabenSPT.EVENTS.AD_VIEW:
+                case willhabenSPT.EVENTS.K_G_CHAT:
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CHAT_CONFIRMATION:
                     b['spt_publisher_id'] = b.seller_uuid || ' ';
                     break;
