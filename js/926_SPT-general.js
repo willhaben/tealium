@@ -160,7 +160,7 @@ willhabenSPT = {
     },
     build: function () {
         willhabenSPT.classifiedAd.includeCategories();
-        willhabenSPT.classifiedAd.includePublisher();
+        //willhabenSPT.classifiedAd.includePublisher();
     }
 };
 
