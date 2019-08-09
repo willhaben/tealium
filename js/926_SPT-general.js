@@ -7,7 +7,8 @@ willhabenSPT = {
         CONTACT_SELLER_CHAT_CONFIRMATION: 'contact_seller_chat_confirmation',
         CALL_BUTTON: 'call_button',
         K_G_CHAT: 'k_g_chat',
-        EMAIL_CONFIRMATION: 'email_confirmation'
+        EMAIL_CONFIRMATION: 'email_confirmation',
+        LIST: 'list'
     },
 
     B_PROPS: {
@@ -132,6 +133,7 @@ willhabenSPT = {
                 case willhabenSPT.EVENTS.CALL_BUTTON:
                 case willhabenSPT.EVENTS.K_G_CHAT:
                 case willhabenSPT.EVENTS.EMAIL_CONFIRMATION:
+                case willhabenSPT.EVENTS.LIST:
                     var categories = make_marketplace_categories();
                     b['spt_category'] = '';
                     b['spt_category_id'] = '';
