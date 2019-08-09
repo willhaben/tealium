@@ -14,7 +14,8 @@ willhabenSPT = {
     B_PROPS: {
         AD_TYPE_ID: 'ad_type_id',
         EVENT_NAME: 'event_name',
-        SPT_CUSTOM: 'spt_custom'
+        SPT_CUSTOM: 'spt_custom',
+        VERTICAL_ID: 'vertical_id'
     },
 
     utilities: {
@@ -40,29 +41,24 @@ willhabenSPT = {
                 var rootCategoryName;
                 var rootCategoryId;
 
-                switch (b[willhabenSPT.B_PROPS.AD_TYPE_ID]) {
-                    case "20":
-                    case "21":
-                    case "25":
-                    case "26":
+                switch (b[willhabenSPT.B_PROPS.VERTICAL_ID]) {
+                    case "1":
+                        rootCategoryName = 'Jobs';
+                        break;
+                    case "2":
+                        rootCategoryName = 'Realestate';
+                        rootCategoryId = 7274;
+                    case "3":
                         rootCategoryName = 'Motor';
                         break;
-                    case "66":
-                    case "67":
-                    case "68":
-                    case "69":
+                    case "5":
                         rootCategoryName = 'Generalist';
                         rootCategoryId = 2;
                         break;
-                    case "40":
-                    case "49":
-                        rootCategoryName = 'Jobs';
-                        break;
                     default:
-                        rootCategoryName = 'Realestate';
-                        rootCategoryId = 7274;
+                        rootCategoryName = 'Unknown';
+                        rootCategoryId = -1;
                 }
-
                 var categories = [];
 
                 categories.push(map_marketplace_category(rootCategoryId, rootCategoryName, 0, rootCategoryName));
