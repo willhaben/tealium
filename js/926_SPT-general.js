@@ -48,6 +48,7 @@ willhabenSPT = {
                     case "2":
                         rootCategoryName = 'Realestate';
                         rootCategoryId = 7274;
+                        break;
                     case "3":
                         rootCategoryName = 'Motor';
                         break;
