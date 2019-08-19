@@ -5,6 +5,7 @@ willhabenSPT = {
     EVENTS: {
         AD_VIEW: 'adview',
         CONTACT_SELLER_CHAT_CONFIRMATION: 'contact_seller_chat_confirmation',
+        CONTACT_SELLER_CONFIRMATION: 'contact_seller_confirmation',
         CALL_BUTTON: 'call_button',
         K_G_CHAT: 'k_g_chat',
         EMAIL_CONFIRMATION: 'email_confirmation',
@@ -155,6 +156,7 @@ willhabenSPT = {
                 case willhabenSPT.EVENTS.AD_VIEW:
                 case willhabenSPT.EVENTS.K_G_CHAT:
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CHAT_CONFIRMATION:
+                case willhabenSPT.EVENTS.CONTACT_SELLER_CONFIRMATION:
                     b['spt_publisher_id'] = b.seller_uuid || ' ';
                     break;
             }
