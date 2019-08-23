@@ -5,6 +5,7 @@ willhabenSPT = {
     EVENTS: {
         AD_VIEW: 'adview',
         AD_INSERTION_FINISHED: 'ad_insertion_finished',
+        AD_INSERTION_PAID_CONFIRM: 'ad_insertion_paid_confirm',
         CALL_BUTTON: 'call_button',
         CONTACT_SELLER_CHAT_CONFIRMATION: 'contact_seller_chat_confirmation',
         CONTACT_SELLER_CONFIRMATION: 'contact_seller_confirmation',
@@ -134,6 +135,8 @@ willhabenSPT = {
             switch (b[willhabenSPT.B_PROPS.EVENT_NAME].toString().toLowerCase()) {
 
                 case willhabenSPT.EVENTS.AD_VIEW:
+                case willhabenSPT.EVENTS.AD_INSERTION_FINISHED:
+                case willhabenSPT.EVENTS.AD_INSERTION_PAID_CONFIRM:
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CHAT_CONFIRMATION:
                 case willhabenSPT.EVENTS.CALL_BUTTON:
                 case willhabenSPT.EVENTS.K_G_CHAT:
@@ -160,11 +163,12 @@ willhabenSPT = {
         includePublisher: function () {
             switch (b[willhabenSPT.B_PROPS.EVENT_NAME].toString().toLowerCase()) {
                 case willhabenSPT.EVENTS.AD_VIEW:
+                case willhabenSPT.EVENTS.AD_INSERTION_FINISHED:
+                case willhabenSPT.EVENTS.AD_INSERTION_PAID_CONFIRM:
                 case willhabenSPT.EVENTS.K_G_CHAT:
                 case willhabenSPT.EVENTS.EMAIL_CONFIRMATION:
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CHAT_CONFIRMATION:
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CONFIRMATION:
-                case willhabenSPT.EVENTS.AD_INSERTION_FINISHED:
                     b['spt_publisher_id'] = b.seller_uuid || ' ';
                     if (b['is_private']) {
                         b['spt_publisher_type'] = b['is_private'] === 'true' ? willhabenSPT.PUBLISHER_TYPE_ENUM.PRIVATE : willhabenSPT.PUBLISHER_TYPE_ENUM.PRO;
