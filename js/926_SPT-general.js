@@ -4,12 +4,13 @@ willhabenSPT = {
 
     EVENTS: {
         AD_VIEW: 'adview',
+        AD_INSERTION_FINISHED: 'ad_insertion_finished',
+        CALL_BUTTON: 'call_button',
         CONTACT_SELLER_CHAT_CONFIRMATION: 'contact_seller_chat_confirmation',
         CONTACT_SELLER_CONFIRMATION: 'contact_seller_confirmation',
-        CALL_BUTTON: 'call_button',
-        K_G_CHAT: 'k_g_chat',
         EMAIL_CONFIRMATION: 'email_confirmation',
         LIST: 'list',
+        K_G_CHAT: 'k_g_chat',
         SEARCH_RESULT_LIST: 'search_result_list'
     },
 
@@ -163,6 +164,7 @@ willhabenSPT = {
                 case willhabenSPT.EVENTS.EMAIL_CONFIRMATION:
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CHAT_CONFIRMATION:
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CONFIRMATION:
+                case willhabenSPT.EVENTS.AD_INSERTION_FINISHED:
                     b['spt_publisher_id'] = b.seller_uuid || ' ';
                     if (b['is_private']) {
                         b['spt_publisher_type'] = b['is_private'] === 'true' ? willhabenSPT.PUBLISHER_TYPE_ENUM.PRIVATE : willhabenSPT.PUBLISHER_TYPE_ENUM.PRO;
