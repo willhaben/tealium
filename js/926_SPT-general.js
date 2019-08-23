@@ -20,6 +20,11 @@ willhabenSPT = {
         VERTICAL_ID: 'vertical_id'
     },
 
+    PUBLISHER_TYPE_ENUM: {
+        PRIVATE: 'private',
+        PRO: 'pro'
+    },
+
     utilities: {
         appendSPTCustom: function (name, value) {
             b[willhabenSPT.B_PROPS.SPT_CUSTOM] = b[willhabenSPT.B_PROPS.SPT_CUSTOM] || {};
@@ -106,7 +111,7 @@ willhabenSPT = {
                     case 'Realestate':
                         sdrn = "sdrn:willhabenat:category";
                         if (level !== 0) {
-                            extension =  b["category_tree_id"];
+                            extension = b["category_tree_id"];
                         } else {
                             extension = id;
                         }
@@ -139,12 +144,12 @@ willhabenSPT = {
                     b['spt_category_id'] = '';
                     b['spt_subcategory'] = null;
                     b['spt_subcategory_id'] = null;
-                    for(var i=0; i<categories.length; i++){
-                        if (i!==0) {
+                    for (var i = 0; i < categories.length; i++) {
+                        if (i !== 0) {
                             b['spt_category'] = b['spt_category'] + ',';
                             b['spt_category_id'] = b['spt_category_id'] + ',';
                         }
-                        b['spt_category'] = b['spt_category']  + categories[i].name;
+                        b['spt_category'] = b['spt_category'] + categories[i].name;
                         b['spt_category_id'] = b['spt_category_id'] + categories[i].localId;
                     }
                     break;
@@ -159,7 +164,9 @@ willhabenSPT = {
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CHAT_CONFIRMATION:
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CONFIRMATION:
                     b['spt_publisher_id'] = b.seller_uuid || ' ';
-                    b['spt_publisher_type'] = b['is_private'] ? 'private' : 'pro';
+                    if (b['is_private']) {
+                        b['spt_publisher_type'] = b['is_private'] === 'true' ? willhabenSPT.PUBLISHER_TYPE_ENUM.PRIVATE : willhabenSPT.PUBLISHER_TYPE_ENUM.PRO;
+                    }
                     break;
             }
         }
