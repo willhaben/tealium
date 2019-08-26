@@ -88,17 +88,28 @@ b.make_classified_ad_iad = function(ad) {
     var adId = id;
     var publisher = undefined;
 
-    if (ad.authorUuid) {
+
+    if (ad.sellerUuid) {
         publisher = {};
-        publisher["@id"] = "sdrn:iad.willhaben.at:user:" + ad.authorUuid;
+        publisher["@id"] = "sdrn:iad.willhaben.at:user:" + ad.sellerUuid;
         publisher["@type"] = "Account";
-        publisher["accountId"] = ad.authorUuid;
     }
     var ad_location = b.make_location(ad);
-    var result = {adId: parseInt(adId), adType: b.map_ad_type(ad.adTypeId), category: b.map_category(ad), categories: b.resolve_categories(ad), contentId: adId, name: name, publisher: publisher, publishertype: ad.publisherType, location: ad_location, price: parseInt(ad.price)};
+    var result = {
+        adId: parseInt(adId),
+        adType: b.map_ad_type(ad.adTypeId),
+        category: b.map_category(ad),
+        categories: b.resolve_categories(ad),
+        contentId: adId,
+        name: name,
+        publisher: publisher,
+        publishertype: ad.publisherType,
+        location: ad_location,
+        price: parseInt(ad.price)
+    };
     result["@id"] = sdrn;
     result["@type"] = 'ClassifiedAd';
-    result["currency"] = 'EUR'
+    result["currency"] = 'EUR';
     return result;
 };
 
