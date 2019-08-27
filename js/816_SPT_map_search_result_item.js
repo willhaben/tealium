@@ -27,7 +27,6 @@ b.resolve_publisher = function(ad) {
 
         delete ad.publisher.id;
         delete ad.publisher.type;
-        delete ad.publisher.accountId;
         return ad.publisher;
     } else {
         return [];
