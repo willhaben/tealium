@@ -11,11 +11,22 @@ b.map_ad_type = function(adTypeId) {
 
 b.resolve_categories = function(ad) {
     if (ad.categories) {
+        for (var i = 0; i < ad.categories.length; i++) {
+            ad.categories[i]["@type"] = ad.categories[i].type;
+        }
         return ad.categories;
     } else {
         return [];
     }
-};
+}
+
+b.resolve_publisher = function(ad) {
+    if (ad.publisher) {
+        return ad.publisher;
+    } else {
+        return [];
+    }
+}
 
 b.map_category = function(ad) {
     var cat = "";
@@ -86,14 +97,6 @@ b.make_classified_ad_iad = function(ad) {
     var name = ad.title;
     var sdrn = "sdrn:willhabenat:classified:iad:"+id.toString();
     var adId = id;
-    var publisher = undefined;
-
-
-    if (ad.sellerUuid) {
-        publisher = {};
-        publisher["@id"] = "sdrn:iad.willhaben.at:user:" + ad.sellerUuid;
-        publisher["@type"] = "Account";
-    }
     var ad_location = b.make_location(ad);
     var result = {
         adId: parseInt(adId),
@@ -102,7 +105,7 @@ b.make_classified_ad_iad = function(ad) {
         categories: b.resolve_categories(ad),
         contentId: adId,
         name: name,
-        publisher: publisher,
+        publisher: b.resolve_publisher(ad),
         publishertype: ad.publisherType,
         location: ad_location,
         price: parseInt(ad.price)
