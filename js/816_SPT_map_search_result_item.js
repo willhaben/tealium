@@ -25,6 +25,7 @@ b.resolve_publisher = function(ad) {
         if (ad.publisher.type) {
             ad.publisher["@id"] = ad.publisher.id;
             ad.publisher.id = undefined;
+            ad.publisher["@type"] = "Account";
         }
         return ad.publisher;
     } else {
@@ -101,6 +102,13 @@ b.make_classified_ad_iad = function(ad) {
     var name = ad.title;
     var sdrn = "sdrn:willhabenat:classified:iad:"+id.toString();
     var adId = id;
+    var publisher = undefined;
+
+    if (ad.sellerUuid) {
+        publisher = {};
+        publisher["@id"] = "sdrn:iad.willhaben.at:user:" + ad.sellerUuid;
+        publisher["@type"] = "Account";
+    }
     var ad_location = b.make_location(ad);
     var result = {
         adId: parseInt(adId),
