@@ -22,6 +22,10 @@ b.resolve_categories = function(ad) {
 
 b.resolve_publisher = function(ad) {
     if (ad.publisher) {
+        if (ad.publisher.type) {
+            ad.publisher["@type"] = ad.publisher.type;
+            ad.publisher.type = undefined;
+        }
         return ad.publisher;
     } else {
         return [];
