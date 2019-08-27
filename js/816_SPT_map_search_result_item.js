@@ -22,12 +22,12 @@ b.resolve_categories = function(ad) {
 
 b.resolve_publisher = function(ad) {
     if (ad.publisher) {
-        /*ad.publisher["@id"] = ad.publisher.id;
+        ad.publisher["@id"] = ad.publisher.accountId;
         ad.publisher["@type"] = "Account";
 
         delete ad.publisher.id;
         delete ad.publisher.type;
-        delete ad.publisher.accountId;*/
+        delete ad.publisher.accountId;
         return ad.publisher;
     } else {
         return [];
