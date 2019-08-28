@@ -169,6 +169,7 @@ willhabenSPT = {
                 case willhabenSPT.EVENTS.EMAIL_CONFIRMATION:
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CHAT_CONFIRMATION:
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CONFIRMATION:
+                case willhabenSPT.EVENTS.LIST:
                     b['spt_publisher_id'] = b.seller_uuid || ' ';
                     if (b['is_private']) {
                         b['spt_publisher_type'] = b['is_private'] === 'true' ? willhabenSPT.PUBLISHER_TYPE_ENUM.PRIVATE : willhabenSPT.PUBLISHER_TYPE_ENUM.PRO;
