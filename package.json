@@ -1,0 +1,35 @@
+{
+    "name": "tealium_bbx_oewa",
+    "version": "1.0.0",
+    "description": "",
+    "main": "Tealium_BBX_OEWA_Template.js",
+    "scripts": {
+        "lint": "eslint ."
+    },
+    "author": "",
+    "license": "ISC",
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{md,json}": [
+            "prettier --write",
+            "git add"
+        ],
+        "*.{js},!47_OEWA_Template.js": [
+            "prettier --write",
+            "eslint --fix",
+            "git add"
+        ]
+    },
+    "dependencies": {
+        "eslint": "^6.2.2",
+        "prettier": "^1.18.2"
+    },
+    "devDependencies": {
+        "husky": "^3.0.4",
+        "lint-staged": "^9.2.5"
+    }
+}
