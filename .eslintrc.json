@@ -1,0 +1,19 @@
+{
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 5,
+        "sourceType": "script",
+        "ecmaFeatures": {
+            "globalReturn": true
+        }
+    },
+    "rules": {
+        "semi": "error"
+    },
+    "globals": {
+        "window": true,
+        "utag": true,
+        "a": true,
+        "b": true
+    }
+}

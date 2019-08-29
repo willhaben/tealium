@@ -1,2 +1,5 @@
-# intellij files
-.idea/
+.idea/**
+.vscode/
+.cache/
+node_modules/
+**/.DS_Store
