@@ -12,10 +12,10 @@ var conditionMap = {
     new: "Neuwagen",
     oldtimer: "Oldtimer",
     tageszulassung: "Tageszulassung",
-    empleyeecar: "Jahreswagen"
+    empleyeecar: "Jahreswagen",
 };
 var warrantyMap = {
-    yes: "AutosMitGarantie"
+    yes: "AutosMitGarantie",
 };
 var carTypeMap = {
     limousine: "Limousine",
@@ -25,27 +25,27 @@ var carTypeMap = {
     sportscarcoupe: "SportwagenCoupe",
     cabrioroadster: "CabrioRoadster",
     kleinbus: "Kleinbus",
-    drivinglicencefree: "Mopedauto"
+    drivinglicencefree: "Mopedauto",
 };
 
 var map = {
-    "car_type": {
+    car_type: {
         chapter1: "Category",
-        valueMapping: carTypeMap
+        valueMapping: carTypeMap,
     },
-    "warranty": {
+    warranty: {
         chapter1: "QuickEntry",
-        valueMapping: warrantyMap
+        valueMapping: warrantyMap,
     },
-    "motor_condition": {
+    motor_condition: {
         chapter1: "QuickEntry",
-        valueMapping: conditionMap
-    }
+        valueMapping: conditionMap,
+    },
 };
 
 var eventName = b.event_name;
-var firstUnderscoreIndex = eventName.indexOf('_');
-var lastUnderscoreIndex = eventName.lastIndexOf('_');
+var firstUnderscoreIndex = eventName.indexOf("_");
+var lastUnderscoreIndex = eventName.lastIndexOf("_");
 if (firstUnderscoreIndex === -1 || lastUnderscoreIndex === -1) {
     // event name is not well formatted (should be e.g. quicklink_cart_type_limousine)
     return;

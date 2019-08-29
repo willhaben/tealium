@@ -1,5 +1,5 @@
 b.map_ad_type = function(adTypeId) {
-    switch(adTypeId) {
+    switch (adTypeId) {
         case "2":
         case "6":
         case "9":
@@ -18,7 +18,7 @@ b.resolve_categories = function(ad) {
     } else {
         return [];
     }
-}
+};
 
 b.resolve_publisher = function(ad) {
     if (ad.publisher) {
@@ -31,7 +31,7 @@ b.resolve_publisher = function(ad) {
     } else {
         return [];
     }
-}
+};
 
 b.map_category = function(ad) {
     var cat = "";
@@ -40,14 +40,14 @@ b.map_category = function(ad) {
         for (var i = ad.categories.length - 1; i >= 0; i--) {
             var category = ad.categories[i];
             if (cat.length <= 0) {
-                cat += category.name
+                cat += category.name;
             } else {
-                cat += ' > ' + category.name;
+                cat += " > " + category.name;
             }
         }
     } else {
         var adTypeId = ad.adTypeId;
-        switch(adTypeId) {
+        switch (adTypeId) {
             case "20":
             case "21":
             case "25":
@@ -71,7 +71,7 @@ b.map_category = function(ad) {
         if (ad.category_level_1) {
             cat += " > " + ad.category_level_1;
         }
-        if (b['category_level_2']) {
+        if (b["category_level_2"]) {
             cat += " > " + ad.category_level_2;
         }
         if (ad.category_level_3) {
@@ -80,11 +80,10 @@ b.map_category = function(ad) {
         if (ad.category_level_4) {
             cat += " > " + ad.category_level_4;
         }
-        if (b['category_level_5']) {
+        if (b["category_level_5"]) {
             cat += " > " + ad.category_level_5;
         }
     }
-
 
     return cat;
 };
@@ -92,7 +91,7 @@ b.map_category = function(ad) {
 b.make_location = function(ad) {
     var location = ad.location;
     if (location) {
-        location['@type'] = 'PostalAddress';
+        location["@type"] = "PostalAddress";
     }
     return location;
 };
@@ -100,7 +99,7 @@ b.make_location = function(ad) {
 b.make_classified_ad_iad = function(ad) {
     var id = ad.adId;
     var name = ad.title;
-    var sdrn = "sdrn:willhabenat:classified:iad:"+id.toString();
+    var sdrn = "sdrn:willhabenat:classified:iad:" + id.toString();
     var adId = id;
     var publisher = undefined;
 
@@ -120,11 +119,10 @@ b.make_classified_ad_iad = function(ad) {
         publisher: b.resolve_publisher(ad),
         publishertype: ad.publisherType,
         location: ad_location,
-        price: parseInt(ad.price)
+        price: parseInt(ad.price),
     };
     result["@id"] = sdrn;
-    result["@type"] = 'ClassifiedAd';
-    result["currency"] = 'EUR';
+    result["@type"] = "ClassifiedAd";
+    result["currency"] = "EUR";
     return result;
 };
-
