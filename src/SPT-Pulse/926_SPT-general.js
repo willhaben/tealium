@@ -20,12 +20,12 @@ willhabenSPT = {
         AD_TYPE_ID: "ad_type_id",
         EVENT_NAME: "event_name",
         SPT_CUSTOM: "spt_custom",
-        VERTICAL_ID: "vertical_id",
+        VERTICAL_ID: "vertical_id"
     },
 
     PUBLISHER_TYPE_ENUM: {
         PRIVATE: "private",
-        PRO: "pro",
+        PRO: "pro"
     },
 
     utilities: {
@@ -39,7 +39,7 @@ willhabenSPT = {
         addPublisherToInReplyTo: function(classifiedPublisher) {
             b.spt_in_reply_to = b.spt_in_reply_to || {};
             b.spt_in_reply_to.publisher = classifiedPublisher;
-        },
+        }
     },
 
     classifiedAd: {
@@ -156,22 +156,25 @@ willhabenSPT = {
         },
 
         includePublisher: function() {
+            function setPublisher() {
+                b["spt_publisher_id"] = b.seller_uuid || " ";
+                if (b["is_private"]) {
+                    b["spt_publisher_type"] = b["is_private"] === "true" ? willhabenSPT.PUBLISHER_TYPE_ENUM.PRIVATE : willhabenSPT.PUBLISHER_TYPE_ENUM.PRO;
+                }
+            }
+
             switch (b[willhabenSPT.B_PROPS.EVENT_NAME].toString().toLowerCase()) {
                 case willhabenSPT.EVENTS.AD_VIEW:
-                case willhabenSPT.EVENTS.AD_INSERTION_FINISHED:
-                case willhabenSPT.EVENTS.AD_INSERTION_PAID_CONFIRM:
                 case willhabenSPT.EVENTS.K_G_CHAT:
                 case willhabenSPT.EVENTS.EMAIL_CONFIRMATION:
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CHAT_CONFIRMATION:
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CONFIRMATION:
                 case willhabenSPT.EVENTS.LIST:
-                case willhabenSPT.EVENTS.AD_INSERTION_CONFIRMED_MWEB:
-                case willhabenSPT.EVENTS.AD_INSERTION_PAID_CONFIRMED_MWEB:
-                    b["spt_publisher_id"] = b.seller_uuid || " ";
-                    if (b["is_private"]) {
-                        b["spt_publisher_type"] = b["is_private"] === "true" ? willhabenSPT.PUBLISHER_TYPE_ENUM.PRIVATE : willhabenSPT.PUBLISHER_TYPE_ENUM.PRO;
-                    }
+                    setPublisher();
                     break;
+            }
+            if (b["spt_is_adinsertion_confirmation"] === "true") { //extension "SPT AI confirmation" should be executed before
+                setPublisher();
             }
         },
     },
