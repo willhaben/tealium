@@ -46,7 +46,7 @@ willhabenSPT = {
                 || b['event_name'].toLowerCase() === 'ad_insertion_edit_paid_confirm'.toLowerCase()
                 || b['event_name'].indexOf('ad_form_confirm') > -1
                 || b['event_name'].indexOf('ad_form_payment_confirm') > -1
-                || b['event_name'].indexOf('ad_payment_confirm') > -1
+                || b['event_name'].indexOf('ad_payment_confirm') > -1;
         }
     },
 
