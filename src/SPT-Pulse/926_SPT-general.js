@@ -39,6 +39,14 @@ willhabenSPT = {
         addPublisherToInReplyTo: function(classifiedPublisher) {
             b.spt_in_reply_to = b.spt_in_reply_to || {};
             b.spt_in_reply_to.publisher = classifiedPublisher;
+        },
+        isAdInsertionConfirmation: function() {
+            return b['event_name'].toLowerCase() === 'ad_insertion_finished'.toLowerCase()
+                || b['event_name'].toLowerCase() === 'ad_insertion_paid_confirm'.toLowerCase()
+                || b['event_name'].toLowerCase() === 'ad_insertion_edit_paid_confirm'.toLowerCase()
+                || b['event_name'].indexOf('ad_form_confirm') > -1
+                || b['event_name'].indexOf('ad_form_payment_confirm') > -1
+                || b['event_name'].indexOf('ad_payment_confirm') > -1
         }
     },
 
@@ -173,7 +181,7 @@ willhabenSPT = {
                     setPublisher();
                     break;
             }
-            if (b["spt_is_adinsertion_confirmation"] === "true") { //extension "SPT AI confirmation" should be executed before
+            if (willhabenSPT.utilities.isAdInsertionConfirmation()) {
                 setPublisher();
             }
         },
@@ -181,7 +189,7 @@ willhabenSPT = {
     build: function() {
         willhabenSPT.classifiedAd.includeCategories();
         willhabenSPT.classifiedAd.includePublisher();
-    },
+    }
 };
 
 willhabenSPT.build();
