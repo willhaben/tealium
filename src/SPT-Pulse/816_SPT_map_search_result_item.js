@@ -101,13 +101,6 @@ b.make_classified_ad_iad = function(ad) {
     var name = ad.title;
     var sdrn = "sdrn:willhabenat:classified:iad:" + id.toString();
     var adId = id;
-    var publisher = undefined;
-
-    if (ad.sellerUuid) {
-        publisher = {};
-        publisher["@id"] = "sdrn:iad.willhaben.at:user:" + ad.sellerUuid;
-        publisher["@type"] = "Account";
-    }
     var ad_location = b.make_location(ad);
     var result = {
         adId: parseInt(adId),
@@ -117,7 +110,7 @@ b.make_classified_ad_iad = function(ad) {
         contentId: adId,
         name: name,
         publisher: b.resolve_publisher(ad),
-        publisherType: ad.publisherType,
+        publisherType: ad.publisherType ? ad.publisherType.toLowerCase() : ad.publisherType,
         location: ad_location,
         price: parseInt(ad.price),
     };
