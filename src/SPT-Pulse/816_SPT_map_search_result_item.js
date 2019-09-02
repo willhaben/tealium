@@ -117,7 +117,7 @@ b.make_classified_ad_iad = function(ad) {
         contentId: adId,
         name: name,
         publisher: b.resolve_publisher(ad),
-        publishertype: ad.publisherType,
+        publisherType: ad.publisherType,
         location: ad_location,
         price: parseInt(ad.price),
     };
