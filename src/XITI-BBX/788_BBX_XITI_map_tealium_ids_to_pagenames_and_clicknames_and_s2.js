@@ -159,6 +159,18 @@ if (a === "view") {
             page: "MyWillhaben::Messages",
             s2: "10",
         },
+        adview: {
+            page: "AdDetail",
+            s2: "3",
+        },
+        adimage_view: {
+            page: "AdImg",
+            s2: "3",
+        },
+        contact_seller_confirmation: {
+            page: "MessageConfirmation",
+            s2: "3",
+        },
     };
 
     params = map[b.event_name];
@@ -403,6 +415,106 @@ if (a === "view") {
         header_usermenu_click_logout: {
             click: "Menu::MyWillhaben::Logout",
             s2: "11",
+        },
+        addetail_previous_ad_click: {
+            click: "AdDetail::Navigation::Previous",
+            s2: "3",
+        },
+        addetail_next_ad_click: {
+            click: "AdDetail::Navigation::Next",
+            s2: "3",
+        },
+        addetail_favorite_ad_click: {
+            click: "AdDetail::SaveAd",
+            s2: "3",
+        },
+        addetail_share_email_click: {
+            click: "AdDetail::Share::Email",
+            s2: "3",
+        },
+        addetail_share_whatsapp_click: {
+            click: "AdDetail::Share::Whatsapp",
+            s2: "3",
+        },
+        addetail_share_facebook_click: {
+            click: "AdDetail::Share::Facebook",
+            s2: "3",
+        },
+        addetail_share_twitter_click: {
+            click: "AdDetail::Share::Twitter",
+            s2: "3",
+        },
+        addetail_share_link_click: {
+            click: "AdDetail::Share::Link",
+            s2: "3",
+        },
+        addetail_print_click: {
+            click: "AdDetail::Print",
+            s2: "3",
+        },
+        addetail_dealer_website_click: {
+            click: "AdDetail::DealerWebsite",
+            s2: "3",
+        },
+        addetail_contact_seller_top_click: {
+            click: "AdDetail::ContactSeller",
+            s2: "3",
+        },
+        addetail_show_phone_number_click: {
+            click: "AdDetail::ShowPhoneNumber",
+            s2: "3",
+        },
+        addetail_more_ads_click: {
+            click: "AdDetail::SellerProfile",
+            s2: "3",
+        },
+        addetail_opening_hours_top_click: {
+            click: "AdDetail::ShowOpeningHours",
+            s2: "3",
+        },
+        addetail_expand_description_click: {
+            click: "AdDetail::ShowDescription",
+            s2: "3",
+        },
+        addetail_more_from_dealer_ad_click: {
+            click: "AdDetail::MoreFromDealer",
+            s2: "3",
+        },
+        addetail_similar_ad_click: {
+            click: "AdDetail::MoreSimilarCars",
+            s2: "3",
+        },
+        addetail_warranty_click: {
+            click: "AdDetail::Warranty",
+            s2: "3",
+        },
+        addetail_defects_liability_click: {
+            click: "AdDetail::DefectsLiability",
+            s2: "3",
+        },
+        addetail_warranty_logo_click: {
+            click: "AdDetail::Warranty::Logo",
+            s2: "3",
+        },
+        addetail_dealer_profile_click: {
+            click: "AdDetail::ShowDealerProfile",
+            s2: "3",
+        },
+        addetail_map_click: {
+            click: "AdDetail::ShowMap",
+            s2: "3",
+        },
+        addetail_send_email_click: {
+            click: "AdDetail::SendEmail",
+            s2: "3",
+        },
+        addetail_send_message_click: {
+            click: "AdDetail::SendMessage",
+            s2: "3",
+        },
+        addetail_call_phone_click: {
+            click: "AdDetail::Call",
+            s2: "3",
         },
     };
 
