@@ -516,6 +516,17 @@ if (a === "view") {
             click: "AdDetail::Call",
             s2: "3",
         },
+        // -------- self-promotions ----------
+        addetail_more_from_dealer_viewed_selfpromotion: {
+            promo_adid: "3",
+            promo_productid: "AdDetail",
+            promo_format: "SimilarAdsWidgetCarB2C",
+        },
+        addetail_similar_ads_viewed_selfpromotion: {
+            promo_adid: "3",
+            promo_productid: "AdDetail",
+            promo_format: "SimilarAdsWidgetCar",
+        },
     };
 
     params = map[b.event_name];
@@ -527,4 +538,8 @@ if (a === "view") {
 
     b.xiti_click_chapter_name = params.click;
     b.xiti_s2 = params.s2;
+
+    b.xiti_promo_adid = params.promo_adid;
+    b.xiti_promo_productid = params.promo_productid;
+    b.xiti_promo_format = params.promo_format;
 }
