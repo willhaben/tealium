@@ -1,8 +1,4 @@
-if (typeof b.event_name !== "undefined" && (b.event_name === "delete_favorite_ad")) {
-    b.event_name = 'favorite_ad';
-}
-
-if (typeof b.event_name !== "undefined" && (b.event_name === "favorite_ad" || b.event_name === "favorite_ad_search_result") && a !== "view") {
+if (typeof b.event_name !== "undefined" && (b.event_name === "favorite_ad" || b.event_name === "favorite_ad_search_result" || b.event_name === "delete_favorite_ad") && a !== "view") {
     pulse(function (tracker){
         tracker.evaluateEventInputs().then(function (eventDefaults) {
             var clickEvent = {
@@ -15,8 +11,8 @@ if (typeof b.event_name !== "undefined" && (b.event_name === "favorite_ad" || b.
 
             if (eventDefaults.object.items) {
                 items = eventDefaults.object.items;
-            } else if (b['items']) {
-                items = JSON.parse(b['items'])
+            } else if (b['spt_items']) {
+                items = b['spt_items']
             }
 
             if (items) {
