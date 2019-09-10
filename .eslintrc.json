@@ -14,6 +14,7 @@
         "window": true,
         "utag": true,
         "a": true,
-        "b": true
+        "b": true,
+        "pulse": true
     }
 }
