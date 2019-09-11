@@ -162,14 +162,17 @@ if (a === "view") {
         adview: {
             page: "AdDetail",
             s2: "3",
+            pageType: "Ad Detail",
         },
         adimage_view: {
             page: "AdImg",
             s2: "3",
+            pageType: "Ad Detail",
         },
         contact_seller_confirmation: {
             page: "MessageConfirmation",
             s2: "3",
+            pageType: "Email Anfrage",
         },
     };
 
@@ -542,6 +545,7 @@ if (a === "view") {
 
     b.xiti_click_chapter_name = params.click;
     b.xiti_s2 = params.s2;
+    b.xiti_x4 = params.pageType;
 
     b.xiti_promo_adid = params.promo_adid;
     b.xiti_promo_productid = params.promo_productid;
