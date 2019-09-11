@@ -16,7 +16,7 @@ if (client === "bbx") {
             });
         });
     }
-} else {
+} else if (client === "desktop" || client === "mweb") {
     if (
         typeof b.event_name !== "undefined" &&
         a !== "view" &&
