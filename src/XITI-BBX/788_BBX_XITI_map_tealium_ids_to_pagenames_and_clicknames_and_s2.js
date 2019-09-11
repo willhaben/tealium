@@ -427,11 +427,7 @@ if (a === "view") {
             click: "AdDetail::Navigation::Next",
             s2: "3",
         },
-        addetail_favorite_ad_saved: {
-            click: "AdDetail::SaveAd",
-            s2: "3",
-        },
-        addetail_favorite_ad_unsaved: {
+        addetail_favorite_ad_click: {
             click: "AdDetail::SaveAd",
             s2: "3",
         },
