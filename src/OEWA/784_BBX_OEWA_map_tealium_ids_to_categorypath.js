@@ -29,6 +29,8 @@ function oewaVerticalName(verticalId) {
 }
 
 var vertical = oewaVerticalName(b.vertical_id);
+var make = b.make || "";
+var model = b.model || "";
 
 var map = {
     contact_contact: {
@@ -152,6 +154,18 @@ var map = {
     chat_view: {
         sktg: "Service/Sonstiges/Sonstiges",
         pageid: "Meinwillhaben",
+    },
+    adview: {
+        sktg: "Service/Rubrikenmaerkte/Automarkt",
+        pageid: "Auto/DA/[make]/[model]",
+    },
+    adimage_view: {
+        sktg: "Service/Rubrikenmaerkte/Automarkt",
+        pageid: "Auto/DA/".concat(make, "/", model),
+    },
+    contact_seller_confirmation: {
+        sktg: "Service/Rubrikenmaerkte/Automarkt",
+        pageid: "Auto/K_G/".concat(make, "/", model),
     },
 };
 
