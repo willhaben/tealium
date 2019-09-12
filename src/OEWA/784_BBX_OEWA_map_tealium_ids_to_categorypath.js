@@ -157,7 +157,7 @@ var map = {
     },
     adview: {
         sktg: "Service/Rubrikenmaerkte/Automarkt",
-        pageid: "Auto/DA/[make]/[model]",
+        pageid: "Auto/DA/".concat(make, "/", model),
     },
     adimage_view: {
         sktg: "Service/Rubrikenmaerkte/Automarkt",
