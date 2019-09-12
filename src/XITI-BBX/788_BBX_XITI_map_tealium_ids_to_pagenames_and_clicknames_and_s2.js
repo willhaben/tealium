@@ -472,7 +472,7 @@ if (a === "view") {
             click: "AdDetail::SellerProfile",
             s2: "3",
         },
-        addetail_opening_hours_top_click: {
+        addetail_show_opening_hours_click: {
             click: "AdDetail::ShowOpeningHours",
             s2: "3",
         },
