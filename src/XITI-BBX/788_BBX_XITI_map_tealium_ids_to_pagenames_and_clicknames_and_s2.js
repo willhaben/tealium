@@ -185,6 +185,7 @@ if (a === "view") {
 
     b.xiti_page_chapter_name = params.page;
     b.xiti_s2 = params.s2;
+    b.xiti_x4 = params.pageType;
 } else if (a === "link") {
     map = {
         send_confirm: {
@@ -541,7 +542,6 @@ if (a === "view") {
 
     b.xiti_click_chapter_name = params.click;
     b.xiti_s2 = params.s2;
-    b.xiti_x4 = params.pageType;
 
     b.xiti_promo_adid = params.promo_adid;
     b.xiti_promo_productid = params.promo_productid;
