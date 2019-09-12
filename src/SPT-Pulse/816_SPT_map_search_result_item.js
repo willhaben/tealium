@@ -112,7 +112,7 @@ b.make_classified_ad_iad = function(ad) {
         publisher: b.resolve_publisher(ad),
         publisherType: ad.publisherType ? ad.publisherType.toLowerCase() : ad.publisherType,
         location: ad_location,
-        price: parseInt(ad.price),
+        price: parseFloat(ad.price),
     };
     result["@id"] = sdrn;
     result["@type"] = "ClassifiedAd";
