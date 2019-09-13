@@ -38,7 +38,7 @@ if (client === "bbx") {
                     items = b["spt_items"];
                 }
 
-                if (items && !(client === "mweb" && b.event_name === "favorite_ad")) {
+                if (items && !(client === "mweb" && b['page_type'] !== 'Favorits' && b.event_name === "favorite_ad")) {
                     var ads = items;
                     for (var i = 0; i < ads.length; i++) {
                         if (ads[i].adId == b.favorite_ad) {
