@@ -38,7 +38,8 @@ if (client === "bbx") {
                     items = b["spt_items"];
                 }
 
-                if (items && !(client === "mweb" && b.event_name === "favorite_ad")) {
+                // this block performs the mapping when we save an ad from a list. search result pages have a distinct event_name of 'favorite_ad_search_result' on mweb
+                if (items && !(client === "mweb" && b.page_type !== "Favorits" && b.event_name === "favorite_ad")) {
                     var ads = items;
                     for (var i = 0; i < ads.length; i++) {
                         if (ads[i].adId == b.favorite_ad) {
