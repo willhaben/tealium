@@ -53,7 +53,8 @@ if (client === "bbx") {
 
                 var tempTracker = tracker.clone();
                 tempTracker.builders.object = {};
-                tempTracker.track("trackerEvent", clickEvent);
+                tempTracker.track('trackerEvent', clickEvent);
+
             });
         });
     }
