@@ -123,9 +123,13 @@ var make_classified_ad_iad = function(ad) {
 // end of duplicate
 
 var map_classified_ads = function(items) {
-    return items.map(function(element) {
-        return make_classified_ad_iad(element);
-    });
+    var classifiedAds = [];
+    for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var classifiedAd = make_classified_ad_iad(item);
+        classifiedAds.push(classifiedAd);
+    }
+    return classifiedAds;
 };
 
 var client = (b.client || "").toLowerCase();
