@@ -25,7 +25,8 @@ if (a == "view") {
         b.xiti_x11 = b.category_level_id_3;
         b.xiti_x12 = b.category_level_id_4;
     } else {
-        b.xiti_x2 = b.category_level_id_1;
-        b.xiti_x3 = b.category_level_id_2;
+        // TODO WHIAD-24711
+        // b.xiti_x2 = b.category_level_id_1;
+        // b.xiti_x3 = b.category_level_id_2;
     }
 }
