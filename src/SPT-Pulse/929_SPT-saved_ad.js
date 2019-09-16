@@ -164,10 +164,9 @@ if (client === "bbx") {
 
                 if (eventDefaults.object.items) {
                     items = eventDefaults.object.items;
-                } else if (b["spt_items"]) {
-                    items = b["spt_items"];
-                } else if (b["items"]) {
-                    items = map_classified_ads(b["items"]);
+                } else if (b.search_results || b.items) {
+                    var rawAdItems = b.search_results || b.items;
+                    items = map_classified_ads(rawAdItems);
                 }
 
                 // this block performs the mapping when we save an ad from a list. search result pages have a distinct event_name of 'favorite_ad_search_result' on mweb
