@@ -120,6 +120,7 @@ var make_classified_ad_iad = function(ad) {
     result["currency"] = "EUR";
     return result;
 };
+// end of duplicate
 
 var map_classified_ads = function(items) {
     return items.map(function(element) {

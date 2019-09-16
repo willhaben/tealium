@@ -1,3 +1,4 @@
+// adaptions here need also be done in the duplicated code in 929_SPT
 b.map_ad_type = function(adTypeId) {
     switch (adTypeId) {
         case "2":
