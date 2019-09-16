@@ -518,14 +518,18 @@ if (a === "view") {
         },
         // -------- self-promotions ----------
         addetail_more_from_dealer_viewed_selfpromotion: {
-            promo_adid: "3",
-            promo_productid: "AdDetail",
-            promo_format: "SimilarAdsWidgetCarB2C",
+            xiti_selfpromotion_impression: {
+                adId: "3",
+                productId: "AdDetail",
+                format: "SimilarAdsWidgetCarB2C",
+            },
         },
         addetail_similar_ads_viewed_selfpromotion: {
-            promo_adid: "3",
-            promo_productid: "AdDetail",
-            promo_format: "SimilarAdsWidgetCar",
+            xiti_selfpromotion_impression: {
+                adId: "3",
+                productId: "AdDetail",
+                format: "SimilarAdsWidgetCar",
+            },
         },
     };
 
@@ -539,7 +543,5 @@ if (a === "view") {
     b.xiti_click_chapter_name = params.click;
     b.xiti_s2 = params.s2;
 
-    b.xiti_promo_adid = params.promo_adid;
-    b.xiti_promo_productid = params.promo_productid;
-    b.xiti_promo_format = params.promo_format;
+    b.xiti_selfpromotion_impression = params.xiti_selfpromotion_impression;
 }
