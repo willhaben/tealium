@@ -13,7 +13,7 @@ if (a == "view") {
         // 1=C2C, 2=B2C
         b.xiti_x1 = b.is_private === "true" ? "1" : "2";
     }
-    b.xiti_x5 = b.region_level_2;
+    b.xiti_x5 = b.region_level_id_2;
     b.xiti_x6 = b.ad_id;
     b.xiti_x7 = "willhaben";
     b.xiti_x8 = b.vertical;
@@ -25,7 +25,7 @@ if (a == "view") {
         b.xiti_x11 = b.category_level_id_3;
         b.xiti_x12 = b.category_level_id_4;
     } else {
-        b.xiti_x2 = b.category_level_1;
-        b.xiti_x3 = b.category_level_2;
+        b.xiti_x2 = b.category_level_id_1;
+        b.xiti_x3 = b.category_level_id_2;
     }
 }
