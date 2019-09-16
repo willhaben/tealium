@@ -162,17 +162,14 @@ if (a === "view") {
         adview: {
             page: "AdDetail",
             s2: "3",
-            pageType: "Ad Detail",
         },
         adimage_view: {
             page: "AdImg",
             s2: "3",
-            pageType: "Ad Detail",
         },
         contact_seller_confirmation: {
             page: "MessageConfirmation",
             s2: "3",
-            pageType: "Email Anfrage",
         },
     };
 
@@ -185,7 +182,6 @@ if (a === "view") {
 
     b.xiti_page_chapter_name = params.page;
     b.xiti_s2 = params.s2;
-    b.xiti_x4 = params.pageType;
 } else if (a === "link") {
     map = {
         send_confirm: {
