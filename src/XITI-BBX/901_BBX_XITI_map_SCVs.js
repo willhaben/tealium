@@ -24,7 +24,10 @@ if (a == "view") {
         b.xiti_x9 = b.category_level_id_1;
         b.xiti_x10 = b.category_level_id_2;
         b.xiti_x11 = b.category_level_id_3;
-        b.xiti_x12 = b.category_level_id_4;
+        if (b.category_level_max) {
+            var category_level_max = "category_level_id_" + b.category_level_max;
+            b.xiti_x12 = b[category_level_max];
+        }
     } else if (b.vertical_id === "3") {
         // MOTOR
         b.xiti_x2 = "100" + b.ad_type_id;
