@@ -20,13 +20,23 @@ if (a == "view") {
     b.xiti_x13 = "1";
 
     if (b.vertical_id === "5") {
+        // BAP
         b.xiti_x9 = b.category_level_id_1;
         b.xiti_x10 = b.category_level_id_2;
         b.xiti_x11 = b.category_level_id_3;
         b.xiti_x12 = b.category_level_id_4;
-    } else {
-        // TODO WHIAD-24711
-        // b.xiti_x2 = b.category_level_id_1;
-        // b.xiti_x3 = b.category_level_id_2;
+    } else if (b.vertical_id === "3") {
+        // MOTOR
+        b.xiti_x2 = "100" + b.ad_type_id;
+
+        if (b.make_id && b.category_level_id_1 == "52") {
+            // wohnwagen
+            b.xiti_x3 = "333" + b.make_id;
+        } else if (b.make_id && b.category_level_id_1 == "50") {
+            // nutzfahrzeug
+            b.xiti_x3 = "222" + b.make_id;
+        } else {
+            b.xiti_x3 = b.make_id;
+        }
     }
 }
