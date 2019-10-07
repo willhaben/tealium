@@ -167,6 +167,10 @@ if (a === "view") {
             page: "AdImg",
             s2: "3",
         },
+        adimage_view_fullscreen: {
+            page: "AdImg_FullScreen",
+            s2: "3",
+        },
         contact_seller_confirmation: {
             page: "MessageConfirmation",
             s2: "3",
