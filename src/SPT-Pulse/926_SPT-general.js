@@ -13,19 +13,19 @@ willhabenSPT = {
         EMAIL_CONFIRMATION: "email_confirmation",
         LIST: "list",
         K_G_CHAT: "k_g_chat",
-        SEARCH_RESULT_LIST: "search_result_list"
+        SEARCH_RESULT_LIST: "search_result_list",
     },
 
     B_PROPS: {
         AD_TYPE_ID: "ad_type_id",
         EVENT_NAME: "event_name",
         SPT_CUSTOM: "spt_custom",
-        VERTICAL_ID: "vertical_id"
+        VERTICAL_ID: "vertical_id",
     },
 
     PUBLISHER_TYPE_ENUM: {
         PRIVATE: "private",
-        PRO: "pro"
+        PRO: "pro",
     },
 
     utilities: {
@@ -41,13 +41,15 @@ willhabenSPT = {
             b.spt_in_reply_to.publisher = classifiedPublisher;
         },
         isAdInsertionConfirmation: function() {
-            return b['event_name'].toLowerCase() === 'ad_insertion_finished'.toLowerCase()
-                || b['event_name'].toLowerCase() === 'ad_insertion_paid_confirm'.toLowerCase()
-                || b['event_name'].toLowerCase() === 'ad_insertion_edit_paid_confirm'.toLowerCase()
-                || b['event_name'].indexOf('ad_form_confirm') > -1
-                || b['event_name'].indexOf('ad_form_payment_confirm') > -1
-                || b['event_name'].indexOf('ad_payment_confirm') > -1;
-        }
+            return (
+                b["event_name"].toLowerCase() === "ad_insertion_finished".toLowerCase() ||
+                b["event_name"].toLowerCase() === "ad_insertion_paid_confirm".toLowerCase() ||
+                b["event_name"].toLowerCase() === "ad_insertion_edit_paid_confirm".toLowerCase() ||
+                b["event_name"].indexOf("ad_form_confirm") > -1 ||
+                b["event_name"].indexOf("ad_form_payment_confirm") > -1 ||
+                b["event_name"].indexOf("ad_payment_confirm") > -1
+            );
+        },
     },
 
     classifiedAd: {
@@ -138,6 +140,7 @@ willhabenSPT = {
 
             switch (b[willhabenSPT.B_PROPS.EVENT_NAME].toString().toLowerCase()) {
                 case willhabenSPT.EVENTS.AD_VIEW:
+                case willhabenSPT.EVENTS.AD_INSERTION_CONFIRMED_MWEB:
                 case willhabenSPT.EVENTS.AD_INSERTION_FINISHED:
                 case willhabenSPT.EVENTS.AD_INSERTION_PAID_CONFIRM:
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CHAT_CONFIRMATION:
@@ -189,7 +192,7 @@ willhabenSPT = {
     build: function() {
         willhabenSPT.classifiedAd.includeCategories();
         willhabenSPT.classifiedAd.includePublisher();
-    }
+    },
 };
 
 willhabenSPT.build();
