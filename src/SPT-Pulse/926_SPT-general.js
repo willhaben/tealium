@@ -8,6 +8,8 @@ willhabenSPT = {
         AD_INSERTION_CONFIRMED_MWEB: "insert_bap_ad_form_confirm",
         AD_INSERTION_PAID_CONFIRMED_MWEB: "insert_bap_ad_form_payment_confirm",
         AD_INSERTION_PAID_CONFIRMED_COMM_MWEB: "insert_bapcomm_ad_form_payment_confirm",
+        AD_INSERTION_BOATS_CONFIRMED_MWEB: "boats_insert_bap_ad_form_payment_confirm",
+        AD_INSERTION_BOATS_CONFIRMED_COMM_MWEB: "boats_insert_bapcomm_ad_form_payment_confirm",
         CALL_BUTTON: "call_button",
         CONTACT_SELLER_CHAT_CONFIRMATION: "contact_seller_chat_confirmation",
         CONTACT_SELLER_CONFIRMATION: "contact_seller_confirmation",
@@ -143,6 +145,8 @@ willhabenSPT = {
                 case willhabenSPT.EVENTS.AD_VIEW:
                 case willhabenSPT.EVENTS.AD_INSERTION_CONFIRMED_MWEB:
                 case willhabenSPT.EVENTS.AD_INSERTION_PAID_CONFIRMED_COMM_MWEB:
+                case willhabenSPT.EVENTS.AD_INSERTION_BOATS_CONFIRMED_MWEB:
+                case willhabenSPT.EVENTS.AD_INSERTION_BOATS_CONFIRMED_COMM_MWEB:
                 case willhabenSPT.EVENTS.AD_INSERTION_FINISHED:
                 case willhabenSPT.EVENTS.AD_INSERTION_PAID_CONFIRM:
                 case willhabenSPT.EVENTS.CONTACT_SELLER_CHAT_CONFIRMATION:
