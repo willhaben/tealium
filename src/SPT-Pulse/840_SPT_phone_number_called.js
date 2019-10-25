@@ -33,7 +33,7 @@ if (client === "desktop" || client === "mweb" || client === "bbx") {
                                 "@type": "Account",
                             },
                         },
-                        category: b.category_level_2 ? b.category_level_1 + " > " + b.category_level_2 : b.category_level_1,
+                        category: eventDefaults && eventDefaults.object ? eventDefaults.object.category : undefined,
                         telephone: b.ad_contact_phone + "",
                         price: b.price,
                     },
