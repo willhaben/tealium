@@ -22,9 +22,10 @@ if (client === "desktop" || client === "mweb" || client === "bbx") {
                             "@type": "ClassifiedAd",
                             category: b.category_level_2 ? b.category_level_1 + " > " + b.category_level_2 : b.category_level_1,
                             categories: eventDefaults && eventDefaults.object ? eventDefaults.object.categories : undefined,
-                            adType: b.ad_type_schibsted,
+                            adType: eventDefaults && eventDefaults.object ? eventDefaults.object.adType : undefined,
                             publisherType: isPrivate ? "private" : "pro",
                             contentId: b.ad_id,
+                            adId: b.ad_id,
                             name: b.ad_title,
                             publisher: eventDefaults && eventDefaults.object ? eventDefaults.object.publisher : undefined,
                             location: {
