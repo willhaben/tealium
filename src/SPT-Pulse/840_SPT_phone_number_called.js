@@ -25,7 +25,7 @@ if (client === "desktop" || client === "mweb" || client === "bbx") {
                             adType: eventDefaults && eventDefaults.object ? eventDefaults.object.adType : undefined,
                             publisherType: isPrivate ? "private" : "pro",
                             contentId: b.ad_id,
-                            adId: b.ad_id,
+                            adId: eventDefaults && eventDefaults.object ? eventDefaults.object.adId : undefined,
                             name: b.ad_title,
                             publisher: eventDefaults && eventDefaults.object ? eventDefaults.object.publisher : undefined,
                             location: {
