@@ -170,7 +170,7 @@ if (client === "bbx") {
                     items = eventDefaults.object.items;
                 } else if (b.search_results || b.items) {
                     var adItemsString = b.search_results || b.items;
-                    var rawAdItems = JSON.parse(adItemsString)
+                    var rawAdItems = JSON.parse(adItemsString);
                     items = map_classified_ads(rawAdItems);
                 }
 
