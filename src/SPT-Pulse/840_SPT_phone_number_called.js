@@ -34,7 +34,6 @@ if (client === "desktop" || client === "mweb" || client === "bbx") {
                             },
                         },
                         category: eventDefaults && eventDefaults.object ? eventDefaults.object.category : undefined,
-                        telephone: b.ad_contact_phone + "",
                         price: b.price,
                     },
                     origin: eventDefaults.object,

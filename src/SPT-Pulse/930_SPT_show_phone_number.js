@@ -16,7 +16,6 @@ if (client === "desktop" || client === "mweb" || client === "bbx") {
                         "@type": "PhoneContact",
                         "@id": "sdrn:willhabenat:phonecontact:" + classifiedId,
                         name: urlDecode(b.seller_name),
-                        telephone: urlDecode(b.seller_phone_number),
                         inReplyTo: {
                             "@id": "sdrn:willhabenat:classified:" + classifiedId,
                             "@type": "ClassifiedAd",
