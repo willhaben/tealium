@@ -134,15 +134,50 @@ var map_classified_ads = function(items) {
 
 var client = (b.client || "").toLowerCase();
 if (client === "bbx") {
-    if (a === "link" && (b.event_name === "addetail_favorite_ad_saved" || b.event_name === "addetail_favorite_ad_unsaved")) {
+    if (
+        a === "link" &&
+        (b.event_name === "addetail_favorite_ad_saved" ||
+            b.event_name === "addetail_favorite_ad_unsaved" ||
+            b.event_name === "search_result_list_ad_saved" ||
+            b.event_name === "search_result_list_ad_unsaved")
+    ) {
         pulse(function(tracker) {
             tracker.evaluateEventInputs().then(function(eventDefaults) {
-                var isSaved = b.event_name === "addetail_favorite_ad_saved";
+                var isSaved = b.event_name === "addetail_favorite_ad_saved" || b.event_name === "search_result_list_ad_saved";
                 var clickEvent = {
                     name: isSaved ? "Ad saved" : "Ad unsaved",
                     type: isSaved ? "Save" : "Unsave",
                     object: eventDefaults.object,
                 };
+
+                var isList = b.event_name === "search_result_list_ad_saved" || b.event_name === "search_result_list_ad_unsaved";
+                if (isList) {
+                    //if this was a search page find the ad in the listing items
+                    var items;
+
+                    if (eventDefaults.object.items) {
+                        items = eventDefaults.object.items;
+                    } else if (b.search_results || b.items) {
+                        var adItemsString = b.search_results || b.items;
+                        var rawAdItems = JSON.parse(adItemsString);
+                        items = map_classified_ads(rawAdItems);
+                    }
+
+                    // this block performs the mapping when we save an ad from a list
+                    if (items) {
+                        var ads = items;
+                        for (var i = 0; i < ads.length; i++) {
+                            // client needs to provide the favorite_ad parameter
+                            if (ads[i].adId == b.favorite_ad) {
+                                clickEvent.object = ads[i];
+                                if (clickEvent.object.price === 0 && clickEvent.object.adType === "sell") {
+                                    clickEvent.object.adType = "give";
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
 
                 var tempTracker = tracker.clone();
                 tempTracker.builders.object = {};
