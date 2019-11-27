@@ -28,9 +28,26 @@ function oewaVerticalName(verticalId) {
     return "Sonstiges";
 }
 
+function oewaCategory(category_level_id_1) {
+    switch (category_level_id_1) {
+        case "2":
+            return "Auto";
+        case "4":
+            return "Motorraeder";
+        case "52":
+            return "Wohnmobile";
+        case "50":
+            return "Nutzfahrzeuge";
+    }
+
+    // this is a fallback, since slightly wrong oewa tags are better than broken ones
+    return "Auto";
+}
+
 var vertical = oewaVerticalName(b.vertical_id);
 var make = b.make || "";
 var model = b.model || "";
+var category = oewaCategory(b.category_level_id_1);
 
 var map = {
     contact_contact: {
@@ -170,6 +187,10 @@ var map = {
     contact_seller_confirmation: {
         sktg: "Service/Rubrikenmaerkte/Automarkt",
         pageid: "Auto/K_G/".concat(make, "/", model),
+    },
+    search_result_list: {
+        sktg: "Service/Rubrikenmaerkte/Automarkt",
+        pageid: category.concat("/TL"),
     },
 };
 

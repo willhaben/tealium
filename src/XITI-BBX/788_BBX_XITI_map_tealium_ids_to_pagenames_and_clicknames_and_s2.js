@@ -175,6 +175,10 @@ if (a === "view") {
             page: "MessageConfirmation",
             s2: "3",
         },
+        search_result_list: {
+            page: "ResultList",
+            s2: "3",
+        },
     };
 
     params = map[b.event_name];
@@ -518,6 +522,34 @@ if (a === "view") {
         },
         addetail_call_phone_click: {
             click: "AdDetail::Call",
+            s2: "3",
+        },
+        search_result_list_keyword_search: {
+            click: "ResultList::KeywordSearch",
+            s2: "3",
+        },
+        search_result_list_reset_click_navigators: {
+            click: "ResultList::RemoveAttribute::Filter",
+            s2: "3",
+        },
+        search_result_list_reset_click_top: {
+            click: "ResultList::RemoveAttribute::Top",
+            s2: "3",
+        },
+        search_result_list_ad_click_save: {
+            click: "ResultList::SaveAd",
+            s2: "3",
+        },
+        search_result_list_ad_click_unsave: {
+            click: "ResultList::UnsaveAd",
+            s2: "3",
+        },
+        search_result_list_show_all_makes: {
+            click: "ResultList::Filter::ShowAll::Make",
+            s2: "3",
+        },
+        search_result_list_show_all_equipments: {
+            click: "ResultList::Filter::ShowAll::Extras",
             s2: "3",
         },
         // -------- self-promotions ----------
