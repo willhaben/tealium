@@ -139,7 +139,8 @@ if (client === "bbx") {
         (b.event_name === "addetail_favorite_ad_saved" ||
             b.event_name === "addetail_favorite_ad_unsaved" ||
             b.event_name === "search_result_list_ad_saved" ||
-            b.event_name === "search_result_list_ad_unsaved")
+            b.event_name === "search_result_list_ad_unsaved" ||
+            b.event_name === "savedads_favorite_ad_unsaved")
     ) {
         pulse(function(tracker) {
             tracker.evaluateEventInputs().then(function(eventDefaults) {
@@ -150,7 +151,7 @@ if (client === "bbx") {
                     object: eventDefaults.object,
                 };
 
-                var isList = b.event_name === "search_result_list_ad_saved" || b.event_name === "search_result_list_ad_unsaved";
+                var isList = b.event_name === "search_result_list_ad_saved" || b.event_name === "search_result_list_ad_unsaved" || b.event_name === "savedads_favorite_ad_unsaved";
                 if (isList) {
                     //if this was a search page find the ad in the listing items
                     var items;
