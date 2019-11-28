@@ -6,6 +6,15 @@ if (!b.client || b.client.toLowerCase() !== "bbx") {
     return false;
 }
 
+function isNumberString(numberString) {
+    if (!numberString) {
+        return false;
+    }
+
+    var numberRegex = /^[0-9]+$/i;
+    return numberRegex.test(numberString.trim());
+}
+
 // do not set xiti SCVs for clicks, otherwise additional page views will be tagged
 if (a == "view") {
     // INFO xiti_x4 is set in extension 788
@@ -32,12 +41,17 @@ if (a == "view") {
         // MOTOR
         b.xiti_x2 = "100" + b.ad_type_id;
 
-        if (b.make_id && b.category_level_id_1 == "52") {
-            // wohnwagen
-            b.xiti_x3 = "333" + b.make_id;
-        } else if (b.make_id && b.category_level_id_1 == "50") {
-            // nutzfahrzeug
-            b.xiti_x3 = "222" + b.make_id;
+        // the make_id will NOT be a number in case there are multiple makes selected in the search - in that case the make names are concatenated with semicolons
+        if (isNumberString(b.make_id)) {
+            if (b.make_id && b.category_level_id_1 == "52") {
+                // wohnwagen
+                b.xiti_x3 = "333" + b.make_id;
+            } else if (b.make_id && b.category_level_id_1 == "50") {
+                // nutzfahrzeug
+                b.xiti_x3 = "222" + b.make_id;
+            } else {
+                b.xiti_x3 = b.make_id;
+            }
         } else {
             b.xiti_x3 = b.make_id;
         }
