@@ -44,8 +44,7 @@ if (a == "view") {
         // the make_id will NOT be a number in case there are multiple makes selected in the search - in that case the make names are concatenated with semicolons
         var multipleMakes = !isNumberString(b.make_id);
         if (multipleMakes) {
-            // TODO in case multiple makes are selected, x3 should be set to one fixed id
-            // b.xiti_x3 = ;
+            b.xiti_x3 = 1;
         } else {
             if (b.make_id && b.category_level_id_1 == "52") {
                 // wohnwagen
