@@ -556,6 +556,10 @@ if (a === "view") {
             click: "ResultList::Filter",
             s2: "3",
         },
+        search_result_list_search_agent_click: {
+            click: "ResultList::SearchAgent",
+            s2: "3",
+        },
         // -------- self-promotions ----------
         addetail_more_from_dealer_viewed_selfpromotion: {
             xiti_selfpromotion_impression: {
