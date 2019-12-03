@@ -552,6 +552,10 @@ if (a === "view") {
             click: "ResultList::Filter::ShowAll::Extras",
             s2: "3",
         },
+        search_result_list_filter_small_click: {
+            click: "ResultList::Filter",
+            s2: "3",
+        },
         // -------- self-promotions ----------
         addetail_more_from_dealer_viewed_selfpromotion: {
             xiti_selfpromotion_impression: {
