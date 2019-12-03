@@ -436,6 +436,14 @@ if (a === "view") {
             click: "AdDetail::SaveAd",
             s2: "3",
         },
+        addetail_favorite_ad_click_save: {
+            click: "AdDetail::SaveAd",
+            s2: "3",
+        },
+        addetail_favorite_ad_click_unsave: {
+            click: "AdDetail::UnsaveAd",
+            s2: "3",
+        },
         addetail_share_email_click: {
             click: "AdDetail::Share::Email",
             s2: "3",
