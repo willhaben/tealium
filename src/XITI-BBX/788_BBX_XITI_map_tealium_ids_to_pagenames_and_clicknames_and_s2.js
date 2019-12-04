@@ -432,10 +432,6 @@ if (a === "view") {
             click: "AdDetail::Navigation::Next",
             s2: "3",
         },
-        addetail_favorite_ad_click: {
-            click: "AdDetail::SaveAd",
-            s2: "3",
-        },
         addetail_favorite_ad_click_save: {
             click: "AdDetail::SaveAd",
             s2: "3",
@@ -562,10 +558,6 @@ if (a === "view") {
         },
         search_result_list_filter_small_click: {
             click: "ResultList::Filter",
-            s2: "3",
-        },
-        search_result_list_search_agent_click: {
-            click: "ResultList::SearchAgent",
             s2: "3",
         },
         search_result_list_search_agent_click_top: {
