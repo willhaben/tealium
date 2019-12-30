@@ -63,21 +63,21 @@ willhabenSPT = {
 
                 switch (b[willhabenSPT.B_PROPS.VERTICAL_ID]) {
                     case "1":
-                        rootCategoryName = "Jobs";
+                        rootCategoryName = "jobs";
                         break;
                     case "2":
-                        rootCategoryName = "Realestate";
+                        rootCategoryName = "realestate";
                         rootCategoryId = 7274;
                         break;
                     case "3":
-                        rootCategoryName = "Motor";
+                        rootCategoryName = "motor";
                         break;
                     case "5":
-                        rootCategoryName = "Generalist";
+                        rootCategoryName = "generalist";
                         rootCategoryId = 2;
                         break;
                     default:
-                        rootCategoryName = "Unknown";
+                        rootCategoryName = "unknown";
                         rootCategoryId = -1;
                 }
                 var categories = [];
