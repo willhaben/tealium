@@ -568,6 +568,10 @@ if (a === "view") {
             click: "ResultList::SearchAgent::Sticky",
             s2: "3",
         },
+        search_result_list_search_agent_click_sticky_small: {
+            click: "ResultList::SearchAgent::Sticky::Small",
+            s2: "3",
+        },
         search_result_list_search_agent_click_bottom: {
             click: "ResultList::SearchAgent::Bottom",
             s2: "3",
