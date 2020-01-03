@@ -18,7 +18,7 @@
             "prettier --write",
             "git add"
         ],
-        "*.{js},!47_OEWA_Template.js": [
+        "*.{js}": [
             "prettier --write",
             "eslint --fix",
             "git add"

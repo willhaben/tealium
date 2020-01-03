@@ -162,17 +162,22 @@ if (a === "view") {
         adview: {
             page: "AdDetail",
             s2: "3",
-            pageType: "Ad Detail",
         },
         adimage_view: {
             page: "AdImg",
             s2: "3",
-            pageType: "Ad Detail",
+        },
+        adimage_view_fullscreen: {
+            page: "AdImg_FullScreen",
+            s2: "3",
         },
         contact_seller_confirmation: {
             page: "MessageConfirmation",
             s2: "3",
-            pageType: "Email Anfrage",
+        },
+        search_result_list: {
+            page: "ResultList",
+            s2: "3",
         },
     };
 
@@ -185,7 +190,6 @@ if (a === "view") {
 
     b.xiti_page_chapter_name = params.page;
     b.xiti_s2 = params.s2;
-    b.xiti_x4 = params.pageType;
 } else if (a === "link") {
     map = {
         send_confirm: {
@@ -428,8 +432,12 @@ if (a === "view") {
             click: "AdDetail::Navigation::Next",
             s2: "3",
         },
-        addetail_favorite_ad_click: {
+        addetail_favorite_ad_click_save: {
             click: "AdDetail::SaveAd",
+            s2: "3",
+        },
+        addetail_favorite_ad_click_unsave: {
+            click: "AdDetail::UnsaveAd",
             s2: "3",
         },
         addetail_share_email_click: {
@@ -520,16 +528,64 @@ if (a === "view") {
             click: "AdDetail::Call",
             s2: "3",
         },
+        search_result_list_keyword_search: {
+            click: "ResultList::KeywordSearch",
+            s2: "3",
+        },
+        search_result_list_reset_click_navigators: {
+            click: "ResultList::RemoveAttribute::Filter",
+            s2: "3",
+        },
+        search_result_list_reset_click_top: {
+            click: "ResultList::RemoveAttribute::Top",
+            s2: "3",
+        },
+        search_result_list_ad_click_save: {
+            click: "ResultList::SaveAd",
+            s2: "3",
+        },
+        search_result_list_ad_click_unsave: {
+            click: "ResultList::UnsaveAd",
+            s2: "3",
+        },
+        search_result_list_show_all_makes: {
+            click: "ResultList::Filter::ShowAll::Make",
+            s2: "3",
+        },
+        search_result_list_show_all_equipments: {
+            click: "ResultList::Filter::ShowAll::Extras",
+            s2: "3",
+        },
+        search_result_list_filter_small_click: {
+            click: "ResultList::Filter",
+            s2: "3",
+        },
+        search_result_list_search_agent_click_top: {
+            click: "ResultList::SearchAgent::Top",
+            s2: "3",
+        },
+        search_result_list_search_agent_click_sticky: {
+            click: "ResultList::SearchAgent::Sticky",
+            s2: "3",
+        },
+        search_result_list_search_agent_click_bottom: {
+            click: "ResultList::SearchAgent::Bottom",
+            s2: "3",
+        },
         // -------- self-promotions ----------
         addetail_more_from_dealer_viewed_selfpromotion: {
-            promo_adid: "3",
-            promo_productid: "AdDetail",
-            promo_format: "SimilarAdsWidgetCarB2C",
+            xiti_selfpromotion_impression: {
+                adId: "3",
+                productId: "AdDetail",
+                format: "SimilarAdsWidgetCarB2C",
+            },
         },
         addetail_similar_ads_viewed_selfpromotion: {
-            promo_adid: "3",
-            promo_productid: "AdDetail",
-            promo_format: "SimilarAdsWidgetCar",
+            xiti_selfpromotion_impression: {
+                adId: "3",
+                productId: "AdDetail",
+                format: "SimilarAdsWidgetCar",
+            },
         },
     };
 
@@ -543,7 +599,5 @@ if (a === "view") {
     b.xiti_click_chapter_name = params.click;
     b.xiti_s2 = params.s2;
 
-    b.xiti_promo_adid = params.promo_adid;
-    b.xiti_promo_productid = params.promo_productid;
-    b.xiti_promo_format = params.promo_format;
+    b.xiti_selfpromotion_impression = params.xiti_selfpromotion_impression;
 }
