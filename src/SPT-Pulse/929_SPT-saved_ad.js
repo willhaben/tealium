@@ -97,6 +97,14 @@ var make_location = function(ad) {
     return location;
 };
 
+b.parse_price = function(price) {
+    if (!price || isNaN(parseFloat(price))) {
+        return 0;
+    }
+
+    return parseFloat(price);
+}
+
 var make_classified_ad_iad = function(ad) {
     var id = ad.adId;
     var name = ad.title;
@@ -113,7 +121,7 @@ var make_classified_ad_iad = function(ad) {
         publisher: resolve_publisher(ad),
         publisherType: ad.publisherType ? ad.publisherType.toLowerCase() : ad.publisherType,
         location: ad_location,
-        price: parseFloat(ad.price),
+        price: b.parse_price(ad.price),
     };
     result["@id"] = sdrn;
     result["@type"] = "ClassifiedAd";
