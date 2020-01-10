@@ -19,6 +19,22 @@ willhabenSPT = {
         SEARCH_RESULT_LIST: "search_result_list",
     },
 
+    MAP_MARKETPLACE_CATEGORY_EVENTS: [
+        willhabenSPT.EVENTS.AD_VIEW,
+        willhabenSPT.EVENTS.AD_INSERTION_CONFIRMED_MWEB,
+        willhabenSPT.EVENTS.AD_INSERTION_PAID_CONFIRMED_COMM_MWEB,
+        willhabenSPT.EVENTS.AD_INSERTION_BOATS_CONFIRMED_MWEB,
+        willhabenSPT.EVENTS.AD_INSERTION_BOATS_CONFIRMED_COMM_MWEB,
+        willhabenSPT.EVENTS.AD_INSERTION_FINISHED,
+        willhabenSPT.EVENTS.AD_INSERTION_PAID_CONFIRM,
+        willhabenSPT.EVENTS.CONTACT_SELLER_CHAT_CONFIRMATION,
+        willhabenSPT.EVENTS.CALL_BUTTON,
+        willhabenSPT.EVENTS.K_G_CHAT,
+        willhabenSPT.EVENTS.EMAIL_CONFIRMATION,
+        willhabenSPT.EVENTS.LIST,
+        willhabenSPT.EVENTS.SEARCH_RESULT_LIST
+    ],
+
     B_PROPS: {
         AD_TYPE_ID: "ad_type_id",
         EVENT_NAME: "event_name",
@@ -141,20 +157,12 @@ willhabenSPT = {
                 return category;
             }
 
-            switch (b[willhabenSPT.B_PROPS.EVENT_NAME].toString().toLowerCase()) {
-                case willhabenSPT.EVENTS.AD_VIEW:
-                case willhabenSPT.EVENTS.AD_INSERTION_CONFIRMED_MWEB:
-                case willhabenSPT.EVENTS.AD_INSERTION_PAID_CONFIRMED_COMM_MWEB:
-                case willhabenSPT.EVENTS.AD_INSERTION_BOATS_CONFIRMED_MWEB:
-                case willhabenSPT.EVENTS.AD_INSERTION_BOATS_CONFIRMED_COMM_MWEB:
-                case willhabenSPT.EVENTS.AD_INSERTION_FINISHED:
-                case willhabenSPT.EVENTS.AD_INSERTION_PAID_CONFIRM:
-                case willhabenSPT.EVENTS.CONTACT_SELLER_CHAT_CONFIRMATION:
-                case willhabenSPT.EVENTS.CALL_BUTTON:
-                case willhabenSPT.EVENTS.K_G_CHAT:
-                case willhabenSPT.EVENTS.EMAIL_CONFIRMATION:
-                case willhabenSPT.EVENTS.LIST:
-                case willhabenSPT.EVENTS.SEARCH_RESULT_LIST:
+            var event_name = b[willhabenSPT.B_PROPS.EVENT_NAME].toString().toLowerCase();
+            if(MAP_CATEGORY_EVENTS.indexOf(event_name) > -1 
+                || event_name.indexOf("ad_form_payment_confirm") > -1
+                || event_name.indexOf("ad_form_confirm") > -1
+                || event_name.indexOf("ad_payment_confirm") > -1) {
+
                     var categories = make_marketplace_categories();
                     b["spt_category"] = "";
                     b["spt_category_id"] = "";
@@ -168,8 +176,7 @@ willhabenSPT = {
                         b["spt_category"] = b["spt_category"] + categories[i].name;
                         b["spt_category_id"] = b["spt_category_id"] + categories[i].localId;
                     }
-                    break;
-            }
+            } 
         },
 
         includePublisher: function() {
