@@ -63,21 +63,21 @@ willhabenSPT = {
 
                 switch (b[willhabenSPT.B_PROPS.VERTICAL_ID]) {
                     case "1":
-                        rootCategoryName = "jobs";
+                        rootCategoryName = "Jobs";
                         break;
                     case "2":
-                        rootCategoryName = "realestate";
+                        rootCategoryName = "Realestate";
                         rootCategoryId = 7274;
                         break;
                     case "3":
-                        rootCategoryName = "motor";
+                        rootCategoryName = "Motor";
                         break;
                     case "5":
-                        rootCategoryName = "generalist";
+                        rootCategoryName = "Generalist";
                         rootCategoryId = 2;
                         break;
                     default:
-                        rootCategoryName = "unknown";
+                        rootCategoryName = "Unknown";
                         rootCategoryId = -1;
                 }
                 var categories = [];
@@ -132,7 +132,7 @@ willhabenSPT = {
                         extension = id;
                 }
 
-                var localId = sdrn + ":" + rootCategoryName;
+                var localId = sdrn + ":" + rootCategoryName.toLocaleLowerCase();
                 if (extension) {
                     localId = localId + ":" + extension;
                 }
