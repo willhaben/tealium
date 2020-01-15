@@ -97,12 +97,12 @@ var make_location = function(ad) {
     return location;
 };
 
-b.parse_price = function(price) {
+var add_price_if_numerical = function(result, price) {
     if (!price || isNaN(parseFloat(price))) {
-        return 0;
+        return;
     }
 
-    return parseFloat(price);
+    result["price"] = parseFloat(price);
 }
 
 var make_classified_ad_iad = function(ad) {
@@ -121,11 +121,13 @@ var make_classified_ad_iad = function(ad) {
         publisher: resolve_publisher(ad),
         publisherType: ad.publisherType ? ad.publisherType.toLowerCase() : ad.publisherType,
         location: ad_location,
-        price: b.parse_price(ad.price),
     };
     result["@id"] = sdrn;
     result["@type"] = "ClassifiedAd";
     result["currency"] = "EUR";
+
+    add_price_if_numerical(result, ad.price);
+
     return result;
 };
 // end of duplicate
