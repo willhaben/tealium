@@ -1,3 +1,21 @@
+function urlGetParameters() {
+    var queryAndFragment = window.location.search + (window.location.hash + "").replace("#", "&");
+    var parameters = {};
+    if (utag.cfg.lowerqp) {
+        queryAndFragment = queryAndFragment.toLowerCase();
+    }
+    if (queryAndFragment.length > 1) {
+        var keyValueArray = queryAndFragment.substring(1).split("&");
+        for (queryAndFragment = 0; queryAndFragment < keyValueArray.length; queryAndFragment++) {
+            var keyAndValue = keyValueArray[queryAndFragment].split("=");
+            if (keyAndValue.length > 1) {
+                parameters[keyAndValue[0]] = utag.ut.decode(keyAndValue[1]);
+            }
+        }
+    }
+    return parameters;
+}
+
 if (
     b.event_name.toLowerCase() === "list" ||
     b.event_name.toLowerCase() === "list_tile" ||
@@ -10,6 +28,10 @@ if (
 ) {
     b.spt_is_listing = "true";
     try {
+        var getParams = urlGetParameters();
+        var sorting = b.map_sort_param(getParams.sort, b.vertical_id);
+        var rows = getParams.rows || "25";
+        var publisherType = b.map_is_private(getParams.ISPRIVATE);
         b.spt_custom = JSON.stringify({
             name: "Listing viewed",
             object: {
@@ -18,9 +40,9 @@ if (
                 },
                 filters: {
                     query: b["dom.query_string"],
-                    sorting: b.map_sort_param(b["qp.sort"], b.vertical_id),
-                    numResults: b["qp.rows"] ? b["qp.rows"] : "25",
-                    publisherType: b.map_is_private(b["qp.ISPRIVATE"]),
+                    sorting: sorting,
+                    numResults: rows,
+                    publisherType: publisherType,
                     adType:
                         b.category_level_id_1 === "131" || b.category_level_id_1 === "132" || b.category_level_id_1 === "16" || b.category_level_id_1 === "32" ? "rent" : "sell",
                     postalCode: b.map_post_code(),
