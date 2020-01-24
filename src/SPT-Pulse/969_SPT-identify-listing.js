@@ -6,8 +6,8 @@ function urlGetParameters() {
     }
     if (queryAndFragment.length > 1) {
         var keyValueArray = queryAndFragment.substring(1).split("&");
-        for (queryAndFragment = 0; queryAndFragment < keyValueArray.length; queryAndFragment++) {
-            var keyAndValue = keyValueArray[queryAndFragment].split("=");
+        for (var i = 0; i < keyValueArray.length; i++) {
+            var keyAndValue = keyValueArray[i].split("=");
             if (keyAndValue.length > 1) {
                 parameters[keyAndValue[0]] = utag.ut.decode(keyAndValue[1]);
             }
