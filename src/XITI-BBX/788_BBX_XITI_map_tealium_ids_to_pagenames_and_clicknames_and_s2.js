@@ -300,6 +300,10 @@ if (a === "view") {
             click: "MyAds::Edit::Description",
             s2: "10",
         },
+        my_ads_contextmenu_click_edit_delivery: {
+            click: "MyAds::Edit::Delivery",
+            s2: "10",
+        },
         my_ads_contextmenu_click_activate: {
             click: "MyAds::Edit::Activate",
             s2: "10",
