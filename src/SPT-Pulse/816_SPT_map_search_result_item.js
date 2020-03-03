@@ -103,7 +103,7 @@ b.add_price_if_numerical = function(result, price) {
     }
 
     result["price"] = parseFloat(price);
-}
+};
 
 b.make_classified_ad_iad = function(ad) {
     var id = ad.adId;
