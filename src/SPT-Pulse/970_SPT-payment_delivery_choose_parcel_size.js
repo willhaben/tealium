@@ -21,7 +21,7 @@ if (client === "desktop" || client === "mweb" || client === "bbx") {
                         category: eventDefaults && eventDefaults.object ? eventDefaults.object.category : undefined,
                         categories: eventDefaults && eventDefaults.object ? eventDefaults.object.categories : undefined,
                         contentId: eventDefaults && eventDefaults.object ? eventDefaults.object.contentId : undefined,
-                        adId: eventDefaults && eventDefaults.object ? eventDefaults.object.adId : undefined,
+                        adId: b.ad_id,
                         publisherType: isPrivate ? "private" : "pro",
                     },
                     origin: eventDefaults.object,
