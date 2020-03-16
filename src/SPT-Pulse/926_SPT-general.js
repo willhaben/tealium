@@ -154,28 +154,29 @@ willhabenSPT = {
                 willhabenSPT.EVENTS.K_G_CHAT,
                 willhabenSPT.EVENTS.EMAIL_CONFIRMATION,
                 willhabenSPT.EVENTS.LIST,
-                willhabenSPT.EVENTS.SEARCH_RESULT_LIST
-            ]
+                willhabenSPT.EVENTS.SEARCH_RESULT_LIST,
+            ];
             var event_name = b[willhabenSPT.B_PROPS.EVENT_NAME].toString().toLowerCase();
-            if(mapMarketPlaceEvents.indexOf(event_name) > -1 
-                || event_name.indexOf("ad_form_payment_confirm") > -1
-                || event_name.indexOf("ad_form_confirm") > -1
-                || event_name.indexOf("ad_payment_confirm") > -1) {
-
-                    var categories = make_marketplace_categories();
-                    b["spt_category"] = "";
-                    b["spt_category_id"] = "";
-                    b["spt_subcategory"] = null;
-                    b["spt_subcategory_id"] = null;
-                    for (var i = 0; i < categories.length; i++) {
-                        if (i !== 0) {
-                            b["spt_category"] = b["spt_category"] + ",";
-                            b["spt_category_id"] = b["spt_category_id"] + ",";
-                        }
-                        b["spt_category"] = b["spt_category"] + categories[i].name;
-                        b["spt_category_id"] = b["spt_category_id"] + categories[i].localId;
+            if (
+                mapMarketPlaceEvents.indexOf(event_name) > -1 ||
+                event_name.indexOf("ad_form_payment_confirm") > -1 ||
+                event_name.indexOf("ad_form_confirm") > -1 ||
+                event_name.indexOf("ad_payment_confirm") > -1
+            ) {
+                var categories = make_marketplace_categories();
+                b["spt_category"] = "";
+                b["spt_category_id"] = "";
+                b["spt_subcategory"] = null;
+                b["spt_subcategory_id"] = null;
+                for (var i = 0; i < categories.length; i++) {
+                    if (i !== 0) {
+                        b["spt_category"] = b["spt_category"] + ",";
+                        b["spt_category_id"] = b["spt_category_id"] + ",";
                     }
-            } 
+                    b["spt_category"] = b["spt_category"] + categories[i].name;
+                    b["spt_category_id"] = b["spt_category_id"] + categories[i].localId;
+                }
+            }
         },
 
         includePublisher: function() {
