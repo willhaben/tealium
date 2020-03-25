@@ -19,7 +19,23 @@ function isPrivateAd() {
     return true;
 }
 
+function createAutoMotorStartPageTag(vertical_id, category_level_id_1) {
+    if (vertical_id !== "3") {
+        return undefined;
+    }
+
+    switch (category_level_id_1) {
+        case "2":
+            return "CarsStartpage";
+        case "4":
+            return "MotorbikeStartpage";
+    }
+
+    return "MotorStartpage";
+}
+
 var privateOrProfessionalString = isPrivateAd() ? "Private" : "Professional";
+var autoMotorStartPageTag = createAutoMotorStartPageTag(b.vertical_id, b.category_level_id_1);
 
 if (a === "view") {
     map = {
@@ -177,6 +193,10 @@ if (a === "view") {
         },
         search_result_list: {
             page: "ResultList",
+            s2: "3",
+        },
+        vertical_home: {
+            page: autoMotorStartPageTag,
             s2: "3",
         },
     };

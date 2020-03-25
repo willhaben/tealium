@@ -44,10 +44,26 @@ function oewaCategory(category_level_id_1) {
     return "Auto";
 }
 
+function createAutoMotorStartPageTag(vertical_id, category_level_id_1) {
+    if (vertical_id !== "3") {
+        return undefined;
+    }
+
+    switch (category_level_id_1) {
+        case "2":
+            return "Auto";
+        case "4":
+            return "Motorraeder";
+    }
+
+    return "Home";
+}
+
 var vertical = oewaVerticalName(b.vertical_id);
 var make = b.make || "";
 var model = b.model || "";
 var category = oewaCategory(b.category_level_id_1);
+var autoMotorStartPageId = createAutoMotorStartPageTag(b.vertical_id, b.category_level_id_1);
 
 var map = {
     contact_contact: {
@@ -191,6 +207,10 @@ var map = {
     search_result_list: {
         sktg: "Service/Rubrikenmaerkte/Automarkt",
         pageid: category.concat("/TL"),
+    },
+    vertical_home: {
+        sktg: "Service/Rubrikenmaerkte/Automarkt",
+        pageid: autoMotorStartPageId,
     },
 };
 
