@@ -17,7 +17,6 @@ Setup an **ESLint plugin** for your IDE to see errors right in your editor. Don'
 3. When you open the extension in tealium there is a button "Add" near to GITHUB Files. Add the full repository link to that e.g. (https://github.com/willhaben/tealium/blob/master/js/926_SPT-general.js)
 4. It needs to be manually be synced every time you pushed something to the github repository
 
-
 ## Problems
 
 ### 1. Template code like `##UTGEN##` and `##UTEXTEND##` causes syntax errors, breaking linting and formatting
@@ -27,7 +26,6 @@ The suggestion is to _temporally_ comment out these lines, but keep that only as
 ### 2. Some very long lines like the code after "Start Tealium loader 4.32" might not be wanted to be formatted into multiple lines
 
 The solution is similar to 1.: Comment the line out temporarily but do not commit the change to this line.
-
 
 ## Why we keep the code in this repo / Problems with Editing Code in Tealium
 

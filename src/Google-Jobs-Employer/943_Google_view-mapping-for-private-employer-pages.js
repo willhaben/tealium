@@ -3,7 +3,6 @@ if (!b.client || b.client.toLowerCase() !== "jobs") {
 }
 
 if (a === "view" && b.application === "employer") {
-
     if (b.application_view === "purchasePaymentInitiated") {
         b.order_id = "";
         b.currency = "EUR";
@@ -12,9 +11,7 @@ if (a === "view" && b.application === "employer") {
         // unused - do not send events to Google
         return false;
     }
-
 } else {
     // unused - do not send events to Google
     return false;
 }
-
