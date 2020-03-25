@@ -3,12 +3,12 @@ if (client === "desktop" || client === "mweb" || client === "bbx") {
     if (a === "link" && (b.event_name == "show_seller_phone_number" || b.event_name == "addetail_show_phone_number_click")) {
         var classifiedId = b.ad_id + "";
         var isPrivate = b.is_private === "true";
-        var urlDecode = function(value) {
+        var urlDecode = function (value) {
             return value ? decodeURIComponent(value.replace(/\+/g, " ")) : value;
         };
 
-        pulse(function(tracker) {
-            tracker.evaluateEventInputs().then(function(eventDefaults) {
+        pulse(function (tracker) {
+            tracker.evaluateEventInputs().then(function (eventDefaults) {
                 var clickEvent = {
                     name: "Ad phone number displayed",
                     type: "Show",

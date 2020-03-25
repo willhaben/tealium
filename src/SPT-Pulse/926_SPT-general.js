@@ -32,18 +32,18 @@ willhabenSPT = {
     },
 
     utilities: {
-        appendSPTCustom: function(name, value) {
+        appendSPTCustom: function (name, value) {
             b[willhabenSPT.B_PROPS.SPT_CUSTOM] = b[willhabenSPT.B_PROPS.SPT_CUSTOM] || {};
             var sptCustom = JSON.parse(b[willhabenSPT.B_PROPS.SPT_CUSTOM]);
             sptCustom["object"] = sptCustom["object"] || {};
             sptCustom["object"][name] = value;
             b[willhabenSPT.B_PROPS.SPT_CUSTOM] = JSON.stringify(sptCustom);
         },
-        addPublisherToInReplyTo: function(classifiedPublisher) {
+        addPublisherToInReplyTo: function (classifiedPublisher) {
             b.spt_in_reply_to = b.spt_in_reply_to || {};
             b.spt_in_reply_to.publisher = classifiedPublisher;
         },
-        isAdInsertionConfirmation: function() {
+        isAdInsertionConfirmation: function () {
             return (
                 b["event_name"].toLowerCase() === "ad_insertion_finished".toLowerCase() ||
                 b["event_name"].toLowerCase() === "ad_insertion_paid_confirm".toLowerCase() ||
@@ -56,7 +56,7 @@ willhabenSPT = {
     },
 
     classifiedAd: {
-        includeCategories: function() {
+        includeCategories: function () {
             function make_marketplace_categories() {
                 var rootCategoryName;
                 var rootCategoryId;
@@ -179,7 +179,7 @@ willhabenSPT = {
             }
         },
 
-        includePublisher: function() {
+        includePublisher: function () {
             function setPublisher() {
                 b["spt_publisher_id"] = b.seller_uuid || " ";
                 if (b["is_private"]) {
@@ -202,7 +202,7 @@ willhabenSPT = {
             }
         },
     },
-    build: function() {
+    build: function () {
         willhabenSPT.classifiedAd.includeCategories();
         willhabenSPT.classifiedAd.includePublisher();
     },

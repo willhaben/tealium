@@ -1,5 +1,5 @@
 // adaptions here need also be done in the duplicated code in 929_SPT
-b.map_ad_type = function(adTypeId) {
+b.map_ad_type = function (adTypeId) {
     switch (adTypeId) {
         case "2":
         case "6":
@@ -10,7 +10,7 @@ b.map_ad_type = function(adTypeId) {
     }
 };
 
-b.resolve_categories = function(ad) {
+b.resolve_categories = function (ad) {
     if (ad.categories) {
         for (var i = 0; i < ad.categories.length; i++) {
             ad.categories[i]["@type"] = ad.categories[i].type;
@@ -21,7 +21,7 @@ b.resolve_categories = function(ad) {
     }
 };
 
-b.resolve_publisher = function(ad) {
+b.resolve_publisher = function (ad) {
     if (ad.publisher) {
         ad.publisher["@id"] = ad.publisher.id;
         ad.publisher["@type"] = "Account";
@@ -34,7 +34,7 @@ b.resolve_publisher = function(ad) {
     }
 };
 
-b.map_category = function(ad) {
+b.map_category = function (ad) {
     var cat = "";
 
     if (ad.categories) {
@@ -89,7 +89,7 @@ b.map_category = function(ad) {
     return cat;
 };
 
-b.make_location = function(ad) {
+b.make_location = function (ad) {
     var location = ad.location;
     if (location) {
         location["@type"] = "PostalAddress";
@@ -97,7 +97,7 @@ b.make_location = function(ad) {
     return location;
 };
 
-b.add_price_if_numerical = function(result, price) {
+b.add_price_if_numerical = function (result, price) {
     if (!price || isNaN(parseFloat(price))) {
         return;
     }
@@ -105,7 +105,7 @@ b.add_price_if_numerical = function(result, price) {
     result["price"] = parseFloat(price);
 };
 
-b.make_classified_ad_iad = function(ad) {
+b.make_classified_ad_iad = function (ad) {
     var id = ad.adId;
     var name = ad.title;
     var sdrn = "sdrn:willhabenat:classified:iad:" + id.toString();

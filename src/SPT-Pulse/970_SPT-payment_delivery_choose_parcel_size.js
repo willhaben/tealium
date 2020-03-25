@@ -4,8 +4,8 @@ if (client === "desktop" || client === "mweb" || client === "bbx") {
         var classifiedId = b.ad_id + "";
         var isPrivate = b.is_private === "true";
 
-        pulse(function(tracker) {
-            tracker.evaluateEventInputs().then(function(eventDefaults) {
+        pulse(function (tracker) {
+            tracker.evaluateEventInputs().then(function (eventDefaults) {
                 var engagementEvent = {
                     name: "Payment&Delivery parcel size chosen",
                     type: "Engagement",

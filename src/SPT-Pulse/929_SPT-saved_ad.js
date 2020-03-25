@@ -1,5 +1,5 @@
 // Duplicates 816_SPT_map_search_result_item.js
-var map_ad_type = function(adTypeId) {
+var map_ad_type = function (adTypeId) {
     switch (adTypeId) {
         case "2":
         case "6":
@@ -10,7 +10,7 @@ var map_ad_type = function(adTypeId) {
     }
 };
 
-var resolve_categories = function(ad) {
+var resolve_categories = function (ad) {
     if (ad.categories) {
         for (var i = 0; i < ad.categories.length; i++) {
             ad.categories[i]["@type"] = ad.categories[i].type;
@@ -21,7 +21,7 @@ var resolve_categories = function(ad) {
     }
 };
 
-var resolve_publisher = function(ad) {
+var resolve_publisher = function (ad) {
     if (ad.publisher) {
         ad.publisher["@id"] = ad.publisher.id;
         ad.publisher["@type"] = "Account";
@@ -34,7 +34,7 @@ var resolve_publisher = function(ad) {
     }
 };
 
-var map_category = function(ad) {
+var map_category = function (ad) {
     var cat = "";
 
     if (ad.categories) {
@@ -89,7 +89,7 @@ var map_category = function(ad) {
     return cat;
 };
 
-var make_location = function(ad) {
+var make_location = function (ad) {
     var location = ad.location;
     if (location) {
         location["@type"] = "PostalAddress";
@@ -97,7 +97,7 @@ var make_location = function(ad) {
     return location;
 };
 
-var add_price_if_numerical = function(result, price) {
+var add_price_if_numerical = function (result, price) {
     if (!price || isNaN(parseFloat(price))) {
         return;
     }
@@ -105,7 +105,7 @@ var add_price_if_numerical = function(result, price) {
     result["price"] = parseFloat(price);
 };
 
-var make_classified_ad_iad = function(ad) {
+var make_classified_ad_iad = function (ad) {
     var id = ad.adId;
     var name = ad.title;
     var sdrn = "sdrn:willhabenat:classified:iad:" + id.toString();
@@ -132,7 +132,7 @@ var make_classified_ad_iad = function(ad) {
 };
 // end of duplicate
 
-var map_classified_ads = function(items) {
+var map_classified_ads = function (items) {
     var classifiedAds = [];
     for (var i = 0; i < items.length; i++) {
         var item = items[i];
@@ -152,8 +152,8 @@ if (client === "bbx") {
             b.event_name === "search_result_list_ad_unsaved" ||
             b.event_name === "savedads_favorite_ad_unsaved")
     ) {
-        pulse(function(tracker) {
-            tracker.evaluateEventInputs().then(function(eventDefaults) {
+        pulse(function (tracker) {
+            tracker.evaluateEventInputs().then(function (eventDefaults) {
                 var isSaved = b.event_name === "addetail_favorite_ad_saved" || b.event_name === "search_result_list_ad_saved";
                 var clickEvent = {
                     name: isSaved ? "Ad saved" : "Ad unsaved",
@@ -202,8 +202,8 @@ if (client === "bbx") {
         a !== "view" &&
         (b.event_name === "favorite_ad" || b.event_name === "favorite_ad_search_result" || b.event_name === "delete_favorite_ad")
     ) {
-        pulse(function(tracker) {
-            tracker.evaluateEventInputs().then(function(eventDefaults) {
+        pulse(function (tracker) {
+            tracker.evaluateEventInputs().then(function (eventDefaults) {
                 var clickEvent = {
                     name: b.favorite_ad_saved ? "Ad saved" : "Ad unsaved",
                     type: b.favorite_ad_saved ? "Save" : "Unsave",
@@ -236,8 +236,7 @@ if (client === "bbx") {
 
                 var tempTracker = tracker.clone();
                 tempTracker.builders.object = {};
-                tempTracker.track('trackerEvent', clickEvent);
-
+                tempTracker.track("trackerEvent", clickEvent);
             });
         });
     }
