@@ -19,7 +19,24 @@ function isPrivateAd() {
     return true;
 }
 
+function createAutoMotorStartPageTag(vertical_id, category_level_id_1) {
+    if (vertical_id !== "3") {
+        return undefined;
+    }
+
+    switch (category_level_id_1) {
+        case "2":
+            return "CarsStartpage";
+        case "4":
+            return "MotorbikeStartpage";
+    }
+
+    return "MotorStartpage";
+}
+
 var privateOrProfessionalString = isPrivateAd() ? "Private" : "Professional";
+var autoMotorStartPageTag = createAutoMotorStartPageTag(b.vertical_id, b.category_level_id_1);
+var trendLabel = b.trend_label || "";
 
 if (a === "view") {
     map = {
@@ -177,6 +194,10 @@ if (a === "view") {
         },
         search_result_list: {
             page: "ResultList",
+            s2: "3",
+        },
+        vertical_home: {
+            page: autoMotorStartPageTag,
             s2: "3",
         },
     };
@@ -578,6 +599,78 @@ if (a === "view") {
         },
         search_result_list_search_agent_click_bottom: {
             click: "ResultList::SearchAgent::Bottom",
+            s2: "3",
+        },
+        vertical_home_tab_car_click: {
+            click: "MotorStartpage::Cars",
+            s2: "3",
+        },
+        vertical_home_tab_mc_click: {
+            click: "MotorStartpage::Motorbikes",
+            s2: "3",
+        },
+        vertical_home_tab_truck_click: {
+            click: "MotorStartpage::Trucks",
+            s2: "3",
+        },
+        vertical_home_tab_caravan_click: {
+            click: "MotorStartpage::Caravans",
+            s2: "3",
+        },
+        vertical_home_search_box_search_button_click: {
+            click: "MotorStartpage::ViewResults",
+            s2: "3",
+        },
+        vertical_home_search_box_detail_search_click: {
+            click: "MotorStartpage::MoreOptions",
+            s2: "3",
+        },
+        vertical_home_search_box_condition_new_activate: {
+            click: "MotorStartpage::NewOption::ToggleOn",
+            s2: "3",
+        },
+        vertical_home_search_box_condition_new_deactivate: {
+            click: "MotorStartpage::NewOption::ToggleOff",
+            s2: "3",
+        },
+        vertical_home_quicklink_1_click: {
+            click: "MotorStartpage::QuickLink::1st",
+            s2: "3",
+        },
+        vertical_home_quicklink_2_click: {
+            click: "MotorStartpage::QuickLink::2nd",
+            s2: "3",
+        },
+        vertical_home_quicklink_3_click: {
+            click: "MotorStartpage::QuickLink::3rd",
+            s2: "3",
+        },
+        vertical_home_spareparts_click: {
+            click: "MotorStartpage::SpareParts",
+            s2: "3",
+        },
+        vertical_home_dealers_click: {
+            click: "MotorStartpage::Dealers",
+            s2: "3",
+        },
+        vertical_home_ad_insertion_button_click: {
+            click: "MotorStartpage::AdInsertion",
+            s2: "3",
+        },
+        vertical_home_topad_click: {
+            click: "MotorStartpage::TopAd",
+            s2: "3",
+        },
+        vertical_home_trend_click: {
+            click: "MotorStartpage::Trends::".concat(trendLabel),
+            s2: "3",
+        },
+        vertical_home_popular_car_make_click: {
+            click: "MotorStartpage::PopularMakes::Cars",
+            s2: "3",
+        },
+        vertical_home_popular_mc_make_click: {
+            click: "MotorStartpage::PopularMakes::Motorbikes",
             s2: "3",
         },
         // -------- self-promotions ----------
