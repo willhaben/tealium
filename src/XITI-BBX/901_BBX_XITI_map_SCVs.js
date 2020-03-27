@@ -39,7 +39,10 @@ if (a == "view") {
         }
     } else if (b.vertical_id === "3") {
         // MOTOR
-        b.xiti_x2 = "100" + b.ad_type_id;
+        var adTypeId = b.ad_type_id;
+        if (adTypeId) {
+            b.xiti_x2 = "100" + adTypeId;
+        }
 
         // the make_id will NOT be a number in case there are multiple makes selected in the search - in that case the make names are concatenated with semicolons
         var multipleMakes = !isNumberString(b.make_id);
