@@ -673,6 +673,14 @@ if (a === "view") {
             click: "MotorStartpage::PopularMakes::Motorbikes",
             s2: "3",
         },
+        detail_search_container_search_agent_car_click_bottom: {
+            click: "DetailSearch::Cars::ActivateSearchAgent",
+            s2: "3",
+        },
+        detail_search_container_search_agent_mc_click_bottom: {
+            click: "DetailSearch::Motorbikes::ActivateSearchAgent",
+            s2: "3",
+        },
         // -------- self-promotions ----------
         addetail_more_from_dealer_viewed_selfpromotion: {
             xiti_selfpromotion_impression: {
