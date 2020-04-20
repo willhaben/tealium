@@ -421,6 +421,30 @@ if (a === "view") {
             click: "Menu::Jobs",
             s2: "11",
         },
+        header_click_ImgSearch: {
+            click: "Menu::ImgSearch",
+            s2: "11",
+        },
+        header_click_myAds: {
+            click: "Menu::MyAds",
+            s2: "11",
+        },
+        header_click_mySearches: {
+            click: "Menu::MySearchAgents",
+            s2: "11",
+        },
+        header_click_myFindings: {
+            click: "Menu::MySavedAds",
+            s2: "11",
+        },
+        header_click_chat: {
+            click: "Menu::MyMessages",
+            s2: "11",
+        },
+        header_click_editUser: {
+            click: "Menu::MyProfile",
+            s2: "11",
+        },
         header_usermenu_click_myAdverts: {
             click: "Menu::MyWillhaben::MyAds",
             s2: "11",
