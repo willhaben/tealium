@@ -717,7 +717,7 @@ if (a === "view") {
             click: "ImmoTips::Aza",
             s2: "2",
         },
-        immotips_tipps_click: {
+        immotips_tips_click: {
             click: "ImmoTips::tipps",
             s2: "2",
         },
