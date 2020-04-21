@@ -212,6 +212,10 @@ var map = {
         sktg: "Service/Rubrikenmaerkte/Automarkt",
         pageid: autoMotorStartPageId,
     },
+    immotips: {
+        sktg: "Service/Rubrikenmaerkte/Immobilienmarkt",
+        pageid: "Immotipps",
+    },
 };
 
 var params = map[b.event_name];

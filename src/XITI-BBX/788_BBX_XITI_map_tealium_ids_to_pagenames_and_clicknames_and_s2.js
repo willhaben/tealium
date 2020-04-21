@@ -200,6 +200,10 @@ if (a === "view") {
             page: autoMotorStartPageTag,
             s2: "3",
         },
+        immotips: {
+            page: "ImmoTips",
+            s2: "2",
+        },
     };
 
     params = map[b.event_name];
@@ -708,6 +712,26 @@ if (a === "view") {
         detail_search_container_search_agent_mc_click_bottom: {
             click: "DetailSearch::Motorbikes::ActivateSearchAgent",
             s2: "3",
+        },
+        immotips_aza_click: {
+            click: "ImmoTips::Aza",
+            s2: "2",
+        },
+        immotips_tipps_click: {
+            click: "ImmoTips::tipps",
+            s2: "2",
+        },
+        immotips_glossar_click: {
+            click: "ImmoTips::glossar",
+            s2: "2",
+        },
+        immotips_immy_click: {
+            click: "ImmoTips::immy",
+            s2: "2",
+        },
+        immotips_contact_click: {
+            click: "ImmoTips::contact",
+            s2: "2",
         },
         // -------- self-promotions ----------
         addetail_more_from_dealer_viewed_selfpromotion: {
