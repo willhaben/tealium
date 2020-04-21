@@ -208,6 +208,10 @@ var map = {
         sktg: "Service/Rubrikenmaerkte/Automarkt",
         pageid: category.concat("/TL"),
     },
+    detail_search: {
+        sktg: "Service/Rubrikenmaerkte/Automarkt",
+        pageid: category.concat("/Suche"),
+    },
     vertical_home: {
         sktg: "Service/Rubrikenmaerkte/Automarkt",
         pageid: autoMotorStartPageId,

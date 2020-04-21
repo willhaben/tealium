@@ -196,6 +196,10 @@ if (a === "view") {
             page: "ResultList",
             s2: "3",
         },
+        detail_search: {
+            page: "DetailSearch",
+            s2: "3",
+        },
         vertical_home: {
             page: autoMotorStartPageTag,
             s2: "3",
@@ -711,6 +715,22 @@ if (a === "view") {
         },
         detail_search_container_search_agent_mc_click_bottom: {
             click: "DetailSearch::Motorbikes::ActivateSearchAgent",
+            s2: "3",
+        },
+        detail_search_search_button_car_click: {
+            click: "DetailSearch::Cars::Search",
+            s2: "3",
+        },
+        detail_search_search_button_mc_click: {
+            click: "DetailSearch::Motorbikes::Search",
+            s2: "3",
+        },
+        detail_search_search_button_caravan_click: {
+            click: "DetailSearch::Caravans::Search",
+            s2: "3",
+        },
+        detail_search_search_button_truck_click: {
+            click: "DetailSearch::Trucks::Search",
             s2: "3",
         },
         immotips_aza_click: {
