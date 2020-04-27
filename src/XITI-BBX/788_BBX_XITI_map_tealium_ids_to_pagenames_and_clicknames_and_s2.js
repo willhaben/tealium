@@ -48,6 +48,10 @@ if (a === "view") {
             page: "GeneralTerms",
             s2: "5",
         },
+        terms_conditions_payment_and_delivery: {
+            page: "TermsPaymentAndDelivery",
+            s2: "5",
+        },
         ad_rules: {
             page: "AdRules",
             s2: "5",
