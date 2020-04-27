@@ -72,6 +72,9 @@ var map = {
     terms_conditions_general: {
         sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
     },
+    terms_conditions_payment_and_delivery: {
+        sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
+    },
     ad_rules: {
         sktg: "Service/Unternehmenskommunikation/Unternehmenskommunikation",
     },
