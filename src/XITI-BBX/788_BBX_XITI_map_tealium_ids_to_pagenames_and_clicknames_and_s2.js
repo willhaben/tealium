@@ -685,6 +685,10 @@ if (a === "view") {
             click: "MotorStartpage::QuickLink::3rd",
             s2: "3",
         },
+        vertical_home_quicklink_4_click: {
+            click: "MotorStartpage::QuickLink::4th",
+            s2: "3",
+        },
         vertical_home_spareparts_click: {
             click: "MotorStartpage::SpareParts",
             s2: "3",
