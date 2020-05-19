@@ -195,14 +195,6 @@ var map = {
         sktg: "Service/Rubrikenmaerkte/Automarkt",
         pageid: "Auto/DA/".concat(make, "/", model),
     },
-    adimage_view: {
-        sktg: "Service/Rubrikenmaerkte/Automarkt",
-        pageid: "Auto/DA/".concat(make, "/", model),
-    },
-    adimage_view_fullscreen: {
-        sktg: "Service/Rubrikenmaerkte/Automarkt",
-        pageid: "Auto/DA/".concat(make, "/", model),
-    },
     contact_seller_confirmation: {
         sktg: "Service/Rubrikenmaerkte/Automarkt",
         pageid: "Auto/K_G/".concat(make, "/", model),
