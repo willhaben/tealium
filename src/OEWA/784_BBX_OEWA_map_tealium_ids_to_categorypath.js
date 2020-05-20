@@ -12,6 +12,20 @@ if (a !== "view") {
     return false;
 }
 
+function replaceUmlauts(string) {
+    if (!string) {
+        return string;
+    }
+    string = string.replace(/Ä/g, "Ae");
+    string = string.replace(/ä/g, "ae");
+    string = string.replace(/Ö/g, "Oe");
+    string = string.replace(/ö/g, "oe");
+    string = string.replace(/Ü/g, "Ue");
+    string = string.replace(/ü/g, "ue");
+    string = string.replace(/ß/g, "ss");
+    return string;
+}
+
 function oewaVerticalName(verticalId) {
     switch (verticalId) {
         case "1":
@@ -92,7 +106,7 @@ function createVerticalSKTG(vertical_id) {
 function createAdDetailPageId(vertical_id, make, model, category, region_level_2) {
     switch (vertical_id) {
         case "2":
-            return (category || "Sonstige").concat("/DA/").concat(region_level_2 || "");
+            return (category || "Sonstige").concat("/DA/").concat(region_level_2);
         case "3":
             return "Auto/DA/".concat(make || "", "/", model || "");
     }
@@ -103,7 +117,7 @@ function createAdDetailPageId(vertical_id, make, model, category, region_level_2
 function createAdDetailContactSellerConfirmationPageId(vertical_id, make, model, category, region_level_2) {
     switch (vertical_id) {
         case "2":
-            return (category || "Sonstige").concat("/K_G/").concat(region_level_2 || "");
+            return (category || "Sonstige").concat("/K_G/").concat(region_level_2);
         case "3":
             return "Auto/K_G/".concat(make || "", "/", model || "");
     }
@@ -115,8 +129,9 @@ var vertical = oewaVerticalName(b.vertical_id);
 var category = oewaCategory(b.category_level_id_1);
 var autoMotorStartPageId = createAutoMotorStartPageTag(b.vertical_id, b.category_level_id_1);
 var verticalSKTG = createVerticalSKTG(b.vertical_id);
-var adDetailPageId = createAdDetailPageId(b.vertical_id, b.make, b.model, category, b.region_level_2);
-var adDetailContactSellerConfirmationPageId = createAdDetailContactSellerConfirmationPageId(b.vertical_id, b.make, b.model, category, b.region_level_2);
+var region_level_2_without_umlauts = replaceUmlauts(b.region_level_2 || "");
+var adDetailPageId = createAdDetailPageId(b.vertical_id, b.make, b.model, category, region_level_2_without_umlauts);
+var adDetailContactSellerConfirmationPageId = createAdDetailContactSellerConfirmationPageId(b.vertical_id, b.make, b.model, category, region_level_2_without_umlauts);
 
 var map = {
     contact_contact: {
