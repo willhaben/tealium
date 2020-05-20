@@ -17,7 +17,6 @@ function isNumberString(numberString) {
 
 // do not set xiti SCVs for clicks, otherwise additional page views will be tagged
 if (a == "view") {
-    // INFO xiti_x4 is set in extension 788
     if (typeof b.is_private !== "undefined") {
         // 1=C2C, 2=B2C
         b.xiti_x1 = b.is_private === "true" ? "1" : "2";
