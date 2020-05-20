@@ -16,13 +16,13 @@ function replaceUmlauts(string) {
     if (!string) {
         return string;
     }
-    string = string.replace(/Ä/g, "Ae");
-    string = string.replace(/ä/g, "ae");
-    string = string.replace(/Ö/g, "Oe");
-    string = string.replace(/ö/g, "oe");
-    string = string.replace(/Ü/g, "Ue");
-    string = string.replace(/ü/g, "ue");
-    string = string.replace(/ß/g, "ss");
+    string = string.replace(/\u00c4/g, "Ae");
+    string = string.replace(/\u00e4/g, "ae");
+    string = string.replace(/\u00d6/g, "Oe");
+    string = string.replace(/\u00f6/g, "oe");
+    string = string.replace(/\u00dc/g, "Ue");
+    string = string.replace(/\u00fc/g, "ue");
+    string = string.replace(/\u00df/g, "ss");
     return string;
 }
 
