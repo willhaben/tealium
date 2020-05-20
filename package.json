@@ -14,22 +14,19 @@
         }
     },
     "lint-staged": {
-        "*.{md,json}": [
-            "prettier --write",
-            "git add"
+        "*.{md,json,js}": [
+            "prettier --write"
         ],
-        "*.{js}": [
-            "prettier --write",
-            "eslint --fix",
-            "git add"
+        "*.js": [
+            "eslint --fix"
         ]
     },
     "dependencies": {
-        "eslint": "^6.8.0",
-        "prettier": "^2.0.2"
+        "eslint": "^7.0.0",
+        "prettier": "^2.0.5"
     },
     "devDependencies": {
-        "husky": "^4.2.3",
-        "lint-staged": "^10.0.9"
+        "husky": "^4.2.5",
+        "lint-staged": "^10.2.4"
     }
 }

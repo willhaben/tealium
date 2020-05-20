@@ -37,6 +37,7 @@ function createAutoMotorStartPageTag(vertical_id, category_level_id_1) {
 var privateOrProfessionalString = isPrivateAd() ? "Private" : "Professional";
 var autoMotorStartPageTag = createAutoMotorStartPageTag(b.vertical_id, b.category_level_id_1);
 var trendLabel = b.trend_label || "";
+var verticalS2 = b.vertical_id;
 
 if (a === "view") {
     map = {
@@ -182,31 +183,31 @@ if (a === "view") {
         },
         adview: {
             page: "AdDetail",
-            s2: "3",
+            s2: verticalS2,
         },
         adimage_view: {
             page: "AdImg",
-            s2: "3",
+            s2: verticalS2,
         },
         adimage_view_fullscreen: {
             page: "AdImg_FullScreen",
-            s2: "3",
+            s2: verticalS2,
         },
         contact_seller_confirmation: {
             page: "MessageConfirmation",
-            s2: "3",
+            s2: verticalS2,
         },
         search_result_list: {
             page: "ResultList",
-            s2: "3",
+            s2: verticalS2,
         },
         detail_search: {
             page: "DetailSearch",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home: {
             page: autoMotorStartPageTag,
-            s2: "3",
+            s2: verticalS2,
         },
         immotips: {
             page: "ImmoTips",

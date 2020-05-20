@@ -38,10 +38,27 @@ function oewaCategory(category_level_id_1) {
             return "Wohnmobile";
         case "50":
             return "Nutzfahrzeuge";
+        case "131":
+            return "Wohnungen_zu_vermieten";
+        case "101":
+            return "Wohnungen_zu_verkaufen";
+        case "132":
+            return "Haeuser_zu_vermieten";
+        case "102":
+            return "Haeuser_zu_verkaufen";
+        case "32":
+            return "Ferienimmobilien_zu_vermieten";
+        case "12":
+            return "Ferienimmobilien_zu_verkaufen";
+        case "16":
+            return "Gewerbeobjekte_zu_vermieten";
+        case "15":
+            return "Gewerbeobjekte_zu_verkaufen";
+        case "14":
+            return "Grundstuecke";
     }
 
-    // this is a fallback, since slightly wrong oewa tags are better than broken ones
-    return "Auto";
+    return "";
 }
 
 function createAutoMotorStartPageTag(vertical_id, category_level_id_1) {
@@ -59,11 +76,47 @@ function createAutoMotorStartPageTag(vertical_id, category_level_id_1) {
     return "Home";
 }
 
+function createVerticalSKTG(vertical_id) {
+    switch (vertical_id) {
+        case "2":
+            return "Service/Rubrikenmaerkte/Immobilienmarkt";
+        case "3":
+            return "Service/Rubrikenmaerkte/Automarkt";
+        case "5":
+            return "Service/Rubrikenmaerkte/Sonstiges";
+    }
+
+    return "Service/Rubrikenmaerkte/Sonstiges";
+}
+
+function createAdDetailPageId(vertical_id, make, model, category, region_level_2) {
+    switch (vertical_id) {
+        case "2":
+            return (category || "Sonstige").concat("/DA/").concat(region_level_2 || "");
+        case "3":
+            return "Auto/DA/".concat(make || "", "/", model || "");
+    }
+
+    return "";
+}
+
+function createAdDetailContactSellerConfirmationPageId(vertical_id, make, model, category, region_level_2) {
+    switch (vertical_id) {
+        case "2":
+            return (category || "Sonstige").concat("/K_G/").concat(region_level_2 || "");
+        case "3":
+            return "Auto/K_G/".concat(make || "", "/", model || "");
+    }
+
+    return "";
+}
+
 var vertical = oewaVerticalName(b.vertical_id);
-var make = b.make || "";
-var model = b.model || "";
 var category = oewaCategory(b.category_level_id_1);
 var autoMotorStartPageId = createAutoMotorStartPageTag(b.vertical_id, b.category_level_id_1);
+var verticalSKTG = createVerticalSKTG(b.vertical_id);
+var adDetailPageId = createAdDetailPageId(b.vertical_id, b.make, b.model, category, b.region_level_2);
+var adDetailContactSellerConfirmationPageId = createAdDetailContactSellerConfirmationPageId(b.vertical_id, b.make, b.model, category, b.region_level_2);
 
 var map = {
     contact_contact: {
@@ -192,22 +245,25 @@ var map = {
         pageid: "Meinwillhaben",
     },
     adview: {
-        sktg: "Service/Rubrikenmaerkte/Automarkt",
-        pageid: "Auto/DA/".concat(make, "/", model),
+        sktg: verticalSKTG,
+        pageid: adDetailPageId,
     },
     contact_seller_confirmation: {
-        sktg: "Service/Rubrikenmaerkte/Automarkt",
-        pageid: "Auto/K_G/".concat(make, "/", model),
+        sktg: verticalSKTG,
+        pageid: adDetailContactSellerConfirmationPageId,
     },
     search_result_list: {
+        // TODO other verticals
         sktg: "Service/Rubrikenmaerkte/Automarkt",
-        pageid: category.concat("/TL"),
+        pageid: (category || "Auto").concat("/TL"),
     },
     detail_search: {
+        // TODO other verticals
         sktg: "Service/Rubrikenmaerkte/Automarkt",
-        pageid: category.concat("/Suche"),
+        pageid: (category || "Auto").concat("/Suche"),
     },
     vertical_home: {
+        // TODO other verticals
         sktg: "Service/Rubrikenmaerkte/Automarkt",
         pageid: autoMotorStartPageId,
     },
