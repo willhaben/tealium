@@ -488,259 +488,259 @@ if (a === "view") {
         },
         addetail_previous_ad_click: {
             click: "AdDetail::Navigation::Previous",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_next_ad_click: {
             click: "AdDetail::Navigation::Next",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_favorite_ad_click_save: {
             click: "AdDetail::SaveAd",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_favorite_ad_click_unsave: {
             click: "AdDetail::UnsaveAd",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_share_email_click: {
             click: "AdDetail::Share::Email",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_share_whatsapp_click: {
             click: "AdDetail::Share::Whatsapp",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_share_facebook_click: {
             click: "AdDetail::Share::Facebook",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_share_twitter_click: {
             click: "AdDetail::Share::Twitter",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_share_link_click: {
             click: "AdDetail::Share::Link",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_print_click: {
             click: "AdDetail::Print",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_dealer_website_click: {
             click: "AdDetail::DealerWebsite",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_contact_seller_top_click: {
             click: "AdDetail::ContactSeller",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_show_phone_number_click: {
             click: "AdDetail::ShowPhoneNumber",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_more_ads_click: {
             click: "AdDetail::SellerProfile",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_show_opening_hours_click: {
             click: "AdDetail::ShowOpeningHours",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_expand_description_click: {
             click: "AdDetail::ShowDescription",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_more_from_dealer_ad_click: {
             click: "AdDetail::MoreFromDealer",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_similar_ad_click: {
             click: "AdDetail::MoreSimilarCars",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_warranty_click: {
             click: "AdDetail::Warranty",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_defects_liability_click: {
             click: "AdDetail::DefectsLiability",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_warranty_logo_click: {
             click: "AdDetail::Warranty::Logo",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_dealer_profile_click: {
             click: "AdDetail::ShowDealerProfile",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_map_click: {
             click: "AdDetail::ShowMap",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_send_email_click: {
             click: "AdDetail::SendEmail",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_send_message_click: {
             click: "AdDetail::SendMessage",
-            s2: "3",
+            s2: verticalS2,
         },
         addetail_call_phone_click: {
             click: "AdDetail::Call",
-            s2: "3",
+            s2: verticalS2,
         },
         search_result_list_keyword_search: {
             click: "ResultList::KeywordSearch",
-            s2: "3",
+            s2: verticalS2,
         },
         search_result_list_reset_click_navigators: {
             click: "ResultList::RemoveAttribute::Filter",
-            s2: "3",
+            s2: verticalS2,
         },
         search_result_list_reset_click_top: {
             click: "ResultList::RemoveAttribute::Top",
-            s2: "3",
+            s2: verticalS2,
         },
         search_result_list_ad_click_save: {
             click: "ResultList::SaveAd",
-            s2: "3",
+            s2: verticalS2,
         },
         search_result_list_ad_click_unsave: {
             click: "ResultList::UnsaveAd",
-            s2: "3",
+            s2: verticalS2,
         },
         search_result_list_show_all_makes: {
             click: "ResultList::Filter::ShowAll::Make",
-            s2: "3",
+            s2: verticalS2,
         },
         search_result_list_show_all_equipments: {
             click: "ResultList::Filter::ShowAll::Extras",
-            s2: "3",
+            s2: verticalS2,
         },
         search_result_list_filter_small_click: {
             click: "ResultList::Filter",
-            s2: "3",
+            s2: verticalS2,
         },
         search_result_list_search_agent_click_top: {
             click: "ResultList::SearchAgent::Top",
-            s2: "3",
+            s2: verticalS2,
         },
         search_result_list_search_agent_click_sticky: {
             click: "ResultList::SearchAgent::Sticky",
-            s2: "3",
+            s2: verticalS2,
         },
         search_result_list_search_agent_click_sticky_small: {
             click: "ResultList::SearchAgent::Sticky::Small",
-            s2: "3",
+            s2: verticalS2,
         },
         search_result_list_search_agent_click_empty_result: {
             click: "ResultList::SearchAgent::EmptyResult",
-            s2: "3",
+            s2: verticalS2,
         },
         search_result_list_search_agent_click_bottom: {
             click: "ResultList::SearchAgent::Bottom",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_tab_car_click: {
             click: "MotorStartpage::Cars",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_tab_mc_click: {
             click: "MotorStartpage::Motorbikes",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_tab_truck_click: {
             click: "MotorStartpage::Trucks",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_tab_caravan_click: {
             click: "MotorStartpage::Caravans",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_search_box_search_button_click: {
             click: "MotorStartpage::ViewResults",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_search_box_detail_search_click: {
             click: "MotorStartpage::MoreOptions",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_search_box_condition_new_activate: {
             click: "MotorStartpage::NewOption::ToggleOn",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_search_box_condition_new_deactivate: {
             click: "MotorStartpage::NewOption::ToggleOff",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_quicklink_1_click: {
             click: "MotorStartpage::QuickLink::1st",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_quicklink_2_click: {
             click: "MotorStartpage::QuickLink::2nd",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_quicklink_3_click: {
             click: "MotorStartpage::QuickLink::3rd",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_quicklink_4_click: {
             click: "MotorStartpage::QuickLink::4th",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_spareparts_click: {
             click: "MotorStartpage::SpareParts",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_dealers_click: {
             click: "MotorStartpage::Dealers",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_ad_insertion_button_click: {
             click: "MotorStartpage::AdInsertion",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_topad_click: {
             click: "MotorStartpage::TopAd",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_trend_click: {
             click: "MotorStartpage::Trends::".concat(trendLabel),
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_popular_car_make_click: {
             click: "MotorStartpage::PopularMakes::Cars",
-            s2: "3",
+            s2: verticalS2,
         },
         vertical_home_popular_mc_make_click: {
             click: "MotorStartpage::PopularMakes::Motorbikes",
-            s2: "3",
+            s2: verticalS2,
         },
         detail_search_container_search_agent_car_click_bottom: {
             click: "DetailSearch::Cars::ActivateSearchAgent",
-            s2: "3",
+            s2: verticalS2,
         },
         detail_search_container_search_agent_mc_click_bottom: {
             click: "DetailSearch::Motorbikes::ActivateSearchAgent",
-            s2: "3",
+            s2: verticalS2,
         },
         detail_search_search_button_car_click: {
             click: "DetailSearch::Cars::Search",
-            s2: "3",
+            s2: verticalS2,
         },
         detail_search_search_button_mc_click: {
             click: "DetailSearch::Motorbikes::Search",
-            s2: "3",
+            s2: verticalS2,
         },
         detail_search_search_button_caravan_click: {
             click: "DetailSearch::Caravans::Search",
-            s2: "3",
+            s2: verticalS2,
         },
         detail_search_search_button_truck_click: {
             click: "DetailSearch::Trucks::Search",
-            s2: "3",
+            s2: verticalS2,
         },
         immotips_aza_click: {
             click: "ImmoTips::Aza",
