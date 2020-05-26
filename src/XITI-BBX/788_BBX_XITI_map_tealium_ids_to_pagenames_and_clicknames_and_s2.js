@@ -590,6 +590,10 @@ if (a === "view") {
             click: "AdDetail::Call",
             s2: verticalS2,
         },
+        addetail_virtual_tour_click: {
+            click: "AdDetail::360Tour",
+            s2: verticalS2,
+        },
         search_result_list_keyword_search: {
             click: "ResultList::KeywordSearch",
             s2: verticalS2,
