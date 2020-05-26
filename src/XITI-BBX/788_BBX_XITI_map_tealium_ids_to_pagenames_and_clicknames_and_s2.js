@@ -527,7 +527,7 @@ if (a === "view") {
             s2: verticalS2,
         },
         addetail_dealer_website_click: {
-            click: "AdDetail::DealerWebsite",
+            click: { "3": "AdDetail::DealerWebsite", "2": "AdDetail::BrokerWebsite" }[b.vertical_id] || "",
             s2: verticalS2,
         },
         addetail_contact_seller_top_click: {
@@ -551,11 +551,11 @@ if (a === "view") {
             s2: verticalS2,
         },
         addetail_more_from_dealer_ad_click: {
-            click: "AdDetail::MoreFromDealer",
+            click: { "3": "AdDetail::MoreFromDealer", "2": "AdDetail::MoreFromBroker" }[b.vertical_id] || "",
             s2: verticalS2,
         },
         addetail_similar_ad_click: {
-            click: "AdDetail::MoreSimilarCars",
+            click: { "3": "AdDetail::MoreSimilarCars", "2": "AdDetail::MoreSimilarAds" }[b.vertical_id] || "",
             s2: verticalS2,
         },
         addetail_warranty_click: {
@@ -571,7 +571,7 @@ if (a === "view") {
             s2: verticalS2,
         },
         addetail_dealer_profile_click: {
-            click: "AdDetail::ShowDealerProfile",
+            click: { "3": "AdDetail::ShowDealerProfile", "2": "AdDetail::ShowBrokerProfile" }[b.vertical_id] || "",
             s2: verticalS2,
         },
         addetail_map_click: {
@@ -771,14 +771,14 @@ if (a === "view") {
             xiti_selfpromotion_impression: {
                 adId: "3",
                 productId: "AdDetail",
-                format: "SimilarAdsWidgetCarB2C",
+                format: { "3": "SimilarAdsWidgetCarB2C", "2": "SimilarAdsWidgetREB2C" }[b.vertical_id] || "",
             },
         },
         addetail_similar_ads_viewed_selfpromotion: {
             xiti_selfpromotion_impression: {
                 adId: "3",
                 productId: "AdDetail",
-                format: "SimilarAdsWidgetCar",
+                format: { "3": "SimilarAdsWidgetCar", "2": "SimilarAdsWidgetRE" }[b.vertical_id] || "",
             },
         },
     };
