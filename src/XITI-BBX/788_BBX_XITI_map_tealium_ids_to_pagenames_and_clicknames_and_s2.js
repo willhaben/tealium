@@ -185,14 +185,6 @@ if (a === "view") {
             page: "AdDetail",
             s2: verticalS2,
         },
-        adimage_view: {
-            page: "AdImg",
-            s2: verticalS2,
-        },
-        adimage_view_fullscreen: {
-            page: "AdImg_FullScreen",
-            s2: verticalS2,
-        },
         contact_seller_confirmation: {
             page: "MessageConfirmation",
             s2: verticalS2,
