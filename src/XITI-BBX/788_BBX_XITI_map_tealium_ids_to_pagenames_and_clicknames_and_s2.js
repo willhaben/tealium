@@ -542,6 +542,10 @@ if (a === "view") {
             click: "AdDetail::ShowDescription",
             s2: verticalS2,
         },
+        addetail_expand_location_click: {
+            click: "Addetail::ShowLocationDescription",
+            s2: verticalS2,
+        },
         addetail_more_from_dealer_ad_click: {
             click: { "3": "AdDetail::MoreFromDealer", "2": "AdDetail::MoreFromBroker" }[b.vertical_id] || "",
             s2: verticalS2,
