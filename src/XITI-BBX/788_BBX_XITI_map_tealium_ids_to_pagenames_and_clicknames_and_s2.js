@@ -526,6 +526,10 @@ if (a === "view") {
             click: "AdDetail::ContactSeller",
             s2: verticalS2,
         },
+        addetail_contact_seller_expand_address_fields_click: {
+            click: "AdDetail::ShowAdressInputfields",
+            s2: verticalS2,
+        },
         addetail_show_phone_number_click: {
             click: "AdDetail::ShowPhoneNumber",
             s2: verticalS2,
