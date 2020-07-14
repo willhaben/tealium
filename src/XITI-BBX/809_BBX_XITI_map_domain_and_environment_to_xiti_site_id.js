@@ -15,13 +15,13 @@ if (mobileRegex.test(domain)) {
     if (environment && environment.toLowerCase() === "prod") {
         xitiSiteId = "474590";
     } else {
-        xitiSiteId = "544852";
+        xitiSiteId = "612450";
     }
 } else {
     if (environment && environment.toLowerCase() === "prod") {
         xitiSiteId = "397816";
     } else {
-        xitiSiteId = "408951";
+        xitiSiteId = "612450";
     }
 }
 
