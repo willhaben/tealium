@@ -6,23 +6,8 @@ if (!b.client || b.client.toLowerCase() !== "bbx") {
     return false;
 }
 
-var domain = b["dom.domain"];
-var environment = b["environment"];
-var mobileRegex = /^mobile(-.+)?.willhaben.at$/i;
-
-var xitiSiteId;
-if (mobileRegex.test(domain)) {
-    if (environment && environment.toLowerCase() === "prod") {
-        xitiSiteId = "474590";
-    } else {
-        xitiSiteId = "544852";
-    }
+if (b.environment && b.environment.toLowerCase() === "prod") {
+    b.xiti_site_id = "612451";
 } else {
-    if (environment && environment.toLowerCase() === "prod") {
-        xitiSiteId = "397816";
-    } else {
-        xitiSiteId = "408951";
-    }
+    b.xiti_site_id = "612450";
 }
-
-b.xiti_site_id = xitiSiteId;
