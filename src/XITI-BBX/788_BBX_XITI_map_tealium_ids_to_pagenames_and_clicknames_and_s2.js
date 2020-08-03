@@ -646,6 +646,10 @@ if (a === "view") {
             click: "ResultList::SearchAgent::Bottom",
             s2: verticalS2,
         },
+        search_result_list_map_view_click: {
+            click: "ResultList::MapView",
+            s2: verticalS2,
+        },
         vertical_home_tab_car_click: {
             click: "MotorStartpage::Cars",
             s2: verticalS2,
