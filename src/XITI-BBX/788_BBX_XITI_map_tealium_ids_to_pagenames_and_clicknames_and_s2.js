@@ -318,6 +318,10 @@ if (a === "view") {
             click: "MyAds::Resubmit",
             s2: "10",
         },
+        my_ads_click_fincredible_banner: {
+            click: "MyAds::Fincrediblebanner",
+            s2: "10",
+        },
         my_ads_contextmenu_click_edit_images: {
             click: "MyAds::Edit::Image",
             s2: "10",
