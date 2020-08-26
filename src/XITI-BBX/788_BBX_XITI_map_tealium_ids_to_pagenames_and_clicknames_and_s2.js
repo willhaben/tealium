@@ -19,23 +19,26 @@ function isPrivateAd() {
     return true;
 }
 
-function createAutoMotorStartPageTag(vertical_id, category_level_id_1) {
-    if (vertical_id !== "3") {
-        return undefined;
+function createStartPageTag(vertical_id, category_level_id_1) {
+    switch (vertical_id) {
+        case 2:
+            return "EstateStartpage";
+        case 3:
+            switch (category_level_id_1) {
+                case "2":
+                    return "CarsStartpage";
+                case "4":
+                    return "MotorbikeStartpage";
+                default:
+                    return "MotorStartpage";
+            }
     }
 
-    switch (category_level_id_1) {
-        case "2":
-            return "CarsStartpage";
-        case "4":
-            return "MotorbikeStartpage";
-    }
-
-    return "MotorStartpage";
+    return "Startpage";
 }
 
 var privateOrProfessionalString = isPrivateAd() ? "Private" : "Professional";
-var autoMotorStartPageTag = createAutoMotorStartPageTag(b.vertical_id, b.category_level_id_1);
+var startPageTag = createStartPageTag(b.vertical_id, b.category_level_id_1);
 var trendLabel = b.trend_label || "";
 var verticalS2 = b.vertical_id;
 
@@ -198,7 +201,7 @@ if (a === "view") {
             s2: verticalS2,
         },
         vertical_home: {
-            page: autoMotorStartPageTag,
+            page: startPageTag,
             s2: verticalS2,
         },
         immotips: {
@@ -626,6 +629,10 @@ if (a === "view") {
             click: "ResultList::Filter::ShowAll::Extras",
             s2: verticalS2,
         },
+        search_result_list_show_all_regions: {
+            click: "ResultList::Filter::ShowAll::Regions",
+            s2: verticalS2,
+        },
         search_result_list_filter_small_click: {
             click: "ResultList::Filter",
             s2: verticalS2,
@@ -652,6 +659,10 @@ if (a === "view") {
         },
         search_result_list_map_view_click: {
             click: "ResultList::MapView",
+            s2: verticalS2,
+        },
+        search_result_list_home_topad_click: {
+            click: "ResultList::TopAd",
             s2: verticalS2,
         },
         vertical_home_tab_car_click: {
