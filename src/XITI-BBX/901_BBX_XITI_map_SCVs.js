@@ -85,12 +85,10 @@ if (a === "view") {
             b.xiti_x2 = "15";
         }
 
-        // TODO result list and landing pages
-        // if (b.dom.query_string.indexOf("TYPE_OF_SALE=Versteigerungen") > -1) {
-        //     if (!b.ad_type_id) {
-        //         b.xiti_x2 = "7777";
-        //     }
-        // }
+        // Versteigerungen result lists are a special case, set xiti_x2 to a fixed value independent of the real category (same for houses, flats, etc.)
+        if (b.dom.query_string.indexOf("TYPE_OF_SALE=Versteigerungen") > -1) {
+            b.xiti_x2 = "7777";
+        }
 
         if (b.property_type && b.property_type.indexOf(";") === -1) {
             b.xiti_x3 = "999" + b.property_type;
