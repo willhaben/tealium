@@ -626,6 +626,10 @@ if (a === "view") {
             click: "ResultList::Filter::ShowAll::Extras",
             s2: verticalS2,
         },
+        search_result_list_show_all_regions: {
+            click: "ResultList::Filter::ShowAll::Regions",
+            s2: verticalS2,
+        },
         search_result_list_filter_small_click: {
             click: "ResultList::Filter",
             s2: verticalS2,
