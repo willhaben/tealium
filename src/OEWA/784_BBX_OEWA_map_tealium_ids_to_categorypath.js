@@ -75,16 +75,17 @@ function oewaCategory(category_level_id_1) {
     return "";
 }
 
-function createAutoMotorStartPageTag(vertical_id, category_level_id_1) {
-    if (vertical_id !== "3") {
-        return undefined;
-    }
-
-    switch (category_level_id_1) {
-        case "2":
-            return "Auto";
-        case "4":
-            return "Motorraeder";
+function createStartPageTag(vertical_id, category_level_id_1) {
+    switch (vertical_id) {
+        case 2:
+            return "Home";
+        case 3:
+            switch (category_level_id_1) {
+                case "2":
+                    return "Auto";
+                case "4":
+                    return "Motorraeder";
+            }
     }
 
     return "Home";
@@ -127,7 +128,7 @@ function createAdDetailContactSellerConfirmationPageId(vertical_id, make, model,
 
 var vertical = oewaVerticalName(b.vertical_id);
 var category = oewaCategory(b.category_level_id_1);
-var autoMotorStartPageId = createAutoMotorStartPageTag(b.vertical_id, b.category_level_id_1);
+var startPageId = createStartPageTag(b.vertical_id, b.category_level_id_1);
 var verticalSKTG = createVerticalSKTG(b.vertical_id);
 var region_level_2_without_umlauts = replaceUmlauts(b.region_level_2 || "");
 var adDetailPageId = createAdDetailPageId(b.vertical_id, b.make, b.model, category, region_level_2_without_umlauts);
@@ -268,19 +269,16 @@ var map = {
         pageid: adDetailContactSellerConfirmationPageId,
     },
     search_result_list: {
-        // TODO other verticals
-        sktg: "Service/Rubrikenmaerkte/Automarkt",
-        pageid: (category || "Auto").concat("/TL"),
+        sktg: verticalSKTG,
+        pageid: (category || "Sonstige").concat("/TL"),
     },
     detail_search: {
-        // TODO other verticals
-        sktg: "Service/Rubrikenmaerkte/Automarkt",
-        pageid: (category || "Auto").concat("/Suche"),
+        sktg: verticalSKTG,
+        pageid: (category || "Sonstige").concat("/Suche"),
     },
     vertical_home: {
-        // TODO other verticals
-        sktg: "Service/Rubrikenmaerkte/Automarkt",
-        pageid: autoMotorStartPageId,
+        sktg: verticalSKTG,
+        pageid: startPageId,
     },
     immotips: {
         sktg: "Service/Rubrikenmaerkte/Immobilienmarkt",

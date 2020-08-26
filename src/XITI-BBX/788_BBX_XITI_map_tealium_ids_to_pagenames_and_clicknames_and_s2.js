@@ -19,23 +19,26 @@ function isPrivateAd() {
     return true;
 }
 
-function createAutoMotorStartPageTag(vertical_id, category_level_id_1) {
-    if (vertical_id !== "3") {
-        return undefined;
+function createStartPageTag(vertical_id, category_level_id_1) {
+    switch (vertical_id) {
+        case 2:
+            return "EstateStartpage";
+        case 3:
+            switch (category_level_id_1) {
+                case "2":
+                    return "CarsStartpage";
+                case "4":
+                    return "MotorbikeStartpage";
+                default:
+                    return "MotorStartpage";
+            }
     }
 
-    switch (category_level_id_1) {
-        case "2":
-            return "CarsStartpage";
-        case "4":
-            return "MotorbikeStartpage";
-    }
-
-    return "MotorStartpage";
+    return "Startpage";
 }
 
 var privateOrProfessionalString = isPrivateAd() ? "Private" : "Professional";
-var autoMotorStartPageTag = createAutoMotorStartPageTag(b.vertical_id, b.category_level_id_1);
+var startPageTag = createStartPageTag(b.vertical_id, b.category_level_id_1);
 var trendLabel = b.trend_label || "";
 var verticalS2 = b.vertical_id;
 
@@ -198,7 +201,7 @@ if (a === "view") {
             s2: verticalS2,
         },
         vertical_home: {
-            page: autoMotorStartPageTag,
+            page: startPageTag,
             s2: verticalS2,
         },
         immotips: {
