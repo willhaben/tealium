@@ -1,11 +1,16 @@
 // adaptions here need also be done in the duplicated code in 929_SPT
-b.map_ad_type = function (adTypeId) {
+b.map_ad_type = function (ad) {
+    var adTypeId = ad.adTypeId
+    var price = ad.price
     switch (adTypeId) {
         case "2":
         case "6":
         case "9":
             return "rent";
         default:
+            if (price === "0") {
+                return "give"
+            }
             return "sell";
     }
 };
@@ -113,7 +118,7 @@ b.make_classified_ad_iad = function (ad) {
     var ad_location = b.make_location(ad);
     var result = {
         adId: parseInt(adId),
-        adType: b.map_ad_type(ad.adTypeId),
+        adType: b.map_ad_type(ad),
         category: b.map_category(ad),
         categories: b.resolve_categories(ad),
         contentId: adId,
