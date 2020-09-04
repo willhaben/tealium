@@ -1,7 +1,7 @@
 // adaptions here need also be done in the duplicated code in 929_SPT
 b.map_ad_type = function (ad) {
-    var adTypeId = ad.adTypeId
-    var price = ad.price
+    var adTypeId = ad.adTypeId;
+    var price = ad.price;
     switch (adTypeId) {
         case "2":
         case "6":
@@ -9,7 +9,7 @@ b.map_ad_type = function (ad) {
             return "rent";
         default:
             if (price === "0") {
-                return "give"
+                return "give";
             }
             return "sell";
     }
