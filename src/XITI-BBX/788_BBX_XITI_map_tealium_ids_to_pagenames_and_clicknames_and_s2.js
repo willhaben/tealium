@@ -776,7 +776,7 @@ if (a === "view") {
             click: "MotorStartpage::PopularMakes::Motorbikes",
             s2: verticalS2,
         },
-        detail_search_container_search_agent_click_bottom: {
+        detail_search_container_search_agent_click: {
             click: "DetailSearch::" + (category || "Sonstige") + "::ActivateSearchAgent",
             s2: verticalS2,
         },
