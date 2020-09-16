@@ -44,14 +44,14 @@ if (
                     sorting: sorting,
                     numResults: rows,
                     adType:
-                      b.category_level_id_1 === "131" || b.category_level_id_1 === "132" || b.category_level_id_1 === "16" || b.category_level_id_1 === "32" ? "rent" : "sell",
+                        b.category_level_id_1 === "131" || b.category_level_id_1 === "132" || b.category_level_id_1 === "16" || b.category_level_id_1 === "32" ? "rent" : "sell",
                     postalCode: b.map_post_code(),
                     region: b.map_region(b.region_level_1, b.region_level_2, b.region_level_3),
                 },
             },
         };
 
-        if (publisherType != null && publisherType !== "") {
+        if (publisherType) {
             listingViewed.object.filters.publisherType = publisherType;
         }
 
