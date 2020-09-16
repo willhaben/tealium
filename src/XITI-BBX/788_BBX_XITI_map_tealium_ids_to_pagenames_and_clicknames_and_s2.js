@@ -19,6 +19,40 @@ function isPrivateAd() {
     return true;
 }
 
+function xitiCategory(category_level_id_1) {
+    switch (category_level_id_1) {
+        case "2":
+            return "Cars";
+        case "4":
+            return "Motorbikes";
+        case "52":
+            return "Caravans";
+        case "50":
+            return "Trucks";
+        // TODO for estate - english?
+        case "131":
+            return "Wohnungen_zu_vermieten";
+        case "101":
+            return "Wohnungen_zu_verkaufen";
+        case "132":
+            return "Haeuser_zu_vermieten";
+        case "102":
+            return "Haeuser_zu_verkaufen";
+        case "32":
+            return "Ferienimmobilien_zu_vermieten";
+        case "12":
+            return "Ferienimmobilien_zu_verkaufen";
+        case "16":
+            return "Gewerbeobjekte_zu_vermieten";
+        case "15":
+            return "Gewerbeobjekte_zu_verkaufen";
+        case "14":
+            return "Grundstuecke";
+    }
+
+    return "";
+}
+
 function createStartPageTag(vertical_id, category_level_id_1) {
     switch (vertical_id) {
         case 2:
@@ -41,6 +75,7 @@ var privateOrProfessionalString = isPrivateAd() ? "Private" : "Professional";
 var startPageTag = createStartPageTag(b.vertical_id, b.category_level_id_1);
 var trendLabel = b.trend_label || "";
 var verticalS2 = b.vertical_id;
+var category = xitiCategory(b.category_level_id_1);
 
 if (a === "view") {
     map = {
@@ -741,6 +776,11 @@ if (a === "view") {
             click: "MotorStartpage::PopularMakes::Motorbikes",
             s2: verticalS2,
         },
+        detail_search_container_search_agent_click_bottom: {
+            click: "DetailSearch::" + (category || "Sonstige") + "::ActivateSearchAgent",
+            s2: verticalS2,
+        },
+        // TODO delete
         detail_search_container_search_agent_car_click_bottom: {
             click: "DetailSearch::Cars::ActivateSearchAgent",
             s2: verticalS2,
@@ -749,6 +789,11 @@ if (a === "view") {
             click: "DetailSearch::Motorbikes::ActivateSearchAgent",
             s2: verticalS2,
         },
+        detail_search_search_button_click: {
+            click: "DetailSearch::" + (category || "Sonstige") + "::Search",
+            s2: verticalS2,
+        },
+        // TODO delete
         detail_search_search_button_car_click: {
             click: "DetailSearch::Cars::Search",
             s2: verticalS2,
