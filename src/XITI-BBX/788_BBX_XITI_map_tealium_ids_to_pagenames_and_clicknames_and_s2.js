@@ -29,25 +29,28 @@ function xitiCategory(category_level_id_1) {
             return "Caravans";
         case "50":
             return "Trucks";
-        // TODO for estate - english?
+        case "90":
+            return "all_object_types";
         case "131":
-            return "Wohnungen_zu_vermieten";
+            return "flat_for_rent";
         case "101":
-            return "Wohnungen_zu_verkaufen";
+            return "flat_for_sale";
         case "132":
-            return "Haeuser_zu_vermieten";
+            return "house_for_rent";
         case "102":
-            return "Haeuser_zu_verkaufen";
+            return "house_for_sale";
         case "32":
-            return "Ferienimmobilien_zu_vermieten";
+            return "vacation_property_for_rent";
         case "12":
-            return "Ferienimmobilien_zu_verkaufen";
+            return "vacation_property_for_sale";
         case "16":
-            return "Gewerbeobjekte_zu_vermieten";
+            return "commercial_property_for_rent";
         case "15":
-            return "Gewerbeobjekte_zu_verkaufen";
+            return "commercial_property_for_sale";
         case "14":
-            return "Grundstuecke";
+            return "plot";
+        case "35":
+            return "other_objects";
     }
 
     return "";
@@ -777,6 +780,7 @@ if (a === "view") {
             s2: verticalS2,
         },
         detail_search_container_search_agent_click: {
+            // todo discuss with fabian why fallback is handled this way
             click: "DetailSearch::" + (category || "Sonstige") + "::ActivateSearchAgent",
             s2: verticalS2,
         },
