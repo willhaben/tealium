@@ -779,6 +779,114 @@ if (a === "view") {
             click: "MotorStartpage::PopularMakes::Motorbikes",
             s2: verticalS2,
         },
+        real_estate_vertical_home_dropdown_all_object_types: {
+            click: "RealEstateStartpage::all_object_types",
+            s2: "3",
+        },
+        real_estate_vertical_home_dropdown_house_for_sale: {
+            click: "RealEstateStartpage::house_for_sale",
+            s2: "3",
+        },
+        real_estate_vertical_home_dropdown_house_for_rent: {
+            click: "RealEstateStartpage::house_for_rent",
+            s2: "3",
+        },
+        real_estate_vertical_home_dropdown_flat_for_sale: {
+            click: "RealEstateStartpage::flat_for_sale",
+            s2: "3",
+        },
+        real_estate_vertical_home_dropdown_flat_for_rent: {
+            click: "RealEstateStartpage::flat_for_rent",
+            s2: "3",
+        },
+        real_estate_vertical_home_dropdown_plot: {
+            click: "RealEstateStartpage::plot",
+            s2: "3",
+        },
+        real_estate_vertical_home_dropdown_commercial_property_for_sale: {
+            click: "RealEstateStartpage::commercial_property_for_sale",
+            s2: "3",
+        },
+        real_estate_vertical_home_dropdown_commercial_property_for_rent: {
+            click: "RealEstateStartpage::commercial_property_for_rent",
+            s2: "3",
+        },
+        real_estate_vertical_home_dropdown_vacation_property_for_sale: {
+            click: "RealEstateStartpage::vacation_property_for_sale",
+            s2: "3",
+        },
+        real_estate_vertical_home_dropdown_vacation_property_for_rent: {
+            click: "RealEstateStartpage::vacation_property_for_rent",
+            s2: "3",
+        },
+        real_estate_vertical_home_dropdown_other_objects: {
+            click: "RealEstateStartpage::other_objects",
+            s2: "3",
+        },
+        real_estate_vertical_home_search_box_search_button_click: {
+            click: "RealEstateStartpage::ViewResults",
+            s2: "3",
+        },
+        real_estate_vertical_home_search_box_detail_search_click: {
+            click: "RealEstateStartpage::MoreOptions",
+            s2: "3",
+        },
+        real_estate_vertical_home_quicklink_new_construction_flats: {
+            click: "RealEstateStartpage::NewConstructionFlats",
+            s2: "3",
+        },
+        real_estate_vertical_home_quicklink_new_construction_houses: {
+            click: "RealEstateStartpage::NewConstructionHouses",
+            s2: "3",
+        },
+        real_estate_vertical_home_quicklink_prefabricated_houses: {
+            click: "RealEstateStartpage::PrefabricatedHouses",
+            s2: "3",
+        },
+        real_estate_vertical_home_ad_insertion_button_click: {
+            click: "RealEstateStartpage::AdInsertion",
+            s2: "3",
+        },
+        real_estate_vertical_home_brokers_click: {
+            click: "RealEstateStartpage::Brokers",
+            s2: "3",
+        },
+        real_estate_vertical_home_builders_click: {
+            click: "RealEstateStartpage::Builders",
+            s2: "3",
+        },
+        real_estate_vertical_home_topad_click: {
+            click: "RealEstateStartpage::TopAd",
+            s2: "3",
+        },
+        real_estate_vertical_home_quicklink_investment_apartment: {
+            click: "RealEstateStartpage::QuickLink::InvestmentApartment",
+            s2: "3",
+        },
+        real_estate_vertical_home_quicklink_apartment_block: {
+            click: "RealEstateStartpage::QuickLink::ApartmentBlock",
+            s2: "3",
+        },
+        real_estate_vertical_home_quicklink_cooperative_flats: {
+            click: "RealEstateStartpage::QuickLink::CooperativeFlats",
+            s2: "3",
+        },
+        real_estate_vertical_home_quicklink_green_living: {
+            click: "RealEstateStartpage::QuickLink::GreenLiving",
+            s2: "3",
+        },
+        real_estate_vertical_home_quicklink_international_objects: {
+            click: "RealEstateStartpage::QuickLink::InternationalObjects",
+            s2: "3",
+        },
+        real_estate_vertical_home_link_vomit_buy_click: {
+            click: "RealEstateStartpage::DirectLink::Buy",
+            s2: "3",
+        },
+        real_estate_vertical_home_link_vomit_rent_click: {
+            click: "RealEstateStartpage::DirectLink::Rent",
+            s2: "3",
+        },
         detail_search_container_search_agent_click: {
             // todo discuss with fabian why fallback is handled this way
             click: "DetailSearch::" + (category || "Sonstige") + "::ActivateSearchAgent",
