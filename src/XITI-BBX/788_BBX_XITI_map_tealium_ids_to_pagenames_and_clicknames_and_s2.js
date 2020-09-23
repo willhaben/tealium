@@ -58,9 +58,9 @@ function xitiCategory(category_level_id_1) {
 
 function createStartPageTag(vertical_id, category_level_id_1) {
     switch (vertical_id) {
-        case 2:
-            return "EstateStartpage";
-        case 3:
+        case "2":
+            return "RealEstateStartpage";
+        case "3":
             switch (category_level_id_1) {
                 case "2":
                     return "CarsStartpage";
