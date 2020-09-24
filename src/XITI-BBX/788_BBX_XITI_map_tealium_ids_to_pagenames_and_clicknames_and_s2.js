@@ -639,6 +639,22 @@ if (a === "view") {
             click: "AdDetail::360Tour",
             s2: verticalS2,
         },
+        addetail_tap_reply_option_availability: {
+            click: "ADetail::TapAdReplyOption::Availability",
+            s2: verticalS2,
+        },
+        addetail_tap_reply_option_viewing: {
+            click: "ADetail::TapAdReplyOption::Viewing",
+            s2: verticalS2,
+        },
+        addetail_tap_reply_option_callback: {
+            click: "ADetail::TapAdReplyOption::Callback",
+            s2: verticalS2,
+        },
+        addetail_tap_reply_option_more_details: {
+            click: "ADetail::TapAdReplyOption::MoreDetails",
+            s2: verticalS2,
+        },
         search_result_list_keyword_search: {
             click: "ResultList::KeywordSearch",
             s2: verticalS2,
