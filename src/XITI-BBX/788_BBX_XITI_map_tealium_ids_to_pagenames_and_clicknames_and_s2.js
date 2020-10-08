@@ -675,6 +675,10 @@ if (a === "view") {
             click: "ResultList::Filter",
             s2: verticalS2,
         },
+        search_result_list_filter_object_types_click: {
+            click: "ResultList::Filter::Object_types",
+            s2: verticalS2,
+        },
         search_result_list_search_agent_click_top: {
             click: "ResultList::SearchAgent::Top",
             s2: verticalS2,
