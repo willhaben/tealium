@@ -707,6 +707,14 @@ if (a === "view") {
             click: "ResultList::TopAd",
             s2: verticalS2,
         },
+        search_result_list_sortorder: {
+            click: "ResultList::Sortorder",
+            s2: verticalS2,
+        },
+        search_result_list_sortorder_nearme: {
+            click: "ResultList::Sortorder::NearMe",
+            s2: verticalS2,
+        },
         vertical_home_tab_car_click: {
             click: "MotorStartpage::Cars",
             s2: verticalS2,
