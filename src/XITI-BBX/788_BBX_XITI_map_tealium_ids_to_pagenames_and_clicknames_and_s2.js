@@ -190,6 +190,14 @@ if (a === "view") {
             page: "MyWillhaben::MySearchAgents_Edit_Overlay",
             s2: "10",
         },
+        my_last_searches: {
+            page: "MyWillhaben::MyLastSearches",
+            s2: "10",
+        },
+        my_last_searches_item_click: {
+            page: "MyLastSearches::Open::SearchResult_List",
+            s2: "10",
+        },
         upselling: {
             page: "AI::".concat(privateOrProfessionalString).concat("::Upselling"),
             s2: "4",
@@ -435,6 +443,10 @@ if (a === "view") {
             click: "Menu::Logo",
             s2: "11",
         },
+        header_click_myLastSearches: {
+            click: "Menu::MyLastSearches",
+            s2: "11",
+        },
         header_click_messages: {
             click: "Menu::Messages",
             s2: "11",
@@ -505,6 +517,10 @@ if (a === "view") {
         },
         header_usermenu_click_myFindings: {
             click: "Menu::MyWillhaben::MySavedAds",
+            s2: "11",
+        },
+        header_usermenu_click_myLastSearches: {
+            click: "Menu::MyWillhaben::MyLastSearches",
             s2: "11",
         },
         header_usermenu_click_chat: {
