@@ -695,6 +695,10 @@ if (a === "view") {
             click: "ResultList::Filter::Object_types",
             s2: verticalS2,
         },
+        search_result_list_filter_autocomplete_click: {
+            click: "ResultList::Filter::Autocomplete",
+            s2: verticalS2,
+        },
         search_result_list_search_agent_click_top: {
             click: "ResultList::SearchAgent::Top",
             s2: verticalS2,
@@ -929,6 +933,14 @@ if (a === "view") {
         },
         real_estate_vertical_home_last_searches_search_click: {
             click: "RealEstateStartpage::MyLastSearches::SearchResult",
+            s2: verticalS2,
+        },
+        real_estate_vertical_home_show_all_regions_click: {
+            click: "RealEstateStartpage::ShowAll::Regions",
+            s2: verticalS2,
+        },
+        real_estate_vertical_home_autocomplete_click: {
+            click: "RealEstateStartpage::Autocomplete",
             s2: verticalS2,
         },
         detail_search_container_search_agent_click: {
