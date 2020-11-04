@@ -37,7 +37,6 @@ if (client === "desktop" || client === "mweb" || client === "bbx") {
                         category: eventDefaults && eventDefaults.object ? eventDefaults.object.category : undefined,
                         price: b.price,
                     },
-                    origin: eventDefaults.object,
                 };
                 var tempTracker = tracker.clone();
                 tempTracker.builders.object = {};
