@@ -23,6 +23,7 @@ if (client === "desktop" || client === "mweb" || client === "bbx") {
                             category: eventDefaults && eventDefaults.object ? eventDefaults.object.category : undefined,
                             categories: eventDefaults && eventDefaults.object ? eventDefaults.object.categories : undefined,
                             adType: eventDefaults && eventDefaults.object ? eventDefaults.object.adType : undefined,
+                            price: eventDefaults && eventDefaults.object ? eventDefaults.object.price : undefined,
                             publisherType: isPrivate ? "private" : "pro",
                             contentId: eventDefaults && eventDefaults.object ? eventDefaults.object.contentId : undefined,
                             name: eventDefaults && eventDefaults.object ? eventDefaults.object.name : undefined,
