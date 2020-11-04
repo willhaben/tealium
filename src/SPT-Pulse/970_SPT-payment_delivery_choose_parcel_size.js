@@ -24,7 +24,6 @@ if (client === "desktop" || client === "mweb" || client === "bbx") {
                         adId: b.ad_id,
                         publisherType: isPrivate ? "private" : "pro",
                     },
-                    origin: eventDefaults.object,
                 };
                 var tempTracker = tracker.clone();
                 tempTracker.builders.object = {};

@@ -34,7 +34,6 @@ if (client === "desktop" || client === "mweb" || client === "bbx") {
                             },
                         },
                     },
-                    origin: eventDefaults.object,
                 };
                 var tempTracker = tracker.clone();
                 tempTracker.builders.object = {};
